@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://by7iv0hesryu5"]
+
+[ext_resource type="ArrayMesh" uid="uid://khnljtkcmvgi" path="res://meshes/sitting.res" id="1_85g3d"]
+[ext_resource type="ArrayMesh" uid="uid://pwvh6llbvf7f" path="res://meshes/mac.res" id="2_choun"]
+[ext_resource type="ArrayMesh" uid="uid://cocgbvo0nhq3j" path="res://meshes/hear_phone.res" id="3_ya4ey"]
+[ext_resource type="ArrayMesh" uid="uid://bcblg74j0uhna" path="res://meshes/tree_1.res" id="4_eb6dy"]
+[ext_resource type="ArrayMesh" uid="uid://d0gdpirtxprwe" path="res://meshes/grass/grass.res" id="5_trceg"]
+[ext_resource type="ArrayMesh" uid="uid://dtdpnys34gb7x" path="res://meshes/grass/grass_shadow.res" id="6_a8y0u"]
+[ext_resource type="ArrayMesh" uid="uid://fuy8l2lanig1" path="res://meshes/grass/forest.res" id="7_jkv2x"]
+[ext_resource type="ArrayMesh" uid="uid://d2aol2lpvabxt" path="res://meshes/grass/cyst.res" id="8_jbj1t"]
+[ext_resource type="ArrayMesh" uid="uid://b2xqyvwksgquv" path="res://meshes/rust.res" id="9_muem4"]
+[ext_resource type="Script" uid="uid://c7436y25sog8r" path="res://scripts/menu/mac_button.gd" id="9_ya4ey"]
+[ext_resource type="Script" uid="uid://dxdjfhswi5vqb" path="res://scripts/menu/rust_rotate.gd" id="10_choun"]
+[ext_resource type="ArrayMesh" uid="uid://bdhhbtiu5dm2q" path="res://meshes/mac_screen_off.res" id="10_trceg"]
+[ext_resource type="ArrayMesh" uid="uid://dmilmd6q542gb" path="res://meshes/mac_screen_on.res" id="11_a8y0u"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_272bh"]
+sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
+sky_horizon_color = Color(0.827451, 0.9019608, 0.96862745, 1)
+ground_bottom_color = Color(0.827451, 0.9019608, 0.96862745, 1)
+ground_horizon_color = Color(0.827451, 0.9019608, 0.96862745, 1)
+
+[sub_resource type="Sky" id="Sky_5vw27"]
+sky_material = SubResource("ProceduralSkyMaterial_272bh")
+
+[sub_resource type="Environment" id="Environment_kek77"]
+background_mode = 2
+sky = SubResource("Sky_5vw27")
+adjustment_enabled = true
+adjustment_saturation = 0.7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jmwk8"]
+size = Vector3(0.8286743, 0.5415039, 0.18261719)
+
+[sub_resource type="Animation" id="Animation_7mycd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0ld40"]
+resource_name = "fast_rotate_back"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.6057029, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dp3eg"]
+resource_name = "fast_rotate_mac"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.6057029, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_272bh"]
+resource_name = "idle_rust"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.08726646, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5vw27"]
+_data = {
+&"RESET": SubResource("Animation_7mycd"),
+&"fast_rotate_back": SubResource("Animation_0ld40"),
+&"fast_rotate_mac": SubResource("Animation_dp3eg"),
+&"idle_rust": SubResource("Animation_272bh")
+}
+
+[node name="main" type="Node3D" unique_id=128878236]
+
+[node name="world_light" type="WorldEnvironment" parent="." unique_id=672269219]
+environment = SubResource("Environment_kek77")
+
+[node name="camera" type="Camera3D" parent="." unique_id=308627627]
+transform = Transform3D(0.907044, -0.07672768, 0.41398552, 0, 0.9832549, 0.18223552, -0.4210358, -0.16529563, 0.8918555, 3.14, 1.196, 3.989)
+fov = 42.5
+
+[node name="map" type="Node3D" parent="." unique_id=819528239]
+
+[node name="Sitting" type="MeshInstance3D" parent="map" unique_id=478703575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1514812, 0.14595073, 1.6559105)
+mesh = ExtResource("1_85g3d")
+
+[node name="HearPhone" type="MeshInstance3D" parent="map" unique_id=2133995989]
+transform = Transform3D(0.7561201, 0.6408982, 0.13240705, -0.624117, 0.64531505, 0.4405068, 0.19687577, -0.4157136, 0.8879313, 0.17915654, 1.3862545, 2.0039043)
+mesh = ExtResource("3_ya4ey")
+
+[node name="forest" type="Node3D" parent="map" unique_id=1018462821]
+
+[node name="Tree" type="MeshInstance3D" parent="map/forest" unique_id=877776011]
+transform = Transform3D(0.95371693, 0, 0.3007058, 0, 1, 0, -0.3007058, 0, 0.95371693, -0.3725443, 2.7328396, 1.6999292)
+mesh = ExtResource("4_eb6dy")
+
+[node name="grass" type="Node3D" parent="map" unique_id=1816599619]
+
+[node name="Grass" type="MeshInstance3D" parent="map/grass" unique_id=1541392406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2977804, 0)
+mesh = ExtResource("5_trceg")
+
+[node name="GrassShadow" type="MeshInstance3D" parent="map/grass" unique_id=355527526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.965, -0.288, -3.241)
+mesh = ExtResource("6_a8y0u")
+
+[node name="Forest" type="MeshInstance3D" parent="map/grass" unique_id=1917455198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3654823, 2.6749573, -3.5767655)
+mesh = ExtResource("7_jkv2x")
+
+[node name="Cyst" type="MeshInstance3D" parent="map/grass" unique_id=1441359517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5705101, 0.095526814, -4.0129843)
+mesh = ExtResource("8_jbj1t")
+
+[node name="Mac" type="MeshInstance3D" parent="." unique_id=1129654293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5719484, 0.39773047, 1.6566563)
+mesh = ExtResource("2_choun")
+script = ExtResource("9_ya4ey")
+
+[node name="mac_screen_off" type="MeshInstance3D" parent="Mac" unique_id=570596287]
+mesh = ExtResource("10_trceg")
+
+[node name="mac_screen_on" type="MeshInstance3D" parent="Mac" unique_id=1350495062]
+visible = false
+mesh = ExtResource("11_a8y0u")
+
+[node name="area" type="Area3D" parent="Mac" unique_id=1671692482]
+transform = Transform3D(0.7592713, 0, 0.65077424, 0, 1, 0, -0.65077424, 0, 0.7592713, -0.093156934, 0.23613197, -0.111831546)
+
+[node name="collision" type="CollisionShape3D" parent="Mac/area" unique_id=1538314981]
+transform = Transform3D(0.9999988, 0, -4.7683716e-07, 0, 1, 0, 4.7683716e-07, 0, 0.9999988, 0, 0, 0)
+shape = SubResource("BoxShape3D_jmwk8")
+
+[node name="Rust" type="MeshInstance3D" parent="." unique_id=1383163290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.668705, 0.5154648, 1.6572816)
+mesh = ExtResource("9_muem4")
+script = ExtResource("10_choun")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Rust" unique_id=125760713]
+libraries/ = SubResource("AnimationLibrary_5vw27")

@@ -41,14 +41,32 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "meshes": {
-"grass_Plane_004": {
+"grass_Icosphere_016": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://meshes/grass.res",
+"save_to_file/fallback_path": "res://meshes/grass/cyst.res",
+"save_to_file/path": "uid://dpqdh3aajhv7b"
+},
+"grass_grass": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://meshes/grass/grass.res",
 "save_to_file/path": "uid://d0gdpirtxprwe"
+},
+"grass_shadow_grass": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://meshes/grass/grass_shadow.res",
+"save_to_file/path": "uid://dtdpnys34gb7x"
 }
 }
 }
