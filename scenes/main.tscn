@@ -7,7 +7,7 @@
 [ext_resource type="ArrayMesh" uid="uid://d0gdpirtxprwe" path="res://meshes/grass/grass.res" id="5_trceg"]
 [ext_resource type="ArrayMesh" uid="uid://dtdpnys34gb7x" path="res://meshes/grass/grass_shadow.res" id="6_a8y0u"]
 [ext_resource type="ArrayMesh" uid="uid://fuy8l2lanig1" path="res://meshes/grass/forest.res" id="7_jkv2x"]
-[ext_resource type="ArrayMesh" uid="uid://d2aol2lpvabxt" path="res://meshes/grass/cyst.res" id="8_jbj1t"]
+[ext_resource type="ArrayMesh" uid="uid://dpqdh3aajhv7b" path="res://meshes/grass/cyst.res" id="8_jbj1t"]
 [ext_resource type="ArrayMesh" uid="uid://b2xqyvwksgquv" path="res://meshes/rust.res" id="9_muem4"]
 [ext_resource type="Script" uid="uid://c7436y25sog8r" path="res://scripts/menu/mac_button.gd" id="9_ya4ey"]
 [ext_resource type="Script" uid="uid://dxdjfhswi5vqb" path="res://scripts/menu/rust_rotate.gd" id="10_choun"]
