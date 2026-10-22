@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://by7iv0hesryu5"]
+
+[ext_resource type="ArrayMesh" uid="uid://b2xqyvwksgquv" path="res://meshes/rust.res" id="1_ig7tw"]
+[ext_resource type="ArrayMesh" uid="uid://bcblg74j0uhna" path="res://meshes/tree_1.res" id="2_1bvp3"]
+[ext_resource type="ArrayMesh" uid="uid://khnljtkcmvgi" path="res://meshes/sitting.res" id="3_lquwl"]
+[ext_resource type="ArrayMesh" uid="uid://pwvh6llbvf7f" path="res://meshes/mac.res" id="4_7mycd"]
+[ext_resource type="ArrayMesh" uid="uid://cocgbvo0nhq3j" path="res://meshes/hear_phone.res" id="5_lquwl"]
+[ext_resource type="ArrayMesh" uid="uid://d0gdpirtxprwe" path="res://meshes/grass.res" id="6_7mycd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_272bh"]
+sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
+sky_horizon_color = Color(0.827451, 0.9019608, 0.96862745, 1)
+ground_bottom_color = Color(0.827451, 0.9019608, 0.96862745, 1)
+ground_horizon_color = Color(0.827451, 0.9019608, 0.96862745, 1)
+
+[sub_resource type="Sky" id="Sky_5vw27"]
+sky_material = SubResource("ProceduralSkyMaterial_272bh")
+
+[sub_resource type="Environment" id="Environment_kek77"]
+background_mode = 2
+sky = SubResource("Sky_5vw27")
+
+[sub_resource type="Animation" id="Animation_7mycd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_272bh"]
+resource_name = "idle_rust"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.08726646, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5vw27"]
+_data = {
+&"RESET": SubResource("Animation_7mycd"),
+&"idle_rust": SubResource("Animation_272bh")
+}
+
+[node name="main" type="Node3D" unique_id=128878236]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2111890491]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=672269219]
+environment = SubResource("Environment_kek77")
+
+[node name="map" type="Node3D" parent="." unique_id=819528239]
+
+[node name="Rust" type="MeshInstance3D" parent="map" unique_id=1383163290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.668705, 0.68738264, 1.6572816)
+mesh = ExtResource("1_ig7tw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="map/Rust" unique_id=125760713]
+libraries/ = SubResource("AnimationLibrary_5vw27")
+
+[node name="Sitting" type="MeshInstance3D" parent="map" unique_id=478703575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1514812, 0.3178686, 1.6559105)
+mesh = ExtResource("3_lquwl")
+
+[node name="Mac" type="MeshInstance3D" parent="map" unique_id=1129654293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5719484, 0.5696483, 1.6566563)
+mesh = ExtResource("4_7mycd")
+
+[node name="HearPhone" type="MeshInstance3D" parent="map" unique_id=2133995989]
+transform = Transform3D(0.7561201, 0.6408982, 0.13240705, -0.624117, 0.64531505, 0.4405068, 0.19687577, -0.4157136, 0.8879313, 0.17915654, 1.3862545, 2.0039043)
+mesh = ExtResource("5_lquwl")
+
+[node name="Grass" type="MeshInstance3D" parent="map" unique_id=1853429848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0593998, 0, 1.2939787)
+mesh = ExtResource("6_7mycd")
+
+[node name="forest" type="Node3D" parent="map" unique_id=1018462821]
+
+[node name="Tree" type="MeshInstance3D" parent="map/forest" unique_id=877776011]
+transform = Transform3D(0.95371693, 0, 0.3007058, 0, 1, 0, -0.3007058, 0, 0.95371693, -0.3725443, 2.7328396, 1.6999292)
+mesh = ExtResource("2_1bvp3")
+
+[node name="camera" type="Camera3D" parent="." unique_id=308627627]
+transform = Transform3D(0.8433914, 0, 0.53729963, 0, 1, 0, -0.53729963, 0, 0.8433914, 3.5250015, 1.196, 4.143997)
