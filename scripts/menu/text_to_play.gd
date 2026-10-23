@@ -16,8 +16,8 @@ func _process(dt: float) -> void:
 	time += dt;
 	position.y = start_y + sin(time * SPEED) * AMPLITUDE;
 	
-func on_cursor_mac_entered():
+func on_cursor_mac_entered() -> void:
 	texture = TEXT_TO_CLICK;
 	
-func on_cursor_mac_exited():
+func on_cursor_mac_exited() -> void:
 	texture = TEXT_TO_PLAY;

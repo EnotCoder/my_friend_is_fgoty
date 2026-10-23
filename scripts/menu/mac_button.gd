@@ -25,10 +25,10 @@ func _input(event: InputEvent) -> void:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and is_hover:
 			on_mac_screen_click();
 		
-func on_mac_screen_click():
+func on_mac_screen_click() -> void:
 	get_tree().change_scene_to_file("res://scenes/level_1.tscn");
 
-func mac_screen_on_():
+func mac_screen_on_() -> void:
 	mac_screen_on.show();
 	mac_screen_off.hide();
 	

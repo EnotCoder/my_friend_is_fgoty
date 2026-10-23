@@ -29,7 +29,7 @@ func on_cursor_mac_entered():
 	state = state_book.IDLE_MAC
 	animation_player.play("fast_rotate_mac", 0.15)
 	
-func on_cursor_mac_exited():
+func on_cursor_mac_exited() -> void:
 	if not hovered:
 		return
 	
