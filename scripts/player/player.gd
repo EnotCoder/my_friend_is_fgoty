@@ -6,6 +6,11 @@ const ROT_SPEED: float = 10.0;
 @onready var visual: Node3D = $Rust;
 var target_angle: float = 0.0;
 
+@onready var fall_part: Node3D = $fall_part
+@onready var standart_level_position: Vector3 = global_position;
+
+func set_standart_level_position():
+	global_position = standart_level_position;
 
 func _ready() -> void:
 	target_angle = visual.rotation.y;

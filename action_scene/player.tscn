@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://c6xmstywcsofl"]
 
 [ext_resource type="ArrayMesh" uid="uid://b2xqyvwksgquv" path="res://meshes/rust.res" id="1_3n37v"]
+[ext_resource type="Script" uid="uid://0j34jvgvhvbk" path="res://scripts/player/player.gd" id="1_o3x7v"]
+[ext_resource type="Script" uid="uid://dwefwf7k7rxpj" path="res://scripts/player/fall_part.gd" id="2_gmi33"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jmwk8"]
 radius = 0.23629375
 
 [node name="player" type="CharacterBody3D" unique_id=1175395954]
+script = ExtResource("1_o3x7v")
+
+[node name="fall_part" type="Node3D" parent="." unique_id=1983341158]
+script = ExtResource("2_gmi33")
 
 [node name="Rust" type="MeshInstance3D" parent="." unique_id=986938546]
 mesh = ExtResource("1_3n37v")
