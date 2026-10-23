@@ -159,6 +159,7 @@ material_overlay = SubResource("ShaderMaterial_7nomh")
 mesh = ExtResource("12_go7sj")
 
 [node name="static" type="StaticBody3D" parent="Sitting" unique_id=213404249]
+input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sitting/static" unique_id=625048689]
 shape = ExtResource("13_7gny6")
