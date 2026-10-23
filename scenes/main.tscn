@@ -1,18 +1,20 @@
 [gd_scene format=3 uid="uid://by7iv0hesryu5"]
 
 [ext_resource type="ArrayMesh" uid="uid://khnljtkcmvgi" path="res://meshes/sitting.res" id="1_85g3d"]
-[ext_resource type="ArrayMesh" uid="uid://pwvh6llbvf7f" path="res://meshes/mac.res" id="2_choun"]
+[ext_resource type="ArrayMesh" uid="uid://pwvh6llbvf7f" path="res://meshes/mac/mac.res" id="2_choun"]
 [ext_resource type="ArrayMesh" uid="uid://cocgbvo0nhq3j" path="res://meshes/hear_phone.res" id="3_ya4ey"]
 [ext_resource type="ArrayMesh" uid="uid://bcblg74j0uhna" path="res://meshes/tree_1.res" id="4_eb6dy"]
-[ext_resource type="ArrayMesh" uid="uid://d0gdpirtxprwe" path="res://meshes/grass/grass.res" id="5_trceg"]
-[ext_resource type="ArrayMesh" uid="uid://dtdpnys34gb7x" path="res://meshes/grass/grass_shadow.res" id="6_a8y0u"]
-[ext_resource type="ArrayMesh" uid="uid://fuy8l2lanig1" path="res://meshes/grass/forest.res" id="7_jkv2x"]
-[ext_resource type="ArrayMesh" uid="uid://dpqdh3aajhv7b" path="res://meshes/grass/cyst.res" id="8_jbj1t"]
+[ext_resource type="ArrayMesh" uid="uid://d0gdpirtxprwe" path="res://meshes/grass_menu/grass.res" id="5_trceg"]
+[ext_resource type="ArrayMesh" uid="uid://dtdpnys34gb7x" path="res://meshes/grass_menu/grass_shadow.res" id="6_a8y0u"]
+[ext_resource type="ArrayMesh" uid="uid://fuy8l2lanig1" path="res://meshes/grass_menu/forest.res" id="7_jkv2x"]
+[ext_resource type="ArrayMesh" uid="uid://dpqdh3aajhv7b" path="res://meshes/grass_menu/cyst.res" id="8_jbj1t"]
 [ext_resource type="ArrayMesh" uid="uid://b2xqyvwksgquv" path="res://meshes/rust.res" id="9_muem4"]
 [ext_resource type="Script" uid="uid://c7436y25sog8r" path="res://scripts/menu/mac_button.gd" id="9_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://b0p4pynsalmiu" path="res://ui/text_to_play.png" id="10_a8y0u"]
 [ext_resource type="Script" uid="uid://dxdjfhswi5vqb" path="res://scripts/menu/rust_rotate.gd" id="10_choun"]
-[ext_resource type="ArrayMesh" uid="uid://bdhhbtiu5dm2q" path="res://meshes/mac_screen_off.res" id="10_trceg"]
-[ext_resource type="ArrayMesh" uid="uid://dmilmd6q542gb" path="res://meshes/mac_screen_on.res" id="11_a8y0u"]
+[ext_resource type="ArrayMesh" uid="uid://bdhhbtiu5dm2q" path="res://meshes/mac/mac_screen_off.res" id="10_trceg"]
+[ext_resource type="ArrayMesh" uid="uid://dmilmd6q542gb" path="res://meshes/mac/mac_screen_on.res" id="11_a8y0u"]
+[ext_resource type="Script" uid="uid://ckl1s2fqx2r1g" path="res://scripts/menu/text_to_play.gd" id="11_jkv2x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_272bh"]
 sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
@@ -20,14 +22,14 @@ sky_horizon_color = Color(0.827451, 0.9019608, 0.96862745, 1)
 ground_bottom_color = Color(0.827451, 0.9019608, 0.96862745, 1)
 ground_horizon_color = Color(0.827451, 0.9019608, 0.96862745, 1)
 
-[sub_resource type="Sky" id="Sky_5vw27"]
+[sub_resource type="Sky" id="Sky_jkv2x"]
 sky_material = SubResource("ProceduralSkyMaterial_272bh")
 
 [sub_resource type="Environment" id="Environment_kek77"]
 background_mode = 2
-sky = SubResource("Sky_5vw27")
+sky = SubResource("Sky_jkv2x")
 adjustment_enabled = true
-adjustment_saturation = 0.7
+adjustment_saturation = 0.8
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jmwk8"]
 size = Vector3(0.8286743, 0.5415039, 0.18261719)
@@ -150,6 +152,11 @@ mesh = ExtResource("8_jbj1t")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5719484, 0.39773047, 1.6566563)
 mesh = ExtResource("2_choun")
 script = ExtResource("9_ya4ey")
+
+[node name="text_to_play" type="Sprite3D" parent="Mac" unique_id=848823058]
+transform = Transform3D(0.17250274, 0, 0.10120676, 0, 0.2, 0, -0.10120676, 0, 0.17250274, 0, 0.725, 0)
+texture = ExtResource("10_a8y0u")
+script = ExtResource("11_jkv2x")
 
 [node name="mac_screen_off" type="MeshInstance3D" parent="Mac" unique_id=570596287]
 mesh = ExtResource("10_trceg")

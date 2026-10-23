@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bw1mvgymbcrqv"
-path="res://.godot/imported/frogy_head.gltf-c0e20d78c1b0b7c1c43e5c9ddd407a4d.scn"
+valid=false
 
 [deps]
 
-source_file="res://models/frogy_head.gltf"
-dest_files=["res://.godot/imported/frogy_head.gltf-c0e20d78c1b0b7c1c43e5c9ddd407a4d.scn"]
+source_file="res://models/menu/frogy_head.gltf"
 
 [params]
 

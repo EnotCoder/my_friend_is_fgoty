@@ -7,7 +7,7 @@ var hovered := false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer;
 
-func _process(_delta: float) -> void:
+func _process(_dt: float) -> void:
 	var is_playing: bool = animation_player.is_playing();
 	
 	if not is_playing:

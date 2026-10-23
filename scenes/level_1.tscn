@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cnf2y8in874g8"]
+
+[ext_resource type="Shape3D" uid="uid://c1iaqun8irlep" path="res://collisions/level_1_grass.tres" id="2_e3sih"]
+[ext_resource type="ArrayMesh" uid="uid://bgqj4yngehbru" path="res://meshes/grass_level_1/grass.res" id="2_rus8k"]
+[ext_resource type="ArrayMesh" uid="uid://djvy5hr2dowx4" path="res://meshes/grass_level_1/grass_shadow.res" id="3_5xbjy"]
+[ext_resource type="ArrayMesh" uid="uid://cg4wgkrq2pwsv" path="res://meshes/grass_level_1/forest.res" id="4_5xbjy"]
+[ext_resource type="Shape3D" uid="uid://8jquknnn41ce" path="res://collisions/level_1_forest.tres" id="4_15mv3"]
+[ext_resource type="ArrayMesh" uid="uid://bh1vb8nsyhd5j" path="res://meshes/grass_level_1/cysts.res" id="5_4nkto"]
+[ext_resource type="PackedScene" uid="uid://c6xmstywcsofl" path="res://action_scene/player.tscn" id="5_fcfvj"]
+[ext_resource type="Shape3D" uid="uid://bbme7xxi5kbil" path="res://collisions/level_1_cysts.tres" id="6_e3sih"]
+[ext_resource type="Script" uid="uid://0j34jvgvhvbk" path="res://scripts/player/player.gd" id="6_pa8r4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bswci"]
+sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
+sky_horizon_color = Color(0.827451, 0.9019608, 0.96862745, 1)
+ground_bottom_color = Color(0.827451, 0.9019608, 0.96862745, 1)
+ground_horizon_color = Color(0.827451, 0.9019608, 0.96862745, 1)
+
+[sub_resource type="Sky" id="Sky_5vw27"]
+sky_material = SubResource("ProceduralSkyMaterial_bswci")
+
+[sub_resource type="Environment" id="Environment_rus8k"]
+background_mode = 2
+sky = SubResource("Sky_5vw27")
+adjustment_enabled = true
+adjustment_saturation = 0.8
+
+[node name="Level1" type="Node3D" unique_id=928790142]
+
+[node name="world_light" type="WorldEnvironment" parent="." unique_id=664374490]
+environment = SubResource("Environment_rus8k")
+
+[node name="camera" type="Camera3D" parent="." unique_id=1000256945]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.8338858, 0.551937, 0, -0.551937, 0.8338858, 0.57, 8.516, 11.069)
+fov = 79.0
+
+[node name="map" type="Node3D" parent="." unique_id=1457961318]
+
+[node name="Grass" type="MeshInstance3D" parent="map" unique_id=967400319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.298, 0)
+mesh = ExtResource("2_rus8k")
+
+[node name="static_body" type="StaticBody3D" parent="map/Grass" unique_id=555081677]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Grass/static_body" unique_id=1621516534]
+shape = ExtResource("2_e3sih")
+
+[node name="GrassShadow" type="MeshInstance3D" parent="map" unique_id=223289965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.288, 0)
+mesh = ExtResource("3_5xbjy")
+
+[node name="Forest" type="MeshInstance3D" parent="map" unique_id=2057336991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7829404, 2.675, -1.5152674)
+mesh = ExtResource("4_5xbjy")
+
+[node name="static_body" type="StaticBody3D" parent="map/Forest" unique_id=1072720714]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Forest/static_body" unique_id=890814037]
+shape = ExtResource("4_15mv3")
+
+[node name="Cysts" type="MeshInstance3D" parent="map" unique_id=1050792694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9909172, 0.096, -1.2360015)
+mesh = ExtResource("5_4nkto")
+
+[node name="static_body" type="StaticBody3D" parent="map/Cysts" unique_id=1271280278]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Cysts/static_body" unique_id=263349502]
+shape = ExtResource("6_e3sih")
+
+[node name="player" parent="." unique_id=1175395954 instance=ExtResource("5_fcfvj")]
+script = ExtResource("6_pa8r4")

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c6xmstywcsofl"]
+
+[ext_resource type="ArrayMesh" uid="uid://b2xqyvwksgquv" path="res://meshes/rust.res" id="1_3n37v"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jmwk8"]
+radius = 0.23629375
+
+[node name="player" type="CharacterBody3D" unique_id=1175395954]
+
+[node name="Rust" type="MeshInstance3D" parent="." unique_id=986938546]
+mesh = ExtResource("1_3n37v")
+
+[node name="collision" type="CollisionShape3D" parent="." unique_id=673733327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0031489134, 0)
+shape = SubResource("SphereShape3D_jmwk8")
