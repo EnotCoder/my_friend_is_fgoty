@@ -9,6 +9,10 @@
 [ext_resource type="ArrayMesh" uid="uid://gjsws5i06c1k" path="res://meshes/grass_level_1/cysts.res" id="5_4nkto"]
 [ext_resource type="PackedScene" uid="uid://c6xmstywcsofl" path="res://action_scene/player.tscn" id="5_fcfvj"]
 [ext_resource type="Shape3D" uid="uid://bbme7xxi5kbil" path="res://collisions/level_1_cysts.tres" id="6_e3sih"]
+[ext_resource type="ArrayMesh" uid="uid://pwvh6llbvf7f" path="res://meshes/mac/mac.res" id="10_2os1m"]
+[ext_resource type="ArrayMesh" uid="uid://bdhhbtiu5dm2q" path="res://meshes/mac/mac_screen_off.res" id="11_go7sj"]
+[ext_resource type="ArrayMesh" uid="uid://khnljtkcmvgi" path="res://meshes/sitting.res" id="12_go7sj"]
+[ext_resource type="Shape3D" uid="uid://cikeb1mxchxph" path="res://collisions/sitting.tres" id="13_7gny6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bswci"]
 sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
@@ -24,6 +28,11 @@ background_mode = 2
 sky = SubResource("Sky_5vw27")
 adjustment_enabled = true
 adjustment_saturation = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7gny6"]
+size = Vector3(0.8286743, 0.5415039, 0.18261719)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jmwk8"]
 
 [node name="Level1" type="Node3D" unique_id=928790142]
 
@@ -73,3 +82,31 @@ script = ExtResource("1_2y5yt")
 player = NodePath("../player")
 
 [node name="map_wall" type="Node3D" parent="." unique_id=1011596586]
+
+[node name="Mac" type="MeshInstance3D" parent="." unique_id=1835450423]
+transform = Transform3D(0.33545148, 0, -0.94205743, 0, 1, 0, 0.94205743, 0, 0.33545148, 1.3624223, -0.21848449, -0.48973668)
+mesh = ExtResource("10_2os1m")
+
+[node name="mac_screen_off" type="MeshInstance3D" parent="Mac" unique_id=26171760]
+mesh = ExtResource("11_go7sj")
+
+[node name="area" type="Area3D" parent="Mac" unique_id=111659120]
+transform = Transform3D(0.7592713, 0, 0.65077424, 0, 1, 0, -0.65077424, 0, 0.7592713, -0.093156934, 0.23613197, -0.111831546)
+
+[node name="collision" type="CollisionShape3D" parent="Mac/area" unique_id=413714349]
+transform = Transform3D(0.9999988, 0, -4.7683716e-07, 0, 1, 0, 4.7683716e-07, 0, 0.9999988, 0, 0, 0)
+shape = SubResource("BoxShape3D_7gny6")
+
+[node name="static" type="StaticBody3D" parent="Mac" unique_id=866579551]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mac/static" unique_id=2027874632]
+shape = SubResource("BoxShape3D_jmwk8")
+
+[node name="Sitting" type="MeshInstance3D" parent="." unique_id=969822811]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -0.40396464, 0.16140664, -1.9319048)
+mesh = ExtResource("12_go7sj")
+
+[node name="static" type="StaticBody3D" parent="Sitting" unique_id=213404249]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sitting/static" unique_id=625048689]
+shape = ExtResource("13_7gny6")
