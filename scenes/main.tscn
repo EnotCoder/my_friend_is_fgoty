@@ -15,6 +15,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bdhhbtiu5dm2q" path="res://meshes/mac/mac_screen_off.res" id="10_trceg"]
 [ext_resource type="ArrayMesh" uid="uid://dmilmd6q542gb" path="res://meshes/mac/mac_screen_on.res" id="11_a8y0u"]
 [ext_resource type="Script" uid="uid://ckl1s2fqx2r1g" path="res://scripts/menu/text_to_play.gd" id="11_jkv2x"]
+[ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/font.ttf" id="16_jbj1t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_272bh"]
 sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
@@ -179,3 +180,47 @@ script = ExtResource("10_choun")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Rust" unique_id=125760713]
 libraries/ = SubResource("AnimationLibrary_5vw27")
+
+[node name="ui" type="Control" parent="." unique_id=142827029]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="version" type="Label" parent="ui" unique_id=966530347]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.011458334
+anchor_top = 0.9851852
+anchor_right = 0.011458334
+anchor_bottom = 0.9851852
+offset_top = -42.0
+offset_right = 402.0
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("16_jbj1t")
+theme_override_font_sizes/font_size = 40
+text = "version: 0.1.0 (for gamejam)"
+metadata/_edit_use_anchors_ = true
+
+[node name="version2" type="Label" parent="ui" unique_id=1065413455]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.98802084
+anchor_top = 0.9898148
+anchor_right = 0.98802084
+anchor_bottom = 0.9898148
+offset_left = -313.0
+offset_top = -49.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("16_jbj1t")
+theme_override_font_sizes/font_size = 40
+text = "EnotCoder 2026"
+metadata/_edit_use_anchors_ = true

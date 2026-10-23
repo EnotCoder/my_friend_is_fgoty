@@ -3,6 +3,97 @@
 [ext_resource type="ArrayMesh" uid="uid://b2xqyvwksgquv" path="res://meshes/rust.res" id="1_3n37v"]
 [ext_resource type="Script" uid="uid://0j34jvgvhvbk" path="res://scripts/player/player.gd" id="1_o3x7v"]
 [ext_resource type="Script" uid="uid://dwefwf7k7rxpj" path="res://scripts/player/fall_part.gd" id="2_gmi33"]
+[ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/font.ttf" id="3_gbxs5"]
+
+[sub_resource type="Animation" id="Animation_gbxs5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("poor_crab:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("you_bad:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gnbup"]
+resource_name = "fade_in"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("poor_crab:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("you_bad:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_if2w1"]
+resource_name = "fade_out"
+length = 0.19999999999999998
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("you_bad:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("poor_crab:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3b8k8"]
+_data = {
+&"RESET": SubResource("Animation_gbxs5"),
+&"fade_in": SubResource("Animation_gnbup"),
+&"fade_out": SubResource("Animation_if2w1")
+}
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jmwk8"]
 radius = 0.23629375
@@ -12,6 +103,59 @@ script = ExtResource("1_o3x7v")
 
 [node name="fall_part" type="Node3D" parent="." unique_id=1983341158]
 script = ExtResource("2_gmi33")
+
+[node name="ui" type="Control" parent="fall_part" unique_id=2111695533]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="poor_crab" type="Label" parent="fall_part/ui" unique_id=1793651589]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.0
+offset_top = -48.5
+offset_right = 286.0
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_gbxs5")
+theme_override_font_sizes/font_size = 80
+text = "poor little crab"
+
+[node name="you_bad" type="Label" parent="fall_part/ui" unique_id=1020942526]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = 54.0
+offset_right = 206.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_gbxs5")
+theme_override_font_sizes/font_size = 40
+text = "You are a bad person."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fall_part/ui" unique_id=1587196252]
+libraries/ = SubResource("AnimationLibrary_3b8k8")
 
 [node name="Rust" type="MeshInstance3D" parent="." unique_id=986938546]
 mesh = ExtResource("1_3n37v")
