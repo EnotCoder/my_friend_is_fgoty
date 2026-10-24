@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://po4fng56enrw"
-path="res://.godot/imported/shadow_grass_cell.gltf-72c8aea9dfa0f3eef906bc2fccd68bdd.scn"
+uid="uid://pv3i22g6s677"
+path="res://.godot/imported/loc_1.gltf-e7af13af2b212c2310b10aa7b88eae1e.scn"
 
 [deps]
 
-source_file="res://models/shadow_grass_cell.gltf"
-dest_files=["res://.godot/imported/shadow_grass_cell.gltf-72c8aea9dfa0f3eef906bc2fccd68bdd.scn"]
+source_file="res://objects/models/menu/loc_1.gltf"
+dest_files=["res://.godot/imported/loc_1.gltf-e7af13af2b212c2310b10aa7b88eae1e.scn"]
 
 [params]
 
@@ -41,14 +41,23 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "meshes": {
-"shadow_grass_cell_grass_003": {
+"loc_1_bench": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://meshes/grass_shadow_cell.res",
-"save_to_file/path": "uid://6pa0wh4lfyeb"
+"save_to_file/fallback_path": "res://objects/meshes/sitting.res",
+"save_to_file/path": "uid://khnljtkcmvgi"
+},
+"loc_1_tree": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://objects/meshes/tree_1.res",
+"save_to_file/path": "uid://bcblg74j0uhna"
 }
 }
 }

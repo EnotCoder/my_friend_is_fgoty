@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://cnf2y8in874g8"]
 
 [ext_resource type="Script" uid="uid://ckwcf5viegnl0" path="res://scripts/player/level_camera.gd" id="1_2y5yt"]
-[ext_resource type="Shape3D" uid="uid://c1iaqun8irlep" path="res://collisions/level_1_grass.tres" id="2_e3sih"]
-[ext_resource type="ArrayMesh" uid="uid://dvynh3s2si5tu" path="res://meshes/grass_level_1/grass.res" id="2_rus8k"]
-[ext_resource type="ArrayMesh" uid="uid://imgmd3basxqr" path="res://meshes/grass_level_1/grass_shadow.res" id="3_5xbjy"]
-[ext_resource type="ArrayMesh" uid="uid://kehl5ud40rt5" path="res://meshes/grass_level_1/forest.res" id="4_5xbjy"]
-[ext_resource type="Shape3D" uid="uid://8jquknnn41ce" path="res://collisions/level_1_forest.tres" id="4_15mv3"]
-[ext_resource type="ArrayMesh" uid="uid://gjsws5i06c1k" path="res://meshes/grass_level_1/cysts.res" id="5_4nkto"]
+[ext_resource type="Shape3D" uid="uid://c1iaqun8irlep" path="res://objects/collisions/level_1_grass.tres" id="2_e3sih"]
+[ext_resource type="ArrayMesh" uid="uid://dvynh3s2si5tu" path="res://objects/meshes/grass_level_1/grass.res" id="2_rus8k"]
+[ext_resource type="ArrayMesh" uid="uid://imgmd3basxqr" path="res://objects/meshes/grass_level_1/grass_shadow.res" id="3_5xbjy"]
+[ext_resource type="ArrayMesh" uid="uid://kehl5ud40rt5" path="res://objects/meshes/grass_level_1/forest.res" id="4_5xbjy"]
+[ext_resource type="Shape3D" uid="uid://8jquknnn41ce" path="res://objects/collisions/level_1_forest.tres" id="4_15mv3"]
+[ext_resource type="ArrayMesh" uid="uid://gjsws5i06c1k" path="res://objects/meshes/grass_level_1/cysts.res" id="5_4nkto"]
 [ext_resource type="PackedScene" uid="uid://c6xmstywcsofl" path="res://scenes/action_scene/player.tscn" id="5_fcfvj"]
-[ext_resource type="Shape3D" uid="uid://bbme7xxi5kbil" path="res://collisions/level_1_cysts.tres" id="6_e3sih"]
-[ext_resource type="ArrayMesh" uid="uid://pwvh6llbvf7f" path="res://meshes/mac/mac.res" id="10_2os1m"]
+[ext_resource type="Shape3D" uid="uid://bbme7xxi5kbil" path="res://objects/collisions/level_1_cysts.tres" id="6_e3sih"]
+[ext_resource type="ArrayMesh" uid="uid://pwvh6llbvf7f" path="res://objects/meshes/mac/mac.res" id="10_2os1m"]
 [ext_resource type="Shader" uid="uid://b700fs1jyol2f" path="res://shaders/select_object.gdshader" id="10_6dial"]
 [ext_resource type="Shader" uid="uid://2i1mls7c23vy" path="res://shaders/mac_fon.gdshader" id="11_2aecg"]
-[ext_resource type="ArrayMesh" uid="uid://bdhhbtiu5dm2q" path="res://meshes/mac/mac_screen_off.res" id="11_go7sj"]
-[ext_resource type="ArrayMesh" uid="uid://khnljtkcmvgi" path="res://meshes/sitting.res" id="12_go7sj"]
-[ext_resource type="Shape3D" uid="uid://cikeb1mxchxph" path="res://collisions/sitting.tres" id="13_7gny6"]
+[ext_resource type="ArrayMesh" uid="uid://bdhhbtiu5dm2q" path="res://objects/meshes/mac/mac_screen_off.res" id="11_go7sj"]
+[ext_resource type="ArrayMesh" uid="uid://khnljtkcmvgi" path="res://objects/meshes/sitting.res" id="12_go7sj"]
+[ext_resource type="Shape3D" uid="uid://cikeb1mxchxph" path="res://objects/collisions/sitting.tres" id="13_7gny6"]
 [ext_resource type="Script" uid="uid://cr7h1b8xe1to2" path="res://scripts/action/select_object_area.gd" id="14_7nomh"]
 [ext_resource type="Script" uid="uid://blfbf7paja41d" path="res://scripts/action/mesh/sitting.gd" id="16_x2xxo"]
 [ext_resource type="PackedScene" uid="uid://dxe1h4qesqhx3" path="res://scenes/action_scene/ui/hint_label.tscn" id="18_tr1x6"]
@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://ccqcmsj6iwgjy" path="res://scenes/action_scene/fgoty_sit.tscn" id="20_isj1j"]
 [ext_resource type="Texture2D" uid="uid://cklig1b7o52cp" path="res://ui/text/my_friend.png" id="20_so66j"]
 [ext_resource type="Script" uid="uid://fyuefsp1yb7s" path="res://scripts/action/to_sin.gd" id="21_tr1x6"]
-[ext_resource type="ArrayMesh" uid="uid://dflykkokjaugt" path="res://meshes/grass_level_1/branches.res" id="24_wbtxt"]
+[ext_resource type="ArrayMesh" uid="uid://d00yu71csjg1x" path="res://objects/meshes/grass_level_1/branches.res" id="24_wbtxt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bswci"]
 sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
@@ -90,15 +90,6 @@ shader_parameter/stripe_speed = 20.0
 [node name="world_light" type="WorldEnvironment" parent="." unique_id=664374490]
 environment = SubResource("Environment_rus8k")
 
-[node name="ui" type="Control" parent="." unique_id=743696722]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
 [node name="map" type="Node3D" parent="." unique_id=1457961318]
 metadata/_edit_group_ = true
 
@@ -133,6 +124,10 @@ mesh = ExtResource("5_4nkto")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="map/Cysts/static_body" unique_id=263349502]
 shape = ExtResource("6_e3sih")
 
+[node name="Branches" type="MeshInstance3D" parent="map" unique_id=638552392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87499046, -0.28220776, 0.4690535)
+mesh = ExtResource("24_wbtxt")
+
 [node name="player" parent="." unique_id=1175395954 instance=ExtResource("5_fcfvj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10187982, 0)
 
@@ -144,90 +139,89 @@ size = 9.0
 script = ExtResource("1_2y5yt")
 player = NodePath("../player")
 
-[node name="Mac" type="MeshInstance3D" parent="." unique_id=1835450423]
+[node name="src_obj" type="Node3D" parent="." unique_id=802477194]
+
+[node name="Mac" type="MeshInstance3D" parent="src_obj" unique_id=1835450423]
 transform = Transform3D(0.33545148, 0, -0.94205743, 0, 1, 0, 0.94205743, 0, 0.33545148, 1.3624223, -0.21848449, -0.48973668)
 mesh = ExtResource("10_2os1m")
 metadata/_edit_group_ = true
 
-[node name="mac_screen_code" type="MeshInstance3D" parent="Mac" unique_id=26171760]
+[node name="mac_screen_code" type="MeshInstance3D" parent="src_obj/Mac" unique_id=26171760]
 material_override = SubResource("ShaderMaterial_7gny6")
 mesh = ExtResource("11_go7sj")
 
-[node name="area" type="Area3D" parent="Mac" unique_id=111659120 node_paths=PackedStringArray("shader_obj")]
+[node name="area" type="Area3D" parent="src_obj/Mac" unique_id=111659120 node_paths=PackedStringArray("shader_obj")]
 transform = Transform3D(0.7592713, 0, 0.65077424, 0, 1, 0, -0.65077424, 0, 0.7592713, -0.093156934, 0.23613197, -0.111831546)
 script = ExtResource("14_7nomh")
 shader_obj = [NodePath(".."), NodePath("../mac_screen_code")]
 select_material = SubResource("ShaderMaterial_wbtxt")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mac/area" unique_id=894546601]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="src_obj/Mac/area" unique_id=894546601]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.074543834, 0, 0.1686486)
 shape = SubResource("BoxShape3D_jmwk8")
 
-[node name="static" type="StaticBody3D" parent="Mac" unique_id=866579551]
+[node name="static" type="StaticBody3D" parent="src_obj/Mac" unique_id=866579551]
 input_ray_pickable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mac/static" unique_id=2027874632]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="src_obj/Mac/static" unique_id=2027874632]
 shape = SubResource("BoxShape3D_jmwk8")
 
-[node name="Sitting" type="MeshInstance3D" parent="." unique_id=969822811]
+[node name="Sitting" type="MeshInstance3D" parent="src_obj" unique_id=969822811]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -0.40396464, 0.16140664, -1.9319048)
 mesh = ExtResource("12_go7sj")
 script = ExtResource("16_x2xxo")
 metadata/_edit_group_ = true
 
-[node name="static" type="StaticBody3D" parent="Sitting" unique_id=213404249]
+[node name="static" type="StaticBody3D" parent="src_obj/Sitting" unique_id=213404249]
 input_ray_pickable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sitting/static" unique_id=625048689]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="src_obj/Sitting/static" unique_id=625048689]
 shape = ExtResource("13_7gny6")
 
-[node name="area" type="Area3D" parent="Sitting" unique_id=2091682386 node_paths=PackedStringArray("shader_obj")]
+[node name="area" type="Area3D" parent="src_obj/Sitting" unique_id=2091682386 node_paths=PackedStringArray("shader_obj")]
 script = ExtResource("14_7nomh")
 shader_obj = [NodePath("..")]
 select_material = SubResource("ShaderMaterial_d5akn")
 call_func_click = "sitting_click"
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Sitting/area" unique_id=951181089]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="src_obj/Sitting/area" unique_id=951181089]
 shape = ExtResource("13_7gny6")
 
-[node name="hint_label" parent="Sitting" unique_id=498957823 instance=ExtResource("18_tr1x6")]
+[node name="hint_label" parent="src_obj/Sitting" unique_id=498957823 instance=ExtResource("18_tr1x6")]
 script = ExtResource("19_d5akn")
 
-[node name="fgoty_sit" parent="." unique_id=773859946 instance=ExtResource("20_isj1j")]
+[node name="fgoty_sit" parent="src_obj" unique_id=773859946 instance=ExtResource("20_isj1j")]
 transform = Transform3D(0.66186297, 0, 0.22789772, 0, 0.7, 0, -0.22789772, 0, 0.66186297, -0.471, 0.49784046, -1.734)
+metadata/_edit_group_ = true
 
-[node name="friend" type="Sprite3D" parent="fgoty_sit" unique_id=709360753]
+[node name="friend" type="Sprite3D" parent="src_obj/fgoty_sit" unique_id=709360753]
 transform = Transform3D(1.0000001, 0, 0, 0, 0.8580649, 0.51354134, 0, -0.5135413, 0.858065, 0.046163082, 3.324677, -0.13406706)
 texture = ExtResource("20_so66j")
 script = ExtResource("21_tr1x6")
 start_y = 3.325
 
-[node name="area" type="Area3D" parent="fgoty_sit" unique_id=641404489 node_paths=PackedStringArray("shader_obj")]
+[node name="area" type="Area3D" parent="src_obj/fgoty_sit" unique_id=641404489 node_paths=PackedStringArray("shader_obj")]
 transform = Transform3D(0.7592713, 0, 0.65077424, 0, 1, 0, -0.65077424, 0, 0.7592713, -0.093156934, 0.23613197, -0.111831546)
 script = ExtResource("14_7nomh")
 shader_obj = [NodePath("..")]
 select_material = SubResource("ShaderMaterial_tr1x6")
 call_func_click = "fgoty_click"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fgoty_sit/area" unique_id=1204857913]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="src_obj/fgoty_sit/area" unique_id=1204857913]
 transform = Transform3D(1, 0, 0, 0, 0.9999926, 0, 0, 0, 1, -0.008951783, 0.6224366, 0.23163748)
 shape = SubResource("BoxShape3D_jmwk8")
 
-[node name="hint_label" parent="fgoty_sit" unique_id=201814506 instance=ExtResource("18_tr1x6")]
+[node name="hint_label" parent="src_obj/fgoty_sit" unique_id=201814506 instance=ExtResource("18_tr1x6")]
 script = ExtResource("19_d5akn")
 
-[node name="code_objes" type="Node3D" parent="." unique_id=337815013]
+[node name="code_objes" type="Node3D" parent="src_obj" unique_id=337815013]
 metadata/_edit_group_ = true
 
-[node name="main_window_code" parent="code_objes" unique_id=393723837 instance=ExtResource("19_2cbcq")]
+[node name="main_window_code" parent="src_obj/code_objes" unique_id=393723837 instance=ExtResource("19_2cbcq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7275785, 0, 3.182349)
 
-[node name="main_window_code2" parent="code_objes" unique_id=1011556040 instance=ExtResource("19_2cbcq")]
+[node name="main_window_code2" parent="src_obj/code_objes" unique_id=1011556040 instance=ExtResource("19_2cbcq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.680425, 0, 3.182349)
 
-[node name="main_window_code3" parent="code_objes" unique_id=833951070 instance=ExtResource("19_2cbcq")]
+[node name="main_window_code3" parent="src_obj/code_objes" unique_id=833951070 instance=ExtResource("19_2cbcq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.544713, 0, -1.5844164)
-
-[node name="Branches" type="MeshInstance3D" parent="." unique_id=638552392]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87499046, -0.28220776, 0.4690535)
-mesh = ExtResource("24_wbtxt")

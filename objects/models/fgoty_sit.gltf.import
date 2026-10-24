@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c4twl0wdx4ck7"
-path="res://.godot/imported/fgoty_sit.gltf-93a02d80c30379efb01d052f4cfb323c.scn"
+path="res://.godot/imported/fgoty_sit.gltf-398291860eed4e704916ea0d552c6985.scn"
 
 [deps]
 
-source_file="res://models/fgoty_sit.gltf"
-dest_files=["res://.godot/imported/fgoty_sit.gltf-93a02d80c30379efb01d052f4cfb323c.scn"]
+source_file="res://objects/models/fgoty_sit.gltf"
+dest_files=["res://.godot/imported/fgoty_sit.gltf-398291860eed4e704916ea0d552c6985.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://n1ny4xh2ogfb"
-path="res://.godot/imported/grass.gltf-f686c9391bb511663207a3d48ab69462.scn"
+uid="uid://b2pwkdcm7tgye"
+path="res://.godot/imported/grass.gltf-6886da0aa5ffd862e11eb9ca43bffb9f.scn"
 
 [deps]
 
-source_file="res://models/menu/grass.gltf"
-dest_files=["res://.godot/imported/grass.gltf-f686c9391bb511663207a3d48ab69462.scn"]
+source_file="res://objects/models/level_1/grass.gltf"
+dest_files=["res://.godot/imported/grass.gltf-6886da0aa5ffd862e11eb9ca43bffb9f.scn"]
 
 [params]
 
@@ -41,41 +41,50 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "meshes": {
-"grass_cysts": {
+"grass_Cube_007": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://meshes/grass_menu/cyst.res",
-"save_to_file/path": "uid://dpqdh3aajhv7b"
+"save_to_file/fallback_path": "res://objects/meshes/grass_level_1/branches.res",
+"save_to_file/path": "uid://d00yu71csjg1x"
 },
-"grass_forest": {
+"grass_Icosphere_001": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://meshes/grass_menu/forest.res",
-"save_to_file/path": "uid://fuy8l2lanig1"
+"save_to_file/fallback_path": "res://objects/meshes/grass_level_1/cysts.res",
+"save_to_file/path": "uid://gjsws5i06c1k"
 },
-"grass_grass": {
+"grass_forest_001": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://meshes/grass_menu/grass.res",
-"save_to_file/path": "uid://d0gdpirtxprwe"
+"save_to_file/fallback_path": "res://objects/meshes/grass_level_1/forest.res",
+"save_to_file/path": "uid://kehl5ud40rt5"
 },
-"grass_shadow_grass": {
+"grass_grass_001": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://meshes/grass_menu/grass_shadow.res",
-"save_to_file/path": "uid://dtdpnys34gb7x"
+"save_to_file/fallback_path": "res://objects/meshes/grass_level_1/grass.res",
+"save_to_file/path": "uid://dvynh3s2si5tu"
+},
+"grass_grass_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://objects/meshes/grass_level_1/grass_shadow.res",
+"save_to_file/path": "uid://imgmd3basxqr"
 }
 }
 }

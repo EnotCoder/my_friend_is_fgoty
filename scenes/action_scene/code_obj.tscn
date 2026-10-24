@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://3lpn23m8luoo" path="res://scripts/action/code_obj.gd" id="1_4ydmg"]
 [ext_resource type="Texture2D" uid="uid://d0k5ea188hihu" path="res://ui/card_code_ui/code_to_create_window.png" id="1_kqwqn"]
 [ext_resource type="Texture2D" uid="uid://cfym2236xbb5" path="res://ui/texture_card.png" id="2_xoo1o"]
-[ext_resource type="ArrayMesh" uid="uid://deo562yhf7luf" path="res://meshes/grass_shadow_cell.res" id="3_xoo1o"]
+[ext_resource type="ArrayMesh" uid="uid://6pa0wh4lfyeb" path="res://objects/meshes/grass_shadow_cell.res" id="3_xoo1o"]
 [ext_resource type="Script" uid="uid://bl53gxk8q5imq" path="res://scripts/action/ui_code_obj.gd" id="4_sefyh"]
 [ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="5_nbfq8"]
 

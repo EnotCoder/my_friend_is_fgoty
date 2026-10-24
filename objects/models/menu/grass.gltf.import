@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://drvgn3jmtcsjq"
-path="res://.godot/imported/object_fgoty.gltf-531ec83a35e49b92497cb2504c825e61.scn"
+uid="uid://n1ny4xh2ogfb"
+path="res://.godot/imported/grass.gltf-d546159f2da1f2b7cab9615d76c59c53.scn"
 
 [deps]
 
-source_file="res://models/object_fgoty.gltf"
-dest_files=["res://.godot/imported/object_fgoty.gltf-531ec83a35e49b92497cb2504c825e61.scn"]
+source_file="res://objects/models/menu/grass.gltf"
+dest_files=["res://.godot/imported/grass.gltf-d546159f2da1f2b7cab9615d76c59c53.scn"]
 
 [params]
 
@@ -41,50 +41,41 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "meshes": {
-"object_fgoty_Cube": {
+"grass_cysts": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://meshes/mac.res",
-"save_to_file/path": "uid://pwvh6llbvf7f"
+"save_to_file/fallback_path": "res://objects/meshes/grass_menu/cyst.res",
+"save_to_file/path": "uid://dpqdh3aajhv7b"
 },
-"object_fgoty_Cube_001": {
+"grass_forest": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://meshes/rust.res",
-"save_to_file/path": "uid://b2xqyvwksgquv"
+"save_to_file/fallback_path": "res://objects/meshes/grass_menu/forest.res",
+"save_to_file/path": "uid://fuy8l2lanig1"
 },
-"object_fgoty_Cube_005": {
+"grass_grass": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://meshes/mac_screen_on.res",
-"save_to_file/path": "uid://dmilmd6q542gb"
+"save_to_file/fallback_path": "res://objects/meshes/grass_menu/grass.res",
+"save_to_file/path": "uid://d0gdpirtxprwe"
 },
-"object_fgoty_Cube_006": {
+"grass_shadow_grass": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://meshes/mac_screen_off.res",
-"save_to_file/path": "uid://bdhhbtiu5dm2q"
-},
-"object_fgoty_Cylinder_002": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://meshes/hear_phone.res",
-"save_to_file/path": "uid://cocgbvo0nhq3j"
+"save_to_file/fallback_path": "res://objects/meshes/grass_menu/grass_shadow.res",
+"save_to_file/path": "uid://dtdpnys34gb7x"
 }
 }
 }
