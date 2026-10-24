@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+class_name Player;
+
 const SPEED = 5.0;
 const ROT_SPEED: float = 10.0;
 
@@ -16,6 +18,7 @@ var walk_frequency: float = 3.0
 
 func set_standart_level_position():
 	global_position = standart_level_position;
+	global_position.y = standart_level_position.y + 10.0;
 
 @export var is_apk: bool = false;
 @onready var moble_ui: Control = $moble_ui

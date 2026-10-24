@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://cr7h1b8xe1to2" path="res://scripts/action/select_object_area.gd" id="14_7nomh"]
 [ext_resource type="Script" uid="uid://blfbf7paja41d" path="res://scripts/action/mesh/sitting.gd" id="16_x2xxo"]
 [ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/font.ttf" id="17_1s4pk"]
+[ext_resource type="PackedScene" uid="uid://6kfah1nt2dp4" path="res://action_scene/code_obj.tscn" id="19_2cbcq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bswci"]
 sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
@@ -136,6 +137,32 @@ _data = {
 
 [node name="world_light" type="WorldEnvironment" parent="." unique_id=664374490]
 environment = SubResource("Environment_rus8k")
+
+[node name="ui" type="Control" parent="." unique_id=743696722]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="text" type="Label" parent="ui" unique_id=1240699243]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -98.0
+offset_top = 26.0
+offset_right = 98.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("17_1s4pk")
+theme_override_font_sizes/font_size = 60
+text = "Level 1"
+horizontal_alignment = 1
 
 [node name="map" type="Node3D" parent="." unique_id=1457961318]
 
@@ -268,28 +295,5 @@ libraries/ = SubResource("AnimationLibrary_isj1j")
 wait_time = 3.0
 one_shot = true
 
-[node name="ui" type="Control" parent="." unique_id=743696722]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="text" type="Label" parent="ui" unique_id=1240699243]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -98.0
-offset_top = 26.0
-offset_right = 98.0
-offset_bottom = 100.0
-grow_horizontal = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
-theme_override_fonts/font = ExtResource("17_1s4pk")
-theme_override_font_sizes/font_size = 60
-text = "Level 1"
-horizontal_alignment = 1
+[node name="code_obj" parent="." unique_id=393723837 instance=ExtResource("19_2cbcq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7275785, 0, 3.182349)
