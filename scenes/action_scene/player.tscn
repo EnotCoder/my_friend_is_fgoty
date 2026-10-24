@@ -225,6 +225,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="joystick" type="VirtualJoystick" parent="moble_ui" unique_id=447510433]
 layout_mode = 1

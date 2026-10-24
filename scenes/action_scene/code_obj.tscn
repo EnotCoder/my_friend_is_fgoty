@@ -111,19 +111,19 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("use:position")
+tracks/0/path = NodePath("ui/use:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(511, 1300)]
+"values": [Vector2(0, 1300)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("delete:position")
+tracks/1/path = NodePath("ui/delete:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -147,7 +147,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("text:visible_ratio")
+tracks/3/path = NodePath("ui/text:visible_ratio")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -159,26 +159,26 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("text:position")
+tracks/4/path = NodePath("ui/code:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(508, 75)]
+"values": [Vector2(0, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("code:scale")
+tracks/5/path = NodePath("ui/text:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(31, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_sefyh"]
@@ -187,26 +187,26 @@ length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("use:position")
+tracks/0/path = NodePath("ui/use:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0.2, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(511, 1300), Vector2(511, 917)]
+"values": [Vector2(0, 1300), Vector2(0, 848)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("delete:position")
+tracks/1/path = NodePath("ui/delete:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0.2, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1039, 1300), Vector2(1039, 917)]
+"values": [Vector2(549, 1300), Vector2(549, 848)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -223,7 +223,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("text:visible_ratio")
+tracks/3/path = NodePath("ui/text:visible_ratio")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -235,7 +235,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("code:scale")
+tracks/4/path = NodePath("ui/code:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -251,38 +251,38 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("delete:position")
+tracks/0/path = NodePath("ui/delete:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1039, 917), Vector2(1039, 1300)]
+"values": [Vector2(549, 848), Vector2(549, 1300)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("use:position")
+tracks/1/path = NodePath("ui/use:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(511, 917), Vector2(511, 1300)]
+"values": [Vector2(0, 848), Vector2(0, 1300)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("text:position")
+tracks/2/path = NodePath("ui/text:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(508, 75), Vector2(508, 1200)]
+"values": [Vector2(31, 0), Vector2(31, 1200)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -299,7 +299,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("code:scale")
+tracks/4/path = NodePath("ui/code:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -340,7 +340,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("4_sefyh")
 
 [node name="rect" type="ColorRect" parent="ui" unique_id=1628503229]
 layout_mode = 1
@@ -352,34 +351,46 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
-[node name="code" type="TextureRect" parent="ui" unique_id=1986153192]
+[node name="ui" type="Control" parent="ui" unique_id=736285383]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -461.80554
-offset_top = -332.5
-offset_right = 461.807
-offset_bottom = 332.5027
+offset_left = -483.0
+offset_top = -479.0
+offset_right = 483.0
+offset_bottom = 479.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_sefyh")
+
+[node name="code" type="TextureRect" parent="ui/ui" unique_id=1986153192]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -461.80627
+offset_top = -332.50134
+offset_right = 461.80627
+offset_bottom = 332.50134
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("1_kqwqn")
 
-[node name="use" type="Button" parent="ui" unique_id=2024620682]
+[node name="use" type="Button" parent="ui/ui" unique_id=2024620682]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -449.0
-offset_top = 220.0
-offset_right = -88.0
-offset_bottom = 330.00012
-grow_horizontal = 2
+offset_top = 342.0
+offset_right = 417.0004
+offset_bottom = 452.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("5_nbfq8")
 theme_override_font_sizes/font_size = 84
@@ -389,18 +400,18 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_exhfj")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_sefyh")
 text = "USE"
 
-[node name="delete" type="Button" parent="ui" unique_id=1128127866]
+[node name="delete" type="Button" parent="ui/ui" unique_id=1128127866]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 79.0
-offset_top = 220.0
-offset_right = 457.0
-offset_bottom = 330.00012
-grow_horizontal = 2
+offset_left = 73.0
+offset_top = 342.0
+offset_right = 489.9989
+offset_bottom = 452.00012
+grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("5_nbfq8")
 theme_override_font_sizes/font_size = 84
@@ -410,15 +421,14 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_etgsl")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_4wfdx")
 text = "DELETE"
 
-[node name="text" type="Label" parent="ui" unique_id=1934658612]
+[node name="text" type="Label" parent="ui/ui" unique_id=1934658612]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -452.0
-offset_top = 75.0
-offset_right = 452.0
-offset_bottom = 168.0003
+offset_right = 452.00012
+offset_bottom = 93.0
 grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 33
@@ -428,5 +438,6 @@ text = "You found a part of code"
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ui" unique_id=194723939]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ui/ui" unique_id=194723939]
+root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_4wfdx")

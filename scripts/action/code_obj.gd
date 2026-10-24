@@ -10,8 +10,8 @@ const SPEED_SCALE_SHADOW: float = 4.0;
 
 @onready var sprite_code: Sprite3D = $sprite_code
 @onready var grass_shadow_cell: MeshInstance3D = $GrassShadowCell
-@onready var ui: Control = $ui
-@onready var code: TextureRect = $ui/code
+@onready var ui: Control = $ui/ui
+@onready var code: TextureRect = $ui/ui/code
 
 var time: float = 0.0;
 var start_y: float = 0.0;
