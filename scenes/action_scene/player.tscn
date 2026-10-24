@@ -153,6 +153,7 @@ corner_detail = 20
 
 [node name="player" type="CharacterBody3D" unique_id=1175395954]
 script = ExtResource("1_o3x7v")
+is_apk = true
 
 [node name="fall_part" type="Node3D" parent="." unique_id=1983341158]
 script = ExtResource("2_gmi33")

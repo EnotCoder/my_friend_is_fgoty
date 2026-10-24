@@ -1,6 +1,7 @@
 extends Area3D;
 
 @export var shader_obj: Array[Node3D] = [];
+@export var script_obj: Node3D;
 @export var select_material: ShaderMaterial;
 @export var call_func_click: String;
 
@@ -72,7 +73,7 @@ func _input(event: InputEvent) -> void:
 			if not should_click:
 				return
 
-			var parent := get_parent()
+			var parent := get_parent() if not script_obj else script_obj;
 
 			if not is_instance_valid(parent):
 				push_warning("У Area3D нет родителя")

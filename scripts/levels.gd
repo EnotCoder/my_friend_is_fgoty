@@ -23,3 +23,6 @@ func _process(delta: float) -> void:
 		target_x,
 		1.0 - exp(-SMOOTH_SPEED * delta)
 	);
+	
+func start_level_1():
+	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn");

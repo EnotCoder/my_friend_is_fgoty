@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dwk3ksm5bsm6g"]
+
+[ext_resource type="Script" uid="uid://0jvpng2dv4pw" path="res://scripts/levels.gd" id="1_i2p2e"]
+[ext_resource type="ArrayMesh" uid="uid://cjqk61b02bsir" path="res://objects/meshes/levels/level_1.res" id="2_6hds7"]
+[ext_resource type="Script" uid="uid://cr7h1b8xe1to2" path="res://scripts/action/select_object_area.gd" id="3_8jpd0"]
+[ext_resource type="Shader" uid="uid://b700fs1jyol2f" path="res://shaders/select_object.gdshader" id="4_sac6b"]
+[ext_resource type="Shape3D" uid="uid://0akwlleayixx" path="res://objects/collisions/levels/level_1.tres" id="5_rllr3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qk7pt"]
+sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
+sky_horizon_color = Color(0.55373067, 0.74425006, 0.9088375, 1)
+ground_bottom_color = Color(0.5341039, 0.7322206, 0.90276814, 1)
+ground_horizon_color = Color(0.5529412, 0.74509805, 0.9098039, 1)
+
+[sub_resource type="Sky" id="Sky_hcnff"]
+sky_material = SubResource("ProceduralSkyMaterial_qk7pt")
+
+[sub_resource type="Environment" id="Environment_hcnff"]
+background_mode = 2
+sky = SubResource("Sky_hcnff")
+adjustment_enabled = true
+adjustment_saturation = 0.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ly2og"]
+render_priority = 0
+shader = ExtResource("4_sac6b")
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 0.0
+shader_parameter/stripe_spacing = 12.0
+shader_parameter/stripe_width = 0.50000002212006
+shader_parameter/stripe_speed = 20.0
+
+[node name="levels" type="Node3D" unique_id=211427842]
+
+[node name="world_light" type="WorldEnvironment" parent="." unique_id=2105662563]
+environment = SubResource("Environment_hcnff")
+
+[node name="camera" type="Camera3D" parent="." unique_id=1660861855]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0.355, 1.397)
+size = 1.305
+
+[node name="meshes" type="Node3D" parent="." unique_id=1321576023]
+script = ExtResource("1_i2p2e")
+
+[node name="level_1" type="MeshInstance3D" parent="meshes" unique_id=591481114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.035)
+mesh = ExtResource("2_6hds7")
+metadata/_edit_group_ = true
+
+[node name="area" type="Area3D" parent="meshes/level_1" unique_id=1170426032 node_paths=PackedStringArray("shader_obj", "script_obj")]
+script = ExtResource("3_8jpd0")
+shader_obj = [NodePath("..")]
+script_obj = NodePath("../..")
+select_material = SubResource("ShaderMaterial_ly2og")
+call_func_click = "start_level_1"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="meshes/level_1/area" unique_id=245206698]
+shape = ExtResource("5_rllr3")
+
+[node name="level_2" type="MeshInstance3D" parent="meshes" unique_id=1822484629]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3762265, 0, 0.035)
+mesh = ExtResource("2_6hds7")
+metadata/_edit_group_ = true
+
+[node name="area" type="Area3D" parent="meshes/level_2" unique_id=770541300 node_paths=PackedStringArray("shader_obj")]
+script = ExtResource("3_8jpd0")
+shader_obj = [NodePath("..")]
+select_material = SubResource("ShaderMaterial_ly2og")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="meshes/level_2/area" unique_id=1071429512]
+shape = ExtResource("5_rllr3")
+
+[node name="level_3" type="MeshInstance3D" parent="meshes" unique_id=895262570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.752, 0, 0.035)
+mesh = ExtResource("2_6hds7")
+metadata/_edit_group_ = true
+
+[node name="area" type="Area3D" parent="meshes/level_3" unique_id=2003648845 node_paths=PackedStringArray("shader_obj")]
+script = ExtResource("3_8jpd0")
+shader_obj = [NodePath("..")]
+select_material = SubResource("ShaderMaterial_ly2og")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="meshes/level_3/area" unique_id=1059770499]
+shape = ExtResource("5_rllr3")
