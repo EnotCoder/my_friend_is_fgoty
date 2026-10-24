@@ -17,8 +17,9 @@
 [ext_resource type="Shape3D" uid="uid://cikeb1mxchxph" path="res://collisions/sitting.tres" id="13_7gny6"]
 [ext_resource type="Script" uid="uid://cr7h1b8xe1to2" path="res://scripts/action/select_object_area.gd" id="14_7nomh"]
 [ext_resource type="Script" uid="uid://blfbf7paja41d" path="res://scripts/action/mesh/sitting.gd" id="16_x2xxo"]
-[ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/font.ttf" id="17_1s4pk"]
+[ext_resource type="PackedScene" uid="uid://dxe1h4qesqhx3" path="res://action_scene/ui/hint_label.tscn" id="18_tr1x6"]
 [ext_resource type="PackedScene" uid="uid://6kfah1nt2dp4" path="res://action_scene/code_obj.tscn" id="19_2cbcq"]
+[ext_resource type="Script" uid="uid://cvipnsevg4ofo" path="res://scripts/ui/hint_label.gd" id="19_d5akn"]
 [ext_resource type="PackedScene" uid="uid://ccqcmsj6iwgjy" path="res://action_scene/fgoty_sit.tscn" id="20_isj1j"]
 [ext_resource type="Texture2D" uid="uid://cklig1b7o52cp" path="res://ui/my_friend.png" id="20_so66j"]
 [ext_resource type="Script" uid="uid://fyuefsp1yb7s" path="res://scripts/action/to_sin.gd" id="21_tr1x6"]
@@ -38,15 +39,6 @@ sky = SubResource("Sky_5vw27")
 adjustment_enabled = true
 adjustment_saturation = 0.8
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1s4pk"]
-render_priority = 0
-shader = ExtResource("10_6dial")
-shader_parameter/highlight_color = Color(0.3, 0.85, 1, 1)
-shader_parameter/opacity = 0.0
-shader_parameter/stripe_spacing = 12.0
-shader_parameter/stripe_width = 0.3
-shader_parameter/stripe_speed = 20.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7gny6"]
 render_priority = 0
 shader = ExtResource("11_2aecg")
@@ -62,7 +54,7 @@ shader_parameter/brightness = 1.0
 shader_parameter/scanline_strength = 0.06
 shader_parameter/flip_y = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x2xxo"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wbtxt"]
 render_priority = 0
 shader = ExtResource("10_6dial")
 shader_parameter/highlight_color = Color(0.3, 0.85, 1, 1)
@@ -74,7 +66,7 @@ shader_parameter/stripe_speed = 20.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_jmwk8"]
 size = Vector3(1.1669922, 2.2111816, 1.1259766)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7nomh"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d5akn"]
 render_priority = 0
 shader = ExtResource("10_6dial")
 shader_parameter/highlight_color = Color(0.3, 0.85, 1, 1)
@@ -83,59 +75,14 @@ shader_parameter/stripe_spacing = 12.0
 shader_parameter/stripe_width = 0.3
 shader_parameter/stripe_speed = 20.0
 
-[sub_resource type="Animation" id="Animation_1s4pk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("text:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_x2xxo"]
-resource_name = "fade_in"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("text:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_2cbcq"]
-resource_name = "fade_out"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("text:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.0, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_isj1j"]
-_data = {
-&"RESET": SubResource("Animation_1s4pk"),
-&"fade_in": SubResource("Animation_x2xxo"),
-&"fade_out": SubResource("Animation_2cbcq")
-}
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tr1x6"]
+render_priority = 0
+shader = ExtResource("10_6dial")
+shader_parameter/highlight_color = Color(0.3, 0.85, 1, 1)
+shader_parameter/opacity = 0.0
+shader_parameter/stripe_spacing = 12.0
+shader_parameter/stripe_width = 0.3
+shader_parameter/stripe_speed = 20.0
 
 [node name="Level1" type="Node3D" unique_id=928790142]
 
@@ -152,6 +99,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="map" type="Node3D" parent="." unique_id=1457961318]
+metadata/_edit_group_ = true
 
 [node name="Grass" type="MeshInstance3D" parent="map" unique_id=967400319]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.298, 0)
@@ -197,19 +145,18 @@ player = NodePath("../player")
 
 [node name="Mac" type="MeshInstance3D" parent="." unique_id=1835450423]
 transform = Transform3D(0.33545148, 0, -0.94205743, 0, 1, 0, 0.94205743, 0, 0.33545148, 1.3624223, -0.21848449, -0.48973668)
-material_overlay = SubResource("ShaderMaterial_1s4pk")
 mesh = ExtResource("10_2os1m")
 metadata/_edit_group_ = true
 
 [node name="mac_screen_code" type="MeshInstance3D" parent="Mac" unique_id=26171760]
 material_override = SubResource("ShaderMaterial_7gny6")
-material_overlay = SubResource("ShaderMaterial_x2xxo")
 mesh = ExtResource("11_go7sj")
 
 [node name="area" type="Area3D" parent="Mac" unique_id=111659120 node_paths=PackedStringArray("shader_obj")]
 transform = Transform3D(0.7592713, 0, 0.65077424, 0, 1, 0, -0.65077424, 0, 0.7592713, -0.093156934, 0.23613197, -0.111831546)
 script = ExtResource("14_7nomh")
 shader_obj = [NodePath(".."), NodePath("../mac_screen_code")]
+select_material = SubResource("ShaderMaterial_wbtxt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mac/area" unique_id=894546601]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.074543834, 0, 0.1686486)
@@ -223,7 +170,6 @@ shape = SubResource("BoxShape3D_jmwk8")
 
 [node name="Sitting" type="MeshInstance3D" parent="." unique_id=969822811]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -0.40396464, 0.16140664, -1.9319048)
-material_overlay = SubResource("ShaderMaterial_7nomh")
 mesh = ExtResource("12_go7sj")
 script = ExtResource("16_x2xxo")
 metadata/_edit_group_ = true
@@ -237,48 +183,14 @@ shape = ExtResource("13_7gny6")
 [node name="area" type="Area3D" parent="Sitting" unique_id=2091682386 node_paths=PackedStringArray("shader_obj")]
 script = ExtResource("14_7nomh")
 shader_obj = [NodePath("..")]
+select_material = SubResource("ShaderMaterial_d5akn")
 call_func_click = "sitting_click"
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Sitting/area" unique_id=951181089]
 shape = ExtResource("13_7gny6")
 
-[node name="ui" type="Control" parent="Sitting" unique_id=479562839]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="text" type="Label" parent="Sitting/ui" unique_id=662017405]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -206.0
-offset_top = -78.0
-offset_right = 206.0
-offset_bottom = -29.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
-theme_override_fonts/font = ExtResource("17_1s4pk")
-theme_override_font_sizes/font_size = 60
-text = "text"
-horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sitting/ui" unique_id=1568312129]
-libraries/ = SubResource("AnimationLibrary_isj1j")
-
-[node name="timer" type="Timer" parent="Sitting/ui" unique_id=848191092]
-wait_time = 3.0
-one_shot = true
+[node name="hint_label" parent="Sitting" unique_id=498957823 instance=ExtResource("18_tr1x6")]
+script = ExtResource("19_d5akn")
 
 [node name="fgoty_sit" parent="." unique_id=773859946 instance=ExtResource("20_isj1j")]
 transform = Transform3D(0.66186297, 0, 0.22789772, 0, 0.7, 0, -0.22789772, 0, 0.66186297, -0.471, 0.49784046, -1.734)
@@ -293,12 +205,18 @@ start_y = 3.325
 transform = Transform3D(0.7592713, 0, 0.65077424, 0, 1, 0, -0.65077424, 0, 0.7592713, -0.093156934, 0.23613197, -0.111831546)
 script = ExtResource("14_7nomh")
 shader_obj = [NodePath("..")]
+select_material = SubResource("ShaderMaterial_tr1x6")
+call_func_click = "fgoty_click"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fgoty_sit/area" unique_id=1204857913]
 transform = Transform3D(1, 0, 0, 0, 0.9999926, 0, 0, 0, 1, -0.008951783, 0.6224366, 0.23163748)
 shape = SubResource("BoxShape3D_jmwk8")
 
+[node name="hint_label" parent="fgoty_sit" unique_id=201814506 instance=ExtResource("18_tr1x6")]
+script = ExtResource("19_d5akn")
+
 [node name="code_objes" type="Node3D" parent="." unique_id=337815013]
+metadata/_edit_group_ = true
 
 [node name="main_window_code" parent="code_objes" unique_id=393723837 instance=ExtResource("19_2cbcq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7275785, 0, 3.182349)

@@ -1,16 +1,6 @@
 [gd_scene format=4 uid="uid://ccqcmsj6iwgjy"]
 
 [ext_resource type="Script" uid="uid://b0tnv54xx8x1k" path="res://scripts/action/fgoty_sit.gd" id="1_thdja"]
-[ext_resource type="Shader" uid="uid://b700fs1jyol2f" path="res://shaders/select_object.gdshader" id="2_e0jh5"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_thdja"]
-render_priority = 0
-shader = ExtResource("2_e0jh5")
-shader_parameter/highlight_color = Color(0.3, 0.85, 1, 1)
-shader_parameter/opacity = 0.0
-shader_parameter/stripe_spacing = 12.0
-shader_parameter/stripe_width = 0.3
-shader_parameter/stripe_speed = 20.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sx6sq"]
 resource_name = "body_1"
@@ -159,15 +149,6 @@ bind/10/name = &"right_leg"
 bind/10/bone = -1
 bind/10/pose = Transform3D(2.73704, 0.07521125, 0.07523965, 0.07523965, -2.7380733, -8.357016e-07, 0.07521126, 0.0020673093, -2.7380733, -2.064934, -2.4789605, 0.82272786)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_e0jh5"]
-render_priority = 0
-shader = ExtResource("2_e0jh5")
-shader_parameter/highlight_color = Color(0.3, 0.85, 1, 1)
-shader_parameter/opacity = 0.0
-shader_parameter/stripe_spacing = 12.0
-shader_parameter/stripe_width = 0.3
-shader_parameter/stripe_speed = 20.0
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7vfdj"]
 resource_name = "eyes"
 cull_mode = 2
@@ -197,15 +178,6 @@ blend_shape_mode = 0
 metadata/extras = {
 "targetNames": ["down"]
 }
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_87x1c"]
-render_priority = 0
-shader = ExtResource("2_e0jh5")
-shader_parameter/highlight_color = Color(0.3, 0.85, 1, 1)
-shader_parameter/opacity = 0.0
-shader_parameter/stripe_spacing = 12.0
-shader_parameter/stripe_width = 0.3
-shader_parameter/stripe_speed = 20.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6a5v"]
 resource_name = "blue_1"
@@ -332,15 +304,6 @@ _surfaces = [{
 "vertex_data": PackedByteArray("tFKUP8ZIaj9cHac+uiqVPwuYVD+mNHc++ZGUP2ruYz/gWIg+wAKWP0/nPj9cHac+esOVP6tBRT/gWIg+uiqVPwuYVD9joNI++pGUP2vuYz/Y4cU+esOVP6tBRT/Y4cU+APtVvAuYVD+mNHc+APDTu8ZIaj9cHac+gJoJvGruYz/gWIg+APtVvAuYVD9joNI+gJoJvGvuYz/Y4cU+AP+gvE/nPj9cHac+gC2RvKtBRT/gWIg+gC2RvKtBRT/Y4cU+PgnBdsF2X/s+CcF2wXZf+z4JwXbBdl/7PgnBdsF2X/s+CcF2wXZf+z4JwXbBdl/7PgnBdsF2X/s+CcF2wXZf+8D2wXY9iZ8EwPbBdj2JnwTA9sF2PYmfBMD2wXY9iZ8EwPbBdj2JnwTA9sF2PYmfBMD2wXY9iZ8EwPbBdj2JnwQ=")
 }]
 blend_shape_mode = 0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yut5d"]
-render_priority = 0
-shader = ExtResource("2_e0jh5")
-shader_parameter/highlight_color = Color(0.3, 0.85, 1, 1)
-shader_parameter/opacity = 0.0
-shader_parameter/stripe_spacing = 12.0
-shader_parameter/stripe_width = 0.3
-shader_parameter/stripe_speed = 20.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_u6r62"]
 resource_name = "fgoty_sit_Plane_002"
@@ -518,26 +481,22 @@ bones/10/rotation = Quaternion(0.7372658, 0.019404799, 0.00084722973, 0.6753236)
 bones/10/scale = Vector3(1, 0.99999994, 0.99999994)
 
 [node name="body" type="MeshInstance3D" parent="fgoty_body/Skeleton3D" unique_id=197297711]
-material_overlay = SubResource("ShaderMaterial_thdja")
 mesh = SubResource("ArrayMesh_p18gg")
 skin = SubResource("Skin_l3ebv")
 skeleton = NodePath("..")
 
 [node name="eyes" type="MeshInstance3D" parent="fgoty_body/Skeleton3D" unique_id=2049895740]
-material_overlay = SubResource("ShaderMaterial_e0jh5")
 mesh = SubResource("ArrayMesh_ykxg4")
 skin = SubResource("Skin_l3ebv")
 skeleton = NodePath("..")
 blend_shapes/down = 0.0
 
 [node name="headphones_fgoty" type="MeshInstance3D" parent="fgoty_body/Skeleton3D" unique_id=1256577941]
-material_overlay = SubResource("ShaderMaterial_87x1c")
 mesh = SubResource("ArrayMesh_51w6i")
 skin = SubResource("Skin_l3ebv")
 skeleton = NodePath("..")
 
 [node name="mouth" type="MeshInstance3D" parent="fgoty_body/Skeleton3D" unique_id=2093591569]
-material_overlay = SubResource("ShaderMaterial_yut5d")
 mesh = SubResource("ArrayMesh_u6r62")
 skin = SubResource("Skin_l3ebv")
 skeleton = NodePath("..")
