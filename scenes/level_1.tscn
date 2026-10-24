@@ -16,6 +16,8 @@
 [ext_resource type="ArrayMesh" uid="uid://khnljtkcmvgi" path="res://meshes/sitting.res" id="12_go7sj"]
 [ext_resource type="Shape3D" uid="uid://cikeb1mxchxph" path="res://collisions/sitting.tres" id="13_7gny6"]
 [ext_resource type="Script" uid="uid://cr7h1b8xe1to2" path="res://scripts/action/select_object_area.gd" id="14_7nomh"]
+[ext_resource type="Script" uid="uid://blfbf7paja41d" path="res://scripts/action/mesh/sitting.gd" id="16_x2xxo"]
+[ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/font.ttf" id="17_1s4pk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bswci"]
 sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
@@ -76,8 +78,59 @@ shader_parameter/stripe_spacing = 12.0
 shader_parameter/stripe_width = 0.3
 shader_parameter/stripe_speed = 20.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jbj1t"]
-size = Vector3(2.5407715, 0.9342041, 1)
+[sub_resource type="Animation" id="Animation_1s4pk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_x2xxo"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_2cbcq"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_isj1j"]
+_data = {
+&"RESET": SubResource("Animation_1s4pk"),
+&"fade_in": SubResource("Animation_x2xxo"),
+&"fade_out": SubResource("Animation_2cbcq")
+}
 
 [node name="Level1" type="Node3D" unique_id=928790142]
 
@@ -122,7 +175,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10187982, 0)
 
 [node name="camera" type="Camera3D" parent="." unique_id=1000256945 node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 0.83388585, 0.55193704, 0, -0.55193704, 0.83388585, 0, 8.516, 11.069)
+projection = 1
 fov = 30.0
+size = 9.0
 script = ExtResource("1_2y5yt")
 player = NodePath("../player")
 
@@ -132,6 +187,7 @@ player = NodePath("../player")
 transform = Transform3D(0.33545148, 0, -0.94205743, 0, 1, 0, 0.94205743, 0, 0.33545148, 1.3624223, -0.21848449, -0.48973668)
 material_overlay = SubResource("ShaderMaterial_1s4pk")
 mesh = ExtResource("10_2os1m")
+metadata/_edit_group_ = true
 
 [node name="mac_screen_code" type="MeshInstance3D" parent="Mac" unique_id=26171760]
 material_override = SubResource("ShaderMaterial_7gny6")
@@ -157,6 +213,8 @@ shape = SubResource("BoxShape3D_jmwk8")
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -0.40396464, 0.16140664, -1.9319048)
 material_overlay = SubResource("ShaderMaterial_7nomh")
 mesh = ExtResource("12_go7sj")
+script = ExtResource("16_x2xxo")
+metadata/_edit_group_ = true
 
 [node name="static" type="StaticBody3D" parent="Sitting" unique_id=213404249]
 input_ray_pickable = false
@@ -165,10 +223,73 @@ input_ray_pickable = false
 shape = ExtResource("13_7gny6")
 
 [node name="area" type="Area3D" parent="Sitting" unique_id=2091682386 node_paths=PackedStringArray("shader_obj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.093156934, 0.23613197, -0.111831546)
 script = ExtResource("14_7nomh")
 shader_obj = [NodePath("..")]
+call_func_click = "sitting_click"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sitting/area" unique_id=333156204]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10664815, -0.25457764, 0.16864884)
-shape = SubResource("BoxShape3D_jbj1t")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Sitting/area" unique_id=951181089]
+shape = ExtResource("13_7gny6")
+
+[node name="ui" type="Control" parent="Sitting" unique_id=479562839]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="text" type="Label" parent="Sitting/ui" unique_id=662017405]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -206.0
+offset_top = -78.0
+offset_right = 206.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("17_1s4pk")
+theme_override_font_sizes/font_size = 60
+text = "text"
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sitting/ui" unique_id=1568312129]
+libraries/ = SubResource("AnimationLibrary_isj1j")
+
+[node name="timer" type="Timer" parent="Sitting/ui" unique_id=848191092]
+wait_time = 3.0
+one_shot = true
+
+[node name="ui" type="Control" parent="." unique_id=743696722]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="text" type="Label" parent="ui" unique_id=1240699243]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -98.0
+offset_top = 26.0
+offset_right = 98.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("17_1s4pk")
+theme_override_font_sizes/font_size = 60
+text = "Level 1"
+horizontal_alignment = 1

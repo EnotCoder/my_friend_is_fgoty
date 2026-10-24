@@ -27,10 +27,10 @@ func _process(delta: float) -> void:
 		current_rotation.slerp(target_rotation, weight)
 	)
 	
-const START_FOV: float = 30.0;
+const START_SIZE: float = 9.0;
 
 func _ready() -> void:
-	fov = START_FOV;
+	size = START_SIZE;
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
@@ -39,14 +39,14 @@ func _input(event: InputEvent) -> void:
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			set_camera_fov(true);
 
-const FOV_SPEED: float = 5.0;
-const MAX_FOV_VALUE: float = 64.0;
-const MIN_FOV_VALUE: float = 20.0;
+const SIZE_SPEED: float = 2.0;
+const MAX_SIZE_VALUE: float = 12.0;
+const MIN_SIZE_VALUE: float = 6.0;
 
-var camera_fov: float = START_FOV;
+var camera_size: float = START_SIZE;
 
 func set_camera_fov(num_is_true: bool) -> void:
-	if num_is_true: camera_fov += FOV_SPEED;
-	else: camera_fov -= FOV_SPEED;
-	camera_fov = clampf(camera_fov, MIN_FOV_VALUE, MAX_FOV_VALUE);
-	fov = camera_fov;
+	if num_is_true: camera_size += SIZE_SPEED;
+	else: camera_size -= SIZE_SPEED;
+	camera_size = clampf(camera_size, MIN_SIZE_VALUE, MAX_SIZE_VALUE);
+	size = camera_size;

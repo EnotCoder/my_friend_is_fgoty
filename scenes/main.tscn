@@ -114,6 +114,7 @@ environment = SubResource("Environment_kek77")
 [node name="camera" type="Camera3D" parent="." unique_id=308627627]
 transform = Transform3D(0.907044, -0.07672768, 0.41398552, 0, 0.9832549, 0.18223552, -0.4210358, -0.16529563, 0.8918555, 3.14, 1.196, 3.989)
 fov = 42.5
+size = 2.79
 
 [node name="map" type="Node3D" parent="." unique_id=819528239]
 

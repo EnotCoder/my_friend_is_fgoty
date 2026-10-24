@@ -20,6 +20,7 @@ func set_standart_level_position():
 func _ready() -> void:
 	target_angle = visual.rotation.y;
 	start_rotation_x = visual.rotation.x;
+	setup_crab_xray();
 
 
 func _physics_process(dt: float) -> void:
@@ -71,3 +72,22 @@ func player_move(dt: float) -> void:
 	)
 
 	move_and_slide();
+	
+func setup_crab_xray() -> void:
+	var crab := visual as MeshInstance3D
+
+	if not is_instance_valid(crab) or crab.mesh == null:
+		return
+
+	for surface_id in range(crab.mesh.get_surface_count()):
+		var original := crab.get_active_material(surface_id) as BaseMaterial3D
+
+		if original == null:
+			continue
+
+		var material := original.duplicate() as BaseMaterial3D
+
+		material.stencil_mode = BaseMaterial3D.STENCIL_MODE_XRAY
+		material.stencil_color = Color(0.05, 0.3, 1.0, 0.7)
+
+		crab.set_surface_override_material(surface_id, material)
