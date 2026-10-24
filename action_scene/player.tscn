@@ -98,6 +98,59 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_jmwk8"]
 radius = 0.23629375
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gbxs5"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10000
+corner_radius_top_right = 10000
+corner_radius_bottom_right = 10000
+corner_radius_bottom_left = 10000
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gnbup"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10000
+corner_radius_top_right = 10000
+corner_radius_bottom_right = 10000
+corner_radius_bottom_left = 10000
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_if2w1"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10000
+corner_radius_top_right = 10000
+corner_radius_bottom_right = 10000
+corner_radius_bottom_left = 10000
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b8k8"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10000
+corner_radius_top_right = 10000
+corner_radius_bottom_right = 10000
+corner_radius_bottom_left = 10000
+corner_detail = 20
+
 [node name="player" type="CharacterBody3D" unique_id=1175395954]
 script = ExtResource("1_o3x7v")
 
@@ -163,3 +216,32 @@ mesh = ExtResource("1_3n37v")
 [node name="collision" type="CollisionShape3D" parent="." unique_id=673733327]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0031489134, 0)
 shape = SubResource("SphereShape3D_jmwk8")
+
+[node name="moble_ui" type="Control" parent="." unique_id=123871572]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="joystick" type="VirtualJoystick" parent="moble_ui" unique_id=447510433]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 68.0
+offset_top = -441.0
+offset_right = 477.6678
+offset_bottom = -68.0
+grow_vertical = 0
+theme_override_styles/normal_joystick = SubResource("StyleBoxFlat_gbxs5")
+theme_override_styles/normal_tip = SubResource("StyleBoxFlat_gnbup")
+theme_override_styles/pressed_joystick = SubResource("StyleBoxFlat_if2w1")
+theme_override_styles/pressed_tip = SubResource("StyleBoxFlat_3b8k8")
+joystick_size = 360.0
+tip_size = 215.0
+action_left = &"A"
+action_right = &"D"
+action_up = &"W"
+action_down = &"S"

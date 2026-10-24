@@ -17,10 +17,18 @@ var walk_frequency: float = 3.0
 func set_standart_level_position():
 	global_position = standart_level_position;
 
+@export var is_apk: bool = false;
+@onready var moble_ui: Control = $moble_ui
+
 func _ready() -> void:
 	target_angle = visual.rotation.y;
 	start_rotation_x = visual.rotation.x;
 	setup_crab_xray();
+	
+	if is_apk:
+		moble_ui.show();
+	else:
+		moble_ui.hide();
 
 
 func _physics_process(dt: float) -> void:
