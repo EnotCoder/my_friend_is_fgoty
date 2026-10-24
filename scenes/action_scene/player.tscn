@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b2xqyvwksgquv" path="res://meshes/rust.res" id="1_3n37v"]
 [ext_resource type="Script" uid="uid://0j34jvgvhvbk" path="res://scripts/player/player.gd" id="1_o3x7v"]
 [ext_resource type="Script" uid="uid://dwefwf7k7rxpj" path="res://scripts/player/fall_part.gd" id="2_gmi33"]
-[ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/font.ttf" id="3_gbxs5"]
+[ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="3_gbxs5"]
 
 [sub_resource type="Animation" id="Animation_gbxs5"]
 length = 0.001

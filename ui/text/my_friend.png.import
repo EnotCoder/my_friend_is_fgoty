@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0p4pynsalmiu"
-path.s3tc="res://.godot/imported/text_to_play.png-aecfe24045f68cd331a19e91394b0d37.s3tc.ctex"
+uid="uid://cklig1b7o52cp"
+path.s3tc="res://.godot/imported/my_friend.png-10c7f3a7ec3ed2238f96dde525fa9e16.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://ui/text_to_play.png"
-dest_files=["res://.godot/imported/text_to_play.png-aecfe24045f68cd331a19e91394b0d37.s3tc.ctex"]
+source_file="res://ui/text/my_friend.png"
+dest_files=["res://.godot/imported/my_friend.png-10c7f3a7ec3ed2238f96dde525fa9e16.s3tc.ctex"]
 
 [params]
 

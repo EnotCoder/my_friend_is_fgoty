@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxe1h4qesqhx3"]
 
-[ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/font.ttf" id="1_m7i87"]
+[ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="1_m7i87"]
 
 [sub_resource type="Animation" id="Animation_1s4pk"]
 length = 0.001

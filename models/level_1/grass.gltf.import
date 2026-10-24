@@ -41,6 +41,15 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "meshes": {
+"grass_Cube_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://meshes/grass_level_1/branches.res",
+"save_to_file/path": "uid://d00yu71csjg1x"
+},
 "grass_Icosphere_001": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,

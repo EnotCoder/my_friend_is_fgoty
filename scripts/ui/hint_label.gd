@@ -19,3 +19,4 @@ func object_click(text_hint: String) -> void:
 func timer_finish():
 	animation_player.play("fade_out");
 	is_playing = false;
+	World.is_show_hint = false;

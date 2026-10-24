@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cfym2236xbb5" path="res://ui/texture_card.png" id="2_xoo1o"]
 [ext_resource type="ArrayMesh" uid="uid://deo562yhf7luf" path="res://meshes/grass_shadow_cell.res" id="3_xoo1o"]
 [ext_resource type="Script" uid="uid://bl53gxk8q5imq" path="res://scripts/action/ui_code_obj.gd" id="4_sefyh"]
-[ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/font.ttf" id="5_nbfq8"]
+[ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="5_nbfq8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xoo1o"]
 size = Vector3(1.4, 0.8051758, 1.4)

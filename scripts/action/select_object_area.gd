@@ -51,7 +51,11 @@ func _input(event: InputEvent) -> void:
 
 			if is_instance_valid(parent) \
 					and parent.has_method(call_func_click):
-				parent.call(call_func_click);
+				if not World.is_show_hint:
+					parent.call(call_func_click);
+					World.is_show_hint = true;
+				else:
+					print("wait");
 			else:
 				print("obj not has this func '", call_func_click, "'");
 

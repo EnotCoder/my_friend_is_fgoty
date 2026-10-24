@@ -10,12 +10,12 @@
 [ext_resource type="ArrayMesh" uid="uid://dpqdh3aajhv7b" path="res://meshes/grass_menu/cyst.res" id="8_jbj1t"]
 [ext_resource type="ArrayMesh" uid="uid://b2xqyvwksgquv" path="res://meshes/rust.res" id="9_muem4"]
 [ext_resource type="Script" uid="uid://c7436y25sog8r" path="res://scripts/menu/mac_button.gd" id="9_ya4ey"]
-[ext_resource type="Texture2D" uid="uid://b0p4pynsalmiu" path="res://ui/text_to_play.png" id="10_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://b0p4pynsalmiu" path="res://ui/text/text_to_play.png" id="10_a8y0u"]
 [ext_resource type="Script" uid="uid://dxdjfhswi5vqb" path="res://scripts/menu/rust_rotate.gd" id="10_choun"]
 [ext_resource type="ArrayMesh" uid="uid://bdhhbtiu5dm2q" path="res://meshes/mac/mac_screen_off.res" id="10_trceg"]
 [ext_resource type="ArrayMesh" uid="uid://dmilmd6q542gb" path="res://meshes/mac/mac_screen_on.res" id="11_a8y0u"]
 [ext_resource type="Script" uid="uid://ckl1s2fqx2r1g" path="res://scripts/menu/text_to_play.gd" id="11_jkv2x"]
-[ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/font.ttf" id="16_jbj1t"]
+[ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="16_jbj1t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_272bh"]
 sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)

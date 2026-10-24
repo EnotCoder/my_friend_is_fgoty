@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bhielboa5e5rv"
-path="res://.godot/imported/font.ttf-4b64a9f1ad7ba7260dbfbb5f569fcea1.fontdata"
+path="res://.godot/imported/font.ttf-84ee900e01f4926ca021c1da073abf8f.fontdata"
 
 [deps]
 
-source_file="res://ui/font.ttf"
-dest_files=["res://.godot/imported/font.ttf-4b64a9f1ad7ba7260dbfbb5f569fcea1.fontdata"]
+source_file="res://ui/text/font.ttf"
+dest_files=["res://.godot/imported/font.ttf-84ee900e01f4926ca021c1da073abf8f.fontdata"]
 
 [params]
 

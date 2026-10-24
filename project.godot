@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/image="uid://baxeotx6srf87"
 config/icon="uid://baxeotx6srf87"
 
+[autoload]
+
+World="*uid://dlxikhp5mq08i"
+
 [display]
 
 window/size/viewport_width=1920
