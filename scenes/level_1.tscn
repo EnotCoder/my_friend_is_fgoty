@@ -19,6 +19,9 @@
 [ext_resource type="Script" uid="uid://blfbf7paja41d" path="res://scripts/action/mesh/sitting.gd" id="16_x2xxo"]
 [ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/font.ttf" id="17_1s4pk"]
 [ext_resource type="PackedScene" uid="uid://6kfah1nt2dp4" path="res://action_scene/code_obj.tscn" id="19_2cbcq"]
+[ext_resource type="PackedScene" uid="uid://ccqcmsj6iwgjy" path="res://action_scene/fgoty_sit.tscn" id="20_isj1j"]
+[ext_resource type="Texture2D" uid="uid://cklig1b7o52cp" path="res://ui/my_friend.png" id="20_so66j"]
+[ext_resource type="Script" uid="uid://fyuefsp1yb7s" path="res://scripts/action/to_sin.gd" id="21_tr1x6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bswci"]
 sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
@@ -69,6 +72,7 @@ shader_parameter/stripe_width = 0.3
 shader_parameter/stripe_speed = 20.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jmwk8"]
+size = Vector3(1.1669922, 2.2111816, 1.1259766)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7nomh"]
 render_priority = 0
@@ -147,23 +151,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="text" type="Label" parent="ui" unique_id=1240699243]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -98.0
-offset_top = 26.0
-offset_right = 98.0
-offset_bottom = 100.0
-grow_horizontal = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
-theme_override_fonts/font = ExtResource("17_1s4pk")
-theme_override_font_sizes/font_size = 60
-text = "Level 1"
-horizontal_alignment = 1
-
 [node name="map" type="Node3D" parent="." unique_id=1457961318]
 
 [node name="Grass" type="MeshInstance3D" parent="map" unique_id=967400319]
@@ -207,8 +194,6 @@ fov = 30.0
 size = 9.0
 script = ExtResource("1_2y5yt")
 player = NodePath("../player")
-
-[node name="map_wall" type="Node3D" parent="." unique_id=1011596586]
 
 [node name="Mac" type="MeshInstance3D" parent="." unique_id=1835450423]
 transform = Transform3D(0.33545148, 0, -0.94205743, 0, 1, 0, 0.94205743, 0, 0.33545148, 1.3624223, -0.21848449, -0.48973668)
@@ -295,5 +280,31 @@ libraries/ = SubResource("AnimationLibrary_isj1j")
 wait_time = 3.0
 one_shot = true
 
-[node name="code_obj" parent="." unique_id=393723837 instance=ExtResource("19_2cbcq")]
+[node name="fgoty_sit" parent="." unique_id=773859946 instance=ExtResource("20_isj1j")]
+transform = Transform3D(0.66186297, 0, 0.22789772, 0, 0.7, 0, -0.22789772, 0, 0.66186297, -0.471, 0.49784046, -1.734)
+
+[node name="friend" type="Sprite3D" parent="fgoty_sit" unique_id=709360753]
+transform = Transform3D(1.0000001, 0, 0, 0, 0.8580649, 0.51354134, 0, -0.5135413, 0.858065, 0.046163082, 3.324677, -0.13406706)
+texture = ExtResource("20_so66j")
+script = ExtResource("21_tr1x6")
+start_y = 3.325
+
+[node name="area" type="Area3D" parent="fgoty_sit" unique_id=641404489 node_paths=PackedStringArray("shader_obj")]
+transform = Transform3D(0.7592713, 0, 0.65077424, 0, 1, 0, -0.65077424, 0, 0.7592713, -0.093156934, 0.23613197, -0.111831546)
+script = ExtResource("14_7nomh")
+shader_obj = [NodePath("..")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fgoty_sit/area" unique_id=1204857913]
+transform = Transform3D(1, 0, 0, 0, 0.9999926, 0, 0, 0, 1, -0.008951783, 0.6224366, 0.23163748)
+shape = SubResource("BoxShape3D_jmwk8")
+
+[node name="code_objes" type="Node3D" parent="." unique_id=337815013]
+
+[node name="main_window_code" parent="code_objes" unique_id=393723837 instance=ExtResource("19_2cbcq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7275785, 0, 3.182349)
+
+[node name="main_window_code2" parent="code_objes" unique_id=1011556040 instance=ExtResource("19_2cbcq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.680425, 0, 3.182349)
+
+[node name="main_window_code3" parent="code_objes" unique_id=833951070 instance=ExtResource("19_2cbcq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.544713, 0, -1.5844164)

@@ -26,6 +26,38 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_st5n6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0.4674126, 0, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0.35593832, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exhfj"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(3.657937e-06, 0.6294837, 5.7756904e-07, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0.44933867, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wfdx"]
 content_margin_left = 4.0
 content_margin_top = 4.0
@@ -37,6 +69,38 @@ border_width_top = 12
 border_width_right = 12
 border_width_bottom = 12
 border_color = Color(0.48775607, 1.0648929e-06, 1.6845763e-07, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8nj3p"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.4554031, 1.0769255e-06, 2.1658838e-07, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.35247236, 0.00026372343, 0.00014458477, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_etgsl"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.6189331, 8.061901e-07, 2.4065375e-07, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.37823159, 7.099286e-07, 2.1658838e-07, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -183,7 +247,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_4wfdx"]
 resource_name = "fade_out"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -275,6 +339,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("4_sefyh")
 
 [node name="rect" type="ColorRect" parent="ui" unique_id=1628503229]
@@ -284,6 +349,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
 [node name="code" type="TextureRect" parent="ui" unique_id=1986153192]
@@ -296,7 +362,7 @@ anchor_bottom = 0.5
 offset_left = -1895.0
 offset_top = 570.0
 offset_right = -971.38855
-offset_bottom = 1235.0027
+offset_bottom = 1235.0024
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_kqwqn")
@@ -317,6 +383,9 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("5_nbfq8")
 theme_override_font_sizes/font_size = 84
 theme_override_styles/normal = SubResource("StyleBoxFlat_sefyh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_st5n6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_exhfj")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_sefyh")
 text = "USE"
 
 [node name="delete" type="Button" parent="ui" unique_id=1128127866]
@@ -335,6 +404,9 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("5_nbfq8")
 theme_override_font_sizes/font_size = 84
 theme_override_styles/normal = SubResource("StyleBoxFlat_4wfdx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8nj3p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_etgsl")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_4wfdx")
 text = "DELETE"
 
 [node name="text" type="Label" parent="ui" unique_id=1934658612]
@@ -347,6 +419,8 @@ offset_top = 75.0
 offset_right = 452.0
 offset_bottom = 168.00012
 grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 33
 theme_override_fonts/font = ExtResource("5_nbfq8")
 theme_override_font_sizes/font_size = 76
 text = "You found a part of code"
