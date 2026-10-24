@@ -26,7 +26,7 @@ func _input(event: InputEvent) -> void:
 			on_mac_screen_click();
 		
 func on_mac_screen_click() -> void:
-	get_tree().change_scene_to_file("res://scenes/level_1.tscn");
+	get_tree().change_scene_to_file("res://scenes/levels.tscn");
 
 func mac_screen_on_() -> void:
 	mac_screen_on.show();

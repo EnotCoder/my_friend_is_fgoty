@@ -1,29 +1,31 @@
 [gd_scene format=3 uid="uid://cnf2y8in874g8"]
 
-[ext_resource type="Script" uid="uid://ckwcf5viegnl0" path="res://scripts/player/level_camera.gd" id="1_2y5yt"]
-[ext_resource type="Shape3D" uid="uid://c1iaqun8irlep" path="res://objects/collisions/level_1_grass.tres" id="2_e3sih"]
-[ext_resource type="ArrayMesh" uid="uid://dvynh3s2si5tu" path="res://objects/meshes/grass_level_1/grass.res" id="2_rus8k"]
-[ext_resource type="ArrayMesh" uid="uid://imgmd3basxqr" path="res://objects/meshes/grass_level_1/grass_shadow.res" id="3_5xbjy"]
-[ext_resource type="ArrayMesh" uid="uid://kehl5ud40rt5" path="res://objects/meshes/grass_level_1/forest.res" id="4_5xbjy"]
-[ext_resource type="Shape3D" uid="uid://8jquknnn41ce" path="res://objects/collisions/level_1_forest.tres" id="4_15mv3"]
-[ext_resource type="ArrayMesh" uid="uid://gjsws5i06c1k" path="res://objects/meshes/grass_level_1/cysts.res" id="5_4nkto"]
-[ext_resource type="PackedScene" uid="uid://c6xmstywcsofl" path="res://scenes/action_scene/player.tscn" id="5_fcfvj"]
-[ext_resource type="Shape3D" uid="uid://bbme7xxi5kbil" path="res://objects/collisions/level_1_cysts.tres" id="6_e3sih"]
-[ext_resource type="ArrayMesh" uid="uid://pwvh6llbvf7f" path="res://objects/meshes/mac/mac.res" id="10_2os1m"]
-[ext_resource type="Shader" uid="uid://b700fs1jyol2f" path="res://shaders/select_object.gdshader" id="10_6dial"]
-[ext_resource type="Shader" uid="uid://2i1mls7c23vy" path="res://shaders/mac_fon.gdshader" id="11_2aecg"]
-[ext_resource type="ArrayMesh" uid="uid://bdhhbtiu5dm2q" path="res://objects/meshes/mac/mac_screen_off.res" id="11_go7sj"]
-[ext_resource type="ArrayMesh" uid="uid://khnljtkcmvgi" path="res://objects/meshes/sitting.res" id="12_go7sj"]
-[ext_resource type="Shape3D" uid="uid://cikeb1mxchxph" path="res://objects/collisions/sitting.tres" id="13_7gny6"]
-[ext_resource type="Script" uid="uid://cr7h1b8xe1to2" path="res://scripts/action/select_object_area.gd" id="14_7nomh"]
-[ext_resource type="Script" uid="uid://blfbf7paja41d" path="res://scripts/action/mesh/sitting.gd" id="16_x2xxo"]
-[ext_resource type="PackedScene" uid="uid://dxe1h4qesqhx3" path="res://scenes/action_scene/ui/hint_label.tscn" id="18_tr1x6"]
-[ext_resource type="PackedScene" uid="uid://6kfah1nt2dp4" path="res://scenes/action_scene/code_obj.tscn" id="19_2cbcq"]
-[ext_resource type="Script" uid="uid://cvipnsevg4ofo" path="res://scripts/ui/hint_label.gd" id="19_d5akn"]
-[ext_resource type="PackedScene" uid="uid://ccqcmsj6iwgjy" path="res://scenes/action_scene/fgoty_sit.tscn" id="20_isj1j"]
-[ext_resource type="Texture2D" uid="uid://cklig1b7o52cp" path="res://ui/text/my_friend.png" id="20_so66j"]
-[ext_resource type="Script" uid="uid://fyuefsp1yb7s" path="res://scripts/action/to_sin.gd" id="21_tr1x6"]
-[ext_resource type="ArrayMesh" uid="uid://d00yu71csjg1x" path="res://objects/meshes/grass_level_1/branches.res" id="24_wbtxt"]
+[ext_resource type="ArrayMesh" uid="uid://dvynh3s2si5tu" path="res://objects/meshes/grass_level_1/grass.res" id="1_o7j4k"]
+[ext_resource type="Shape3D" uid="uid://c1iaqun8irlep" path="res://objects/collisions/level_1/level_1_grass.tres" id="2_31oqk"]
+[ext_resource type="ArrayMesh" uid="uid://imgmd3basxqr" path="res://objects/meshes/grass_level_1/grass_shadow.res" id="3_x7jkp"]
+[ext_resource type="ArrayMesh" uid="uid://kehl5ud40rt5" path="res://objects/meshes/grass_level_1/forest.res" id="4_0qwwm"]
+[ext_resource type="Shape3D" uid="uid://8jquknnn41ce" path="res://objects/collisions/level_1/level_1_forest.tres" id="5_t4umt"]
+[ext_resource type="ArrayMesh" uid="uid://gjsws5i06c1k" path="res://objects/meshes/grass_level_1/cysts.res" id="6_4yk0h"]
+[ext_resource type="Shape3D" uid="uid://bbme7xxi5kbil" path="res://objects/collisions/level_1/level_1_cysts.tres" id="7_vmrhw"]
+[ext_resource type="ArrayMesh" uid="uid://d00yu71csjg1x" path="res://objects/meshes/grass_level_1/branches.res" id="8_cfnpk"]
+[ext_resource type="PackedScene" uid="uid://c6xmstywcsofl" path="res://scenes/action_scene/player.tscn" id="9_wvtie"]
+[ext_resource type="Script" uid="uid://ckwcf5viegnl0" path="res://scripts/player/level_camera.gd" id="10_o8s4s"]
+[ext_resource type="ArrayMesh" uid="uid://pwvh6llbvf7f" path="res://objects/meshes/mac/mac.res" id="11_ebb2h"]
+[ext_resource type="Shader" uid="uid://2i1mls7c23vy" path="res://shaders/mac_fon.gdshader" id="12_row31"]
+[ext_resource type="ArrayMesh" uid="uid://bdhhbtiu5dm2q" path="res://objects/meshes/mac/mac_screen_off.res" id="13_ytidy"]
+[ext_resource type="Script" uid="uid://cr7h1b8xe1to2" path="res://scripts/action/select_object_area.gd" id="14_hvllt"]
+[ext_resource type="Shader" uid="uid://b700fs1jyol2f" path="res://shaders/select_object.gdshader" id="15_dp4fg"]
+[ext_resource type="ArrayMesh" uid="uid://khnljtkcmvgi" path="res://objects/meshes/sitting.res" id="16_svqqs"]
+[ext_resource type="Script" uid="uid://blfbf7paja41d" path="res://scripts/action/mesh/sitting.gd" id="17_2to4m"]
+[ext_resource type="Shape3D" uid="uid://cikeb1mxchxph" path="res://objects/collisions/level_1/sitting.tres" id="18_kc3v0"]
+[ext_resource type="PackedScene" uid="uid://dxe1h4qesqhx3" path="res://scenes/action_scene/ui/hint_label.tscn" id="19_prmli"]
+[ext_resource type="Script" uid="uid://cvipnsevg4ofo" path="res://scripts/ui/hint_label.gd" id="20_dwx2n"]
+[ext_resource type="PackedScene" uid="uid://ccqcmsj6iwgjy" path="res://scenes/action_scene/fgoty_sit.tscn" id="21_wtkl1"]
+[ext_resource type="Texture2D" uid="uid://cklig1b7o52cp" path="res://ui/text/my_friend.png" id="22_ovy75"]
+[ext_resource type="Script" uid="uid://fyuefsp1yb7s" path="res://scripts/action/to_sin.gd" id="23_wk6bc"]
+[ext_resource type="PackedScene" uid="uid://6kfah1nt2dp4" path="res://scenes/action_scene/code_obj.tscn" id="24_ugk5q"]
+[ext_resource type="Texture2D" uid="uid://d0k5ea188hihu" path="res://ui/card_code_ui/code_to_create_window.png" id="25_4u6u3"]
+[ext_resource type="Texture2D" uid="uid://dv64b2xwlr5n1" path="res://ui/icon_prev/prev.png" id="26_i3rdk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bswci"]
 sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
@@ -31,18 +33,18 @@ sky_horizon_color = Color(0.827451, 0.9019608, 0.96862745, 1)
 ground_bottom_color = Color(0.827451, 0.9019608, 0.96862745, 1)
 ground_horizon_color = Color(0.827451, 0.9019608, 0.96862745, 1)
 
-[sub_resource type="Sky" id="Sky_5vw27"]
+[sub_resource type="Sky" id="Sky_o7j4k"]
 sky_material = SubResource("ProceduralSkyMaterial_bswci")
 
 [sub_resource type="Environment" id="Environment_rus8k"]
 background_mode = 2
-sky = SubResource("Sky_5vw27")
+sky = SubResource("Sky_o7j4k")
 adjustment_enabled = true
 adjustment_saturation = 0.8
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7gny6"]
 render_priority = 0
-shader = ExtResource("11_2aecg")
+shader = ExtResource("12_row31")
 shader_parameter/background_color = Color(0.018, 0.025, 0.045, 1)
 shader_parameter/code_color = Color(0.05, 0.95, 0.2, 1)
 shader_parameter/head_color = Color(0.7, 1, 0.8, 1)
@@ -57,7 +59,7 @@ shader_parameter/flip_y = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wbtxt"]
 render_priority = 0
-shader = ExtResource("10_6dial")
+shader = ExtResource("15_dp4fg")
 shader_parameter/highlight_color = Color(0.3, 0.85, 1, 1)
 shader_parameter/opacity = 0.0
 shader_parameter/stripe_spacing = 12.0
@@ -69,7 +71,7 @@ size = Vector3(1.1669922, 2.2111816, 1.1259766)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d5akn"]
 render_priority = 0
-shader = ExtResource("10_6dial")
+shader = ExtResource("15_dp4fg")
 shader_parameter/highlight_color = Color(0.3, 0.85, 1, 1)
 shader_parameter/opacity = 0.0
 shader_parameter/stripe_spacing = 12.0
@@ -78,7 +80,7 @@ shader_parameter/stripe_speed = 20.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tr1x6"]
 render_priority = 0
-shader = ExtResource("10_6dial")
+shader = ExtResource("15_dp4fg")
 shader_parameter/highlight_color = Color(0.3, 0.85, 1, 1)
 shader_parameter/opacity = 0.0
 shader_parameter/stripe_spacing = 12.0
@@ -95,40 +97,40 @@ metadata/_edit_group_ = true
 
 [node name="Grass" type="MeshInstance3D" parent="map" unique_id=967400319]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.298, 0)
-mesh = ExtResource("2_rus8k")
+mesh = ExtResource("1_o7j4k")
 
 [node name="static_body" type="StaticBody3D" parent="map/Grass" unique_id=555081677]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="map/Grass/static_body" unique_id=1621516534]
-shape = ExtResource("2_e3sih")
+shape = ExtResource("2_31oqk")
 
 [node name="GrassShadow" type="MeshInstance3D" parent="map" unique_id=223289965]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.288, 0)
-mesh = ExtResource("3_5xbjy")
+mesh = ExtResource("3_x7jkp")
 
 [node name="Forest" type="MeshInstance3D" parent="map" unique_id=2057336991]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7829404, 2.675, -1.5152674)
-mesh = ExtResource("4_5xbjy")
+mesh = ExtResource("4_0qwwm")
 
 [node name="static_body" type="StaticBody3D" parent="map/Forest" unique_id=1072720714]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="map/Forest/static_body" unique_id=890814037]
-shape = ExtResource("4_15mv3")
+shape = ExtResource("5_t4umt")
 
 [node name="Cysts" type="MeshInstance3D" parent="map" unique_id=1050792694]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9909172, 0.096, -1.2360015)
-mesh = ExtResource("5_4nkto")
+mesh = ExtResource("6_4yk0h")
 
 [node name="static_body" type="StaticBody3D" parent="map/Cysts" unique_id=1271280278]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="map/Cysts/static_body" unique_id=263349502]
-shape = ExtResource("6_e3sih")
+shape = ExtResource("7_vmrhw")
 
 [node name="Branches" type="MeshInstance3D" parent="map" unique_id=638552392]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87499046, -0.28220776, 0.4690535)
-mesh = ExtResource("24_wbtxt")
+mesh = ExtResource("8_cfnpk")
 
-[node name="player" parent="." unique_id=1175395954 instance=ExtResource("5_fcfvj")]
+[node name="player" parent="." unique_id=1175395954 instance=ExtResource("9_wvtie")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10187982, 0)
 
 [node name="camera" type="Camera3D" parent="." unique_id=1000256945 node_paths=PackedStringArray("player")]
@@ -136,23 +138,23 @@ transform = Transform3D(1, 0, 0, 0, 0.83388585, 0.55193704, 0, -0.55193704, 0.83
 projection = 1
 fov = 30.0
 size = 9.0
-script = ExtResource("1_2y5yt")
+script = ExtResource("10_o8s4s")
 player = NodePath("../player")
 
 [node name="src_obj" type="Node3D" parent="." unique_id=802477194]
 
 [node name="Mac" type="MeshInstance3D" parent="src_obj" unique_id=1835450423]
 transform = Transform3D(0.33545148, 0, -0.94205743, 0, 1, 0, 0.94205743, 0, 0.33545148, 1.3624223, -0.21848449, -0.48973668)
-mesh = ExtResource("10_2os1m")
+mesh = ExtResource("11_ebb2h")
 metadata/_edit_group_ = true
 
 [node name="mac_screen_code" type="MeshInstance3D" parent="src_obj/Mac" unique_id=26171760]
 material_override = SubResource("ShaderMaterial_7gny6")
-mesh = ExtResource("11_go7sj")
+mesh = ExtResource("13_ytidy")
 
 [node name="area" type="Area3D" parent="src_obj/Mac" unique_id=111659120 node_paths=PackedStringArray("shader_obj")]
 transform = Transform3D(0.7592713, 0, 0.65077424, 0, 1, 0, -0.65077424, 0, 0.7592713, -0.093156934, 0.23613197, -0.111831546)
-script = ExtResource("14_7nomh")
+script = ExtResource("14_hvllt")
 shader_obj = [NodePath(".."), NodePath("../mac_screen_code")]
 select_material = SubResource("ShaderMaterial_wbtxt")
 
@@ -168,41 +170,41 @@ shape = SubResource("BoxShape3D_jmwk8")
 
 [node name="Sitting" type="MeshInstance3D" parent="src_obj" unique_id=969822811]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -0.40396464, 0.16140664, -1.9319048)
-mesh = ExtResource("12_go7sj")
-script = ExtResource("16_x2xxo")
+mesh = ExtResource("16_svqqs")
+script = ExtResource("17_2to4m")
 metadata/_edit_group_ = true
 
 [node name="static" type="StaticBody3D" parent="src_obj/Sitting" unique_id=213404249]
 input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="src_obj/Sitting/static" unique_id=625048689]
-shape = ExtResource("13_7gny6")
+shape = ExtResource("18_kc3v0")
 
 [node name="area" type="Area3D" parent="src_obj/Sitting" unique_id=2091682386 node_paths=PackedStringArray("shader_obj")]
-script = ExtResource("14_7nomh")
+script = ExtResource("14_hvllt")
 shader_obj = [NodePath("..")]
 select_material = SubResource("ShaderMaterial_d5akn")
 call_func_click = "sitting_click"
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="src_obj/Sitting/area" unique_id=951181089]
-shape = ExtResource("13_7gny6")
+shape = ExtResource("18_kc3v0")
 
-[node name="hint_label" parent="src_obj/Sitting" unique_id=498957823 instance=ExtResource("18_tr1x6")]
-script = ExtResource("19_d5akn")
+[node name="hint_label" parent="src_obj/Sitting" unique_id=498957823 instance=ExtResource("19_prmli")]
+script = ExtResource("20_dwx2n")
 
-[node name="fgoty_sit" parent="src_obj" unique_id=773859946 instance=ExtResource("20_isj1j")]
+[node name="fgoty_sit" parent="src_obj" unique_id=773859946 instance=ExtResource("21_wtkl1")]
 transform = Transform3D(0.66186297, 0, 0.22789772, 0, 0.7, 0, -0.22789772, 0, 0.66186297, -0.471, 0.49784046, -1.734)
 metadata/_edit_group_ = true
 
 [node name="friend" type="Sprite3D" parent="src_obj/fgoty_sit" unique_id=709360753]
 transform = Transform3D(1.0000001, 0, 0, 0, 0.8580649, 0.51354134, 0, -0.5135413, 0.858065, 0.046163082, 3.324677, -0.13406706)
-texture = ExtResource("20_so66j")
-script = ExtResource("21_tr1x6")
+texture = ExtResource("22_ovy75")
+script = ExtResource("23_wk6bc")
 start_y = 3.325
 
 [node name="area" type="Area3D" parent="src_obj/fgoty_sit" unique_id=641404489 node_paths=PackedStringArray("shader_obj")]
 transform = Transform3D(0.7592713, 0, 0.65077424, 0, 1, 0, -0.65077424, 0, 0.7592713, -0.093156934, 0.23613197, -0.111831546)
-script = ExtResource("14_7nomh")
+script = ExtResource("14_hvllt")
 shader_obj = [NodePath("..")]
 select_material = SubResource("ShaderMaterial_tr1x6")
 call_func_click = "fgoty_click"
@@ -211,17 +213,19 @@ call_func_click = "fgoty_click"
 transform = Transform3D(1, 0, 0, 0, 0.9999926, 0, 0, 0, 1, -0.008951783, 0.6224366, 0.23163748)
 shape = SubResource("BoxShape3D_jmwk8")
 
-[node name="hint_label" parent="src_obj/fgoty_sit" unique_id=201814506 instance=ExtResource("18_tr1x6")]
-script = ExtResource("19_d5akn")
+[node name="hint_label" parent="src_obj/fgoty_sit" unique_id=201814506 instance=ExtResource("19_prmli")]
+script = ExtResource("20_dwx2n")
 
 [node name="code_objes" type="Node3D" parent="src_obj" unique_id=337815013]
 metadata/_edit_group_ = true
 
-[node name="main_window_code" parent="src_obj/code_objes" unique_id=393723837 instance=ExtResource("19_2cbcq")]
+[node name="main_window_code" parent="src_obj/code_objes" unique_id=393723837 instance=ExtResource("24_ugk5q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7275785, 0, 3.182349)
+texture_obj = ExtResource("25_4u6u3")
 
-[node name="main_window_code2" parent="src_obj/code_objes" unique_id=1011556040 instance=ExtResource("19_2cbcq")]
+[node name="main_window_code2" parent="src_obj/code_objes" unique_id=1011556040 instance=ExtResource("24_ugk5q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.680425, 0, 3.182349)
+texture_obj = ExtResource("26_i3rdk")
 
-[node name="main_window_code3" parent="src_obj/code_objes" unique_id=833951070 instance=ExtResource("19_2cbcq")]
+[node name="main_window_code3" parent="src_obj/code_objes" unique_id=833951070 instance=ExtResource("24_ugk5q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.544713, 0, -1.5844164)

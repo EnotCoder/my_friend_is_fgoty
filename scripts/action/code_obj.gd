@@ -1,6 +1,6 @@
 extends Area3D
 
-@export var texture_obj: Texture = load("res://ui/card_code_ui/code_to_create_window.png");
+@export var texture_obj: Texture;
 
 const AMPLITUDE: float = 0.2;
 const SPEED_SIN: float = 2.0;
@@ -11,6 +11,7 @@ const SPEED_SCALE_SHADOW: float = 4.0;
 @onready var sprite_code: Sprite3D = $sprite_code
 @onready var grass_shadow_cell: MeshInstance3D = $GrassShadowCell
 @onready var ui: Control = $ui
+@onready var code: TextureRect = $ui/code
 
 var time: float = 0.0;
 var start_y: float = 0.0;
@@ -29,6 +30,7 @@ func _process(delta: float) -> void:
 		
 
 func _ready() -> void:
+	code.texture = texture_obj;
 	body_entered.connect(on_player_entered);
 	start_y = sprite_code.position.y;
 	del_scale = sprite_code.scale;
