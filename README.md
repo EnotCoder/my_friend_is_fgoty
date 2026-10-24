@@ -1,6 +1,6 @@
 ## My friend is fgoty
 
-![Логотип библиотеки](prev.png)
+![Логотип библиотеки](ui/icon_prev/prev.png)
 
 [![license](https://img.shields.io/crates/l/frglib.svg)](https://github.com/EnotCoder/FRGlib/blob/main/LICENSE)
 [![Godot](https://img.shields.io/badge/Godot-4.7-478CBF?logo=godotengine&logoColor=white)](https://godotengine.org/)
