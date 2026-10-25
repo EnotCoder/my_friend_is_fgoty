@@ -10,6 +10,7 @@ func on_mac_click() -> void:
 func _ready() -> void:
 	back.pressed.connect(on_back_pressed)
 	ui.hide();
+	ui.load_all_code()
 	
 func on_back_pressed() -> void:
 	get_tree().paused = false;
