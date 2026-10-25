@@ -230,3 +230,5 @@ theme_override_fonts/font = ExtResource("16_jbj1t")
 theme_override_font_sizes/font_size = 40
 text = "EnotCoder 2026"
 metadata/_edit_use_anchors_ = true
+
+[node name="sounds" type="Node" parent="." unique_id=673443324]
