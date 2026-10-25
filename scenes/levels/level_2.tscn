@@ -5,7 +5,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cmefyhe34llmf" path="res://objects/meshes/grass_level_2/shadow_grass.res" id="3_nt80m"]
 [ext_resource type="ArrayMesh" uid="uid://dsqhn12awaf7e" path="res://objects/meshes/grass_level_2/forest.res" id="4_brxtv"]
 [ext_resource type="Shape3D" uid="uid://dgwqwpo7ymnwi" path="res://objects/collisions/level_2/forest.tres" id="5_tv7cl"]
-[ext_resource type="ArrayMesh" uid="uid://dnrisc1ochs1c" path="res://objects/meshes/grass_level_2/cysts.res" id="6_r88tb"]
+[ext_resource type="ArrayMesh" uid="uid://tsbkufpujh87" path="res://objects/meshes/grass_level_2/cysts.res" id="6_r88tb"]
 [ext_resource type="Shape3D" uid="uid://d3qrwpcbxd20s" path="res://objects/collisions/level_2/cysts.tres" id="7_1yj8c"]
 [ext_resource type="ArrayMesh" uid="uid://cwba5hq2s20s6" path="res://objects/meshes/grass_level_2/branches.res" id="8_ndlae"]
 [ext_resource type="Script" uid="uid://ckwcf5viegnl0" path="res://scripts/player/level_camera.gd" id="9_3p04p"]
