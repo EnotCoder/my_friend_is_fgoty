@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://bpe8ral5cwpw0"]
+
+[ext_resource type="ArrayMesh" uid="uid://c5rb3yeq2a7t4" path="res://objects/meshes/grass_level_2/grass.res" id="1_qsp8v"]
+[ext_resource type="Shape3D" uid="uid://c1iaqun8irlep" path="res://objects/collisions/level_1/level_1_grass.tres" id="2_3p04p"]
+[ext_resource type="ArrayMesh" uid="uid://cmefyhe34llmf" path="res://objects/meshes/grass_level_2/shadow_grass.res" id="3_nt80m"]
+[ext_resource type="ArrayMesh" uid="uid://dsqhn12awaf7e" path="res://objects/meshes/grass_level_2/forest.res" id="4_brxtv"]
+[ext_resource type="Shape3D" uid="uid://dgwqwpo7ymnwi" path="res://objects/collisions/level_2/forest.tres" id="5_tv7cl"]
+[ext_resource type="ArrayMesh" uid="uid://dnrisc1ochs1c" path="res://objects/meshes/grass_level_2/cysts.res" id="6_r88tb"]
+[ext_resource type="Shape3D" uid="uid://d3qrwpcbxd20s" path="res://objects/collisions/level_2/cysts.tres" id="7_1yj8c"]
+[ext_resource type="ArrayMesh" uid="uid://cwba5hq2s20s6" path="res://objects/meshes/grass_level_2/branches.res" id="8_ndlae"]
+[ext_resource type="Script" uid="uid://ckwcf5viegnl0" path="res://scripts/player/level_camera.gd" id="9_3p04p"]
+[ext_resource type="PackedScene" uid="uid://c6xmstywcsofl" path="res://scenes/action_scene/player.tscn" id="10_qsp8v"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4tk1o"]
+sky_top_color = Color(0.0429096, 0.06442337, 0.07470965, 1)
+sky_horizon_color = Color(0.043137256, 0.0627451, 0.07450981, 1)
+ground_bottom_color = Color(0.043137256, 0.0627451, 0.07450981, 1)
+ground_horizon_color = Color(0.043137256, 0.0627451, 0.07450981, 1)
+sun_angle_max = 0.0
+
+[sub_resource type="Sky" id="Sky_o7j4k"]
+sky_material = SubResource("ProceduralSkyMaterial_4tk1o")
+
+[sub_resource type="Environment" id="Environment_j2425"]
+background_mode = 2
+sky = SubResource("Sky_o7j4k")
+adjustment_enabled = true
+adjustment_saturation = 0.8
+
+[node name="level_2" type="Node3D" unique_id=736475900]
+
+[node name="world_light" type="WorldEnvironment" parent="." unique_id=1943770736]
+environment = SubResource("Environment_j2425")
+
+[node name="map" type="Node3D" parent="." unique_id=501735813]
+metadata/_edit_group_ = true
+
+[node name="Grass" type="MeshInstance3D" parent="map" unique_id=23771011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.298, 0)
+mesh = ExtResource("1_qsp8v")
+
+[node name="static_body" type="StaticBody3D" parent="map/Grass" unique_id=1313850897]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Grass/static_body" unique_id=2073955235]
+shape = ExtResource("2_3p04p")
+
+[node name="GrassShadow" type="MeshInstance3D" parent="map" unique_id=15105784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.288, 0)
+mesh = ExtResource("3_nt80m")
+
+[node name="Forest" type="MeshInstance3D" parent="map" unique_id=1878814753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7829404, 2.675, -1.5152674)
+mesh = ExtResource("4_brxtv")
+
+[node name="static_body" type="StaticBody3D" parent="map/Forest" unique_id=1377082513]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Forest/static_body" unique_id=678636846]
+shape = ExtResource("5_tv7cl")
+
+[node name="Cysts" type="MeshInstance3D" parent="map" unique_id=740784997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9909172, 0.096, -1.2360015)
+mesh = ExtResource("6_r88tb")
+
+[node name="static_body" type="StaticBody3D" parent="map/Cysts" unique_id=522487510]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Cysts/static_body" unique_id=352722012]
+shape = ExtResource("7_1yj8c")
+
+[node name="Branches" type="MeshInstance3D" parent="map" unique_id=78982077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87499046, -0.28220776, 0.4690535)
+mesh = ExtResource("8_ndlae")
+
+[node name="camera" type="Camera3D" parent="." unique_id=868329377 node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 0.83388585, 0.55193704, 0, -0.55193704, 0.83388585, 0, 8.516, 11.069)
+projection = 1
+fov = 30.0
+size = 9.0
+script = ExtResource("9_3p04p")
+player = NodePath("../player")
+
+[node name="player" parent="." unique_id=1175395954 instance=ExtResource("10_qsp8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1945872, -0.10187982, 0)
+is_apk = false
