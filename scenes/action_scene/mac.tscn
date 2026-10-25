@@ -9,8 +9,6 @@
 [ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="7_nc4up"]
 [ext_resource type="Script" uid="uid://bc7ivbyma6dj8" path="res://scripts/mac/mac_ui.gd" id="7_of0i2"]
 [ext_resource type="Script" uid="uid://c7jjjbgox1ovt" path="res://scripts/mac/code_panel.gd" id="8_fiab4"]
-[ext_resource type="Texture2D" uid="uid://ge4ydc35vff1" path="res://ui/card_code_ui/null.png" id="9_fiab4"]
-[ext_resource type="Script" uid="uid://cygfvctw61yq3" path="res://scripts/mac/texture_rect.gd" id="10_n555j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7gny6"]
 render_priority = 0
@@ -82,6 +80,54 @@ border_width_top = 12
 border_width_right = 12
 border_width_bottom = 12
 border_color = Color(0.37823159, 7.099286e-07, 2.1658838e-07, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sefyh"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(8.471012e-06, 0.7203389, 0, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(2.0094587e-06, 0.46288532, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_st5n6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0.4674126, 0, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0.35593832, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exhfj"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(3.657937e-06, 0.6294837, 5.7756904e-07, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0.44933867, 0, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -170,16 +216,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 70
 
-[node name="code_1" type="TextureRect" parent="ui/code_rect/code_list/MarginContainer/code_list" unique_id=1417799738]
-layout_mode = 2
-texture = ExtResource("9_fiab4")
-script = ExtResource("10_n555j")
-
-[node name="code_2" type="TextureRect" parent="ui/code_rect/code_list/MarginContainer/code_list" unique_id=1683705646]
-layout_mode = 2
-texture = ExtResource("9_fiab4")
-script = ExtResource("10_n555j")
-
 [node name="my_code_rect" type="ColorRect" parent="ui" unique_id=1215126103]
 layout_mode = 1
 anchors_preset = 6
@@ -225,9 +261,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -309.0
+offset_left = -603.0
 offset_top = -125.0
-offset_right = -18.000977
+offset_right = -312.00098
 offset_bottom = -14.999878
 grow_horizontal = 0
 grow_vertical = 0
@@ -238,3 +274,21 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_1da0m")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fiab4")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_of0i2")
 text = "BACK"
+
+[node name="run_code" type="Button" parent="ui" unique_id=107897206]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 167.0
+offset_top = -129.0
+offset_right = 717.0
+offset_bottom = -18.999878
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_nc4up")
+theme_override_font_sizes/font_size = 84
+theme_override_styles/normal = SubResource("StyleBoxFlat_sefyh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_st5n6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_exhfj")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_sefyh")
+text = "RUN CODE"
