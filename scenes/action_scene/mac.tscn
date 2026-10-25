@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://dpaftua7gwg1r"]
 
 [ext_resource type="ArrayMesh" uid="uid://pwvh6llbvf7f" path="res://objects/meshes/mac/mac.res" id="1_68fm8"]
-[ext_resource type="Script" uid="uid://dlbgfki6t8glu" path="res://scripts/action/mesh/mac.gd" id="2_nc4up"]
+[ext_resource type="Script" uid="uid://dlbgfki6t8glu" path="res://scripts/mac/mac.gd" id="2_nc4up"]
 [ext_resource type="Shader" uid="uid://2i1mls7c23vy" path="res://shaders/mac_fon.gdshader" id="2_v68f2"]
 [ext_resource type="ArrayMesh" uid="uid://bdhhbtiu5dm2q" path="res://objects/meshes/mac/mac_screen_off.res" id="3_nc4up"]
 [ext_resource type="Script" uid="uid://cr7h1b8xe1to2" path="res://scripts/action/select_object_area.gd" id="4_of0i2"]
 [ext_resource type="Shader" uid="uid://b700fs1jyol2f" path="res://shaders/select_object.gdshader" id="5_1da0m"]
 [ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="7_nc4up"]
-[ext_resource type="Script" uid="uid://bc7ivbyma6dj8" path="res://scripts/ui/mac_ui.gd" id="7_of0i2"]
-[ext_resource type="Texture2D" uid="uid://d0k5ea188hihu" path="res://ui/card_code_ui/code_to_create_window.png" id="8_1da0m"]
-[ext_resource type="Script" uid="uid://c7jjjbgox1ovt" path="res://scripts/ui/code_rect.gd" id="8_fiab4"]
-[ext_resource type="Script" uid="uid://cygfvctw61yq3" path="res://scripts/ui/texture_rect.gd" id="10_n555j"]
+[ext_resource type="Script" uid="uid://bc7ivbyma6dj8" path="res://scripts/mac/mac_ui.gd" id="7_of0i2"]
+[ext_resource type="Script" uid="uid://c7jjjbgox1ovt" path="res://scripts/mac/code_panel.gd" id="8_fiab4"]
+[ext_resource type="Texture2D" uid="uid://ge4ydc35vff1" path="res://ui/card_code_ui/null.png" id="9_fiab4"]
+[ext_resource type="Script" uid="uid://cygfvctw61yq3" path="res://scripts/mac/texture_rect.gd" id="10_n555j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7gny6"]
 render_priority = 0
@@ -144,13 +144,41 @@ offset_top = -367.5
 offset_right = 825.0
 offset_bottom = 367.5
 grow_vertical = 2
+rotation = -0.0017823977
 color = Color(0.14509805, 0.14509805, 0.14509805, 1)
+
+[node name="code_list" type="ScrollContainer" parent="ui/code_rect" unique_id=1444475540]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
 script = ExtResource("8_fiab4")
 
-[node name="TextureRect" type="TextureRect" parent="ui/code_rect" unique_id=1933611786]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MarginContainer" type="MarginContainer" parent="ui/code_rect/code_list" unique_id=437884682]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="code_list" type="VBoxContainer" parent="ui/code_rect/code_list/MarginContainer" unique_id=616279420]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 70
+
+[node name="code_1" type="TextureRect" parent="ui/code_rect/code_list/MarginContainer/code_list" unique_id=1417799738]
+layout_mode = 2
+texture = ExtResource("9_fiab4")
+script = ExtResource("10_n555j")
+
+[node name="code_2" type="TextureRect" parent="ui/code_rect/code_list/MarginContainer/code_list" unique_id=1683705646]
+layout_mode = 2
+texture = ExtResource("9_fiab4")
+script = ExtResource("10_n555j")
 
 [node name="my_code_rect" type="ColorRect" parent="ui" unique_id=1215126103]
 layout_mode = 1
@@ -175,6 +203,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
+script = ExtResource("8_fiab4")
 
 [node name="MarginContainer" type="MarginContainer" parent="ui/my_code_rect/scroll" unique_id=723944581]
 layout_mode = 2
@@ -188,11 +217,6 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 70
-
-[node name="TextureRect" type="TextureRect" parent="ui/my_code_rect/scroll/MarginContainer/code_list" unique_id=1398956206]
-layout_mode = 2
-texture = ExtResource("8_1da0m")
-script = ExtResource("10_n555j")
 
 [node name="back" type="Button" parent="ui" unique_id=696655942]
 layout_mode = 1
