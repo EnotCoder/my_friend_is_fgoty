@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cr7h1b8xe1to2" path="res://scripts/action/select_object_area.gd" id="2_5ekxl"]
 [ext_resource type="Shader" uid="uid://b700fs1jyol2f" path="res://shaders/select_object.gdshader" id="3_ly2og"]
 [ext_resource type="Shape3D" uid="uid://0akwlleayixx" path="res://objects/collisions/levels/level_1.tres" id="4_ly2og"]
+[ext_resource type="AudioStream" uid="uid://bumud35u3trve" path="res://sounds/menu_levels_music.mp3" id="6_byla0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qk7pt"]
 sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
@@ -82,3 +83,10 @@ select_material = SubResource("ShaderMaterial_ly2og")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="meshes/level_3/area" unique_id=1059770499]
 shape = ExtResource("4_ly2og")
+
+[node name="sounds" type="Node" parent="." unique_id=1957200169]
+
+[node name="music" type="AudioStreamPlayer" parent="sounds" unique_id=1892475269]
+stream = ExtResource("6_byla0")
+volume_db = 2.0
+autoplay = true
