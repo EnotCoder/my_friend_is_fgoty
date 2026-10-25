@@ -242,7 +242,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(1, 1)]
+"values": [Vector2(0, 0), Vector2(1.35, 1.35)]
 }
 
 [sub_resource type="Animation" id="Animation_4wfdx"]
@@ -306,7 +306,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+"values": [Vector2(1.35, 1.35), Vector2(1e-05, 1e-05)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4wfdx"]
@@ -374,13 +374,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -461.80627
-offset_top = -332.50134
-offset_right = 461.80627
-offset_bottom = 332.50134
+offset_left = -350.0
+offset_top = -29.0
+offset_right = 350.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1e-05, 1e-05)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("1_kqwqn")
 
 [node name="use" type="Button" parent="ui/ui" unique_id=2024620682]
@@ -390,7 +391,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = 342.0
 offset_right = 417.0004
-offset_bottom = 452.0
+offset_bottom = 452.00012
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("5_nbfq8")
 theme_override_font_sizes/font_size = 84

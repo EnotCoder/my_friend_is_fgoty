@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://dpaftua7gwg1r"]
+
+[ext_resource type="ArrayMesh" uid="uid://pwvh6llbvf7f" path="res://objects/meshes/mac/mac.res" id="1_68fm8"]
+[ext_resource type="Script" uid="uid://dlbgfki6t8glu" path="res://scripts/action/mesh/mac.gd" id="2_nc4up"]
+[ext_resource type="Shader" uid="uid://2i1mls7c23vy" path="res://shaders/mac_fon.gdshader" id="2_v68f2"]
+[ext_resource type="ArrayMesh" uid="uid://bdhhbtiu5dm2q" path="res://objects/meshes/mac/mac_screen_off.res" id="3_nc4up"]
+[ext_resource type="Script" uid="uid://cr7h1b8xe1to2" path="res://scripts/action/select_object_area.gd" id="4_of0i2"]
+[ext_resource type="Shader" uid="uid://b700fs1jyol2f" path="res://shaders/select_object.gdshader" id="5_1da0m"]
+[ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="7_nc4up"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7gny6"]
+render_priority = 0
+shader = ExtResource("2_v68f2")
+shader_parameter/background_color = Color(0.018, 0.025, 0.045, 1)
+shader_parameter/code_color = Color(0.05, 0.95, 0.2, 1)
+shader_parameter/head_color = Color(0.7, 1, 0.8, 1)
+shader_parameter/columns = 64.0
+shader_parameter/rows = 22.0
+shader_parameter/fall_speed = 35.0
+shader_parameter/trail_length = 14.0
+shader_parameter/symbol_change_speed = 10.0
+shader_parameter/brightness = 1.0
+shader_parameter/scanline_strength = 0.06
+shader_parameter/flip_y = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wbtxt"]
+render_priority = 0
+shader = ExtResource("5_1da0m")
+shader_parameter/highlight_color = Color(0.3, 0.85, 1, 1)
+shader_parameter/opacity = 0.0
+shader_parameter/stripe_spacing = 12.0
+shader_parameter/stripe_width = 0.3
+shader_parameter/stripe_speed = 20.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jmwk8"]
+size = Vector3(1.1669922, 2.2111816, 1.1259766)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_of0i2"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.7670247, 2.5268644e-06, 9.62615e-07, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.48775607, 1.0648929e-06, 1.6845763e-07, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1da0m"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.4554031, 1.0769255e-06, 2.1658838e-07, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.35247236, 0.00026372343, 0.00014458477, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fiab4"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.6189331, 8.061901e-07, 2.4065375e-07, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.37823159, 7.099286e-07, 2.1658838e-07, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Mac" type="MeshInstance3D" unique_id=1322469569]
+transform = Transform3D(0.33545148, 0, -0.94205743, 0, 1, 0, 0.94205743, 0, 0.33545148, 0, 0, 0)
+mesh = ExtResource("1_68fm8")
+script = ExtResource("2_nc4up")
+metadata/_edit_group_ = true
+
+[node name="mac_screen_code" type="MeshInstance3D" parent="." unique_id=371020321]
+material_override = SubResource("ShaderMaterial_7gny6")
+mesh = ExtResource("3_nc4up")
+
+[node name="area" type="Area3D" parent="." unique_id=1649657495 node_paths=PackedStringArray("shader_obj")]
+transform = Transform3D(0.7592713, 0, 0.65077424, 0, 1, 0, -0.65077424, 0, 0.7592713, -0.093156934, 0.23613197, -0.111831546)
+script = ExtResource("4_of0i2")
+shader_obj = [NodePath(".."), NodePath("../mac_screen_code")]
+select_material = SubResource("ShaderMaterial_wbtxt")
+call_func_click = "on_mac_click"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="area" unique_id=516174509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.074543834, 0, 0.1686486)
+shape = SubResource("BoxShape3D_jmwk8")
+
+[node name="static" type="StaticBody3D" parent="." unique_id=496376878]
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="static" unique_id=1680259020]
+shape = SubResource("BoxShape3D_jmwk8")
+
+[node name="ui" type="Control" parent="." unique_id=1909572861]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="rect" type="ColorRect" parent="ui" unique_id=22477274]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.30588236)
+
+[node name="code_rect" type="ColorRect" parent="ui" unique_id=1321650714]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 90.0
+offset_top = -367.5
+offset_right = 825.0
+offset_bottom = 367.5
+grow_vertical = 2
+color = Color(0.14509805, 0.14509805, 0.14509805, 1)
+
+[node name="code_seat_1" type="ColorRect" parent="ui/code_rect" unique_id=1427673280]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.5
+offset_top = -339.0
+offset_right = 340.5
+offset_bottom = -158.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.072842635, 0.072842635, 0.072842635, 1)
+
+[node name="my_code_rect" type="ColorRect" parent="ui" unique_id=1215126103]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -826.0
+offset_top = -367.5
+offset_right = -91.0
+offset_bottom = 367.5
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.14406255, 0.14406255, 0.14406249, 1)
+
+[node name="code_seat_1" type="ColorRect" parent="ui/my_code_rect" unique_id=1615187705]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.5
+offset_top = -339.0
+offset_right = 340.5
+offset_bottom = -158.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.072842635, 0.072842635, 0.072842635, 1)
+
+[node name="back" type="Button" parent="ui" unique_id=696655942]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -309.0
+offset_top = -125.0
+offset_right = -18.000977
+offset_bottom = -14.999878
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_nc4up")
+theme_override_font_sizes/font_size = 84
+theme_override_styles/normal = SubResource("StyleBoxFlat_of0i2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1da0m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fiab4")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_of0i2")
+text = "BACK"

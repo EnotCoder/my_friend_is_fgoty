@@ -35,6 +35,7 @@ func _ready() -> void:
 	start_y = sprite_code.position.y;
 	del_scale = sprite_code.scale;
 	
+	
 func on_player_entered(body: Node3D) -> void:
 	if body is Player:
 		set_deferred("monitoring", false)

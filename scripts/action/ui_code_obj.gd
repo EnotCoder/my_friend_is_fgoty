@@ -4,7 +4,6 @@ extends Control
 @onready var use: Button = $use
 @onready var delete: Button = $delete
 
-
 func start():
 	get_tree().paused = true	
 	animation_player.play("fade_in");
