@@ -106,6 +106,7 @@ mesh = ExtResource("8_cfnpk")
 
 [node name="player" parent="." unique_id=1175395954 instance=ExtResource("9_wvtie")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10187982, 0)
+is_apk = false
 
 [node name="camera" type="Camera3D" parent="." unique_id=1000256945 node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 0.83388585, 0.55193704, 0, -0.55193704, 0.83388585, 0, 8.516, 11.069)
@@ -171,13 +172,16 @@ script = ExtResource("20_dwx2n")
 [node name="code_objes" type="Node3D" parent="src_obj" unique_id=337815013]
 metadata/_edit_group_ = true
 
-[node name="main_window_code" parent="src_obj/code_objes" unique_id=393723837 instance=ExtResource("24_ugk5q")]
+[node name="main_window_code" parent="src_obj/code_objes" unique_id=393723837 node_paths=PackedStringArray("mac") instance=ExtResource("24_ugk5q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7275785, 0, 3.182349)
 texture_obj = ExtResource("25_4u6u3")
+mac = NodePath("../../Mac")
 
-[node name="main_window_code2" parent="src_obj/code_objes" unique_id=1011556040 instance=ExtResource("24_ugk5q")]
+[node name="import_code" parent="src_obj/code_objes" unique_id=1011556040 node_paths=PackedStringArray("mac") instance=ExtResource("24_ugk5q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.680425, 0, 3.182349)
 texture_obj = ExtResource("26_o7j4k")
+mac = NodePath("../../Mac")
 
-[node name="main_window_code3" parent="src_obj/code_objes" unique_id=833951070 instance=ExtResource("24_ugk5q")]
+[node name="vars_code" parent="src_obj/code_objes" unique_id=833951070 node_paths=PackedStringArray("mac") instance=ExtResource("24_ugk5q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.544713, 0, -1.5844164)
+mac = NodePath("../../Mac")

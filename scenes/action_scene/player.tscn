@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://0j34jvgvhvbk" path="res://scripts/player/player.gd" id="1_o3x7v"]
 [ext_resource type="Script" uid="uid://dwefwf7k7rxpj" path="res://scripts/player/fall_part.gd" id="2_gmi33"]
 [ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="3_gbxs5"]
+[ext_resource type="ArrayMesh" uid="uid://d2outqym74pfp" path="res://objects/meshes/particle_grass.res" id="5_olf1o"]
 
 [sub_resource type="Animation" id="Animation_gbxs5"]
 length = 0.001
@@ -151,6 +152,10 @@ corner_radius_bottom_right = 10000
 corner_radius_bottom_left = 10000
 corner_detail = 20
 
+[sub_resource type="Gradient" id="Gradient_tpmkk"]
+offsets = PackedFloat32Array(0, 0.47147146, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="player" type="CharacterBody3D" unique_id=1175395954]
 script = ExtResource("1_o3x7v")
 is_apk = true
@@ -247,3 +252,17 @@ action_left = &"A"
 action_right = &"D"
 action_up = &"W"
 action_down = &"S"
+
+[node name="part" type="CPUParticles3D" parent="." unique_id=1267668163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.19211277, -0.18507141)
+amount = 12
+lifetime = 0.35000000000000003
+mesh = ExtResource("5_olf1o")
+direction = Vector3(0, 1, 0)
+spread = 60.0
+gravity = Vector3(0, -3, -5.355)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.2
+scale_amount_min = 0.1
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_tpmkk")

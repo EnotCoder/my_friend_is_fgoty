@@ -1,6 +1,7 @@
 extends Area3D
 
 @export var texture_obj: Texture;
+@export var mac: MeshInstance3D;
 
 const AMPLITUDE: float = 0.2;
 const SPEED_SIN: float = 2.0;
@@ -12,6 +13,11 @@ const SPEED_SCALE_SHADOW: float = 4.0;
 @onready var grass_shadow_cell: MeshInstance3D = $GrassShadowCell
 @onready var ui: Control = $ui/ui
 @onready var code: TextureRect = $ui/ui/code
+@onready var part: CPUParticles3D = $part
+
+func explode() -> void:
+	part.restart()
+	part.emitting = true
 
 var time: float = 0.0;
 var start_y: float = 0.0;

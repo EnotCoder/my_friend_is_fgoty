@@ -1,15 +1,5 @@
 extends ScrollContainer
 
-## Скрипт панели со слотами карточек.
-## Вешается на ScrollContainer обеих панелей (левой и правой).
-##
-## Правила mouse_filter (важно для drag & drop в Godot):
-##  - сам ScrollContainer: STOP — получает hover/drop и колесо прокрутки;
-##  - промежуточные контейнеры (MarginContainer, VBoxContainer): IGNORE,
-##    чтобы дроп «поднимался» от слота к ScrollContainer;
-##  - слоты TextureRect: PASS — с них стартует drag, но они не блокируют
-##    подъём цепочки can_drop_data к ScrollContainer.
-
 const EMPTY_TEXTURE := preload("res://ui/card_code_ui/null.png")
 
 const DRAG_SCRIPT := preload("res://scripts/mac/texture_rect.gd")
@@ -21,15 +11,13 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	_setup_mouse_filters(self)
 
-
-## Раскладка mouse_filter по всем потомкам (см. комментарий над скриптом).
 func _setup_mouse_filters(node: Node) -> void:
 	for child in node.get_children():
 		var control := child as Control
 
 		if control != null:
 			if control is TextureRect:
-				control.mouse_filter = Control.MOUSE_FILTER_PASS
+				control.mouse_filter = Control.MOUSE_FILTER_STOP
 			else:
 				control.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
@@ -71,7 +59,6 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 
 
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
-	# Целевой слот: ячейка под курсором, если она пустая, иначе первый пустой.
 	var slot := get_slot_under_cursor()
 
 	if slot == null or not is_empty_slot(slot):

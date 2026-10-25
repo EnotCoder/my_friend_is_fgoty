@@ -35,7 +35,7 @@ shader_parameter/stripe_width = 0.3
 shader_parameter/stripe_speed = 20.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jmwk8"]
-size = Vector3(1.1669922, 2.2111816, 1.1259766)
+size = Vector3(1.167, 0.625, 1.126)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_of0i2"]
 content_margin_left = 4.0
@@ -151,13 +151,14 @@ select_material = SubResource("ShaderMaterial_wbtxt")
 call_func_click = "on_mac_click"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="area" unique_id=516174509]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.074543834, 0, 0.1686486)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.074543834, -0.003660202, 0.16864859)
 shape = SubResource("BoxShape3D_jmwk8")
 
 [node name="static" type="StaticBody3D" parent="." unique_id=496376878]
 input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="static" unique_id=1680259020]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0, 0.22763425, 0)
 shape = SubResource("BoxShape3D_jmwk8")
 
 [node name="ui" type="Control" parent="." unique_id=1909572861]

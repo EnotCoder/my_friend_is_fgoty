@@ -6,6 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://6pa0wh4lfyeb" path="res://objects/meshes/grass_shadow_cell.res" id="3_xoo1o"]
 [ext_resource type="Script" uid="uid://bl53gxk8q5imq" path="res://scripts/action/ui_code_obj.gd" id="4_sefyh"]
 [ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="5_nbfq8"]
+[ext_resource type="ArrayMesh" uid="uid://h4ae8s57m58d" path="res://objects/meshes/particle.res" id="7_u138y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xoo1o"]
 size = Vector3(1.4, 0.8051758, 1.4)
@@ -316,6 +317,10 @@ _data = {
 &"fade_out": SubResource("Animation_4wfdx")
 }
 
+[sub_resource type="Gradient" id="Gradient_aiar2"]
+offsets = PackedFloat32Array(0, 0.47147146, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="code_obj" type="Area3D" unique_id=393723837]
 script = ExtResource("1_4ydmg")
 
@@ -442,3 +447,18 @@ visible_ratio = 0.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ui/ui" unique_id=194723939]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_4wfdx")
+
+[node name="part" type="CPUParticles3D" parent="." unique_id=1688071573]
+emitting = false
+amount = 32
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+mesh = ExtResource("7_u138y")
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+scale_amount_min = 0.1
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_aiar2")

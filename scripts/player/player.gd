@@ -23,6 +23,8 @@ func set_standart_level_position():
 @export var is_apk: bool = false;
 @onready var moble_ui: Control = $moble_ui
 
+@onready var part: CPUParticles3D = $part
+
 func _ready() -> void:
 	target_angle = visual.rotation.y;
 	start_rotation_x = visual.rotation.x;
@@ -71,9 +73,10 @@ func player_move(dt: float) -> void:
 
 	if direction != Vector3.ZERO and is_on_floor():
 		walk_time += dt
-
+		part.emitting = true;
 		target_x += sin(walk_time * TAU * walk_frequency) * deg_to_rad(walk_angle)
 	else:
+		part.emitting = false;
 		walk_time = 0.0
 
 	visual.rotation.x = lerp_angle(
