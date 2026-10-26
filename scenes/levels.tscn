@@ -8,14 +8,15 @@
 [ext_resource type="ArrayMesh" uid="uid://c1u8wafax2dg7" path="res://objects/meshes/levels/level_2.res" id="5_r44b6"]
 [ext_resource type="AudioStream" uid="uid://bumud35u3trve" path="res://sounds/menu_levels_music.mp3" id="6_byla0"]
 [ext_resource type="Shape3D" uid="uid://sohx8hvcxqwc" path="res://objects/collisions/levels/level_2.tres" id="7_1jewu"]
-[ext_resource type="ArrayMesh" uid="uid://wt4ngs3tlauq" path="res://objects/meshes/levels/level_3.res" id="8_00hpi"]
+[ext_resource type="ArrayMesh" uid="uid://ds3b8fwxq6e8e" path="res://objects/meshes/levels/level_3.res" id="8_00hpi"]
 [ext_resource type="Shape3D" uid="uid://blotoh71lby8t" path="res://objects/collisions/levels/level_3.tres" id="9_6g56m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qk7pt"]
 sky_top_color = Color(0.37413925, 0.37413928, 0.37413922, 1)
 sky_horizon_color = Color(0.37254903, 0.37254903, 0.37254903, 1)
-ground_bottom_color = Color(0.32915837, 0.3291584, 0.32915837, 1)
+ground_bottom_color = Color(0.3180198, 0.31801978, 0.31801975, 1)
 ground_horizon_color = Color(0.37254903, 0.37254903, 0.37254903, 1)
+ground_curve = 0.12553348
 
 [sub_resource type="Sky" id="Sky_hcnff"]
 sky_material = SubResource("ProceduralSkyMaterial_qk7pt")
