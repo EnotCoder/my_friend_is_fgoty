@@ -9,11 +9,10 @@ func on_mac_click() -> void:
 
 func _ready() -> void:
 	ui.hide();
-	ui.load_all_code();
 
 # storage player's code
 var code: Array[Texture] = [];
 
 func add_code(texture: Texture):
 	code.append(texture);
-	ui.load_all_code();
+	ui.load_new_code(texture);

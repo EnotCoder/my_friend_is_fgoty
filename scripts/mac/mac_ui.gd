@@ -17,12 +17,8 @@ const RIGHT_EMPTY_SLOTS := 4;
 @onready var mac: MeshInstance3D = $".."
 
 
-func load_all_code():
-	for child in right_list.get_children():
-		child.queue_free()
-	
-	for card in mac.code:
-		right_list.add_child(make_slot(card));
+func load_new_code(card: Texture):
+	right_list.add_child(make_slot(card));
 
 func make_slot(texture: Texture) -> TextureRect:
 	var rect := TextureRect.new();
