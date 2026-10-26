@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bl53gxk8q5imq" path="res://scripts/action/ui_code_obj.gd" id="4_sefyh"]
 [ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="5_nbfq8"]
 [ext_resource type="ArrayMesh" uid="uid://h4ae8s57m58d" path="res://objects/meshes/part/particle.res" id="7_u138y"]
+[ext_resource type="AudioStream" uid="uid://bhu0urt08ach0" path="res://sounds/click_use_del.mp3" id="8_d5nfs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xoo1o"]
 size = Vector3(1.4, 0.8051758, 1.4)
@@ -334,6 +335,7 @@ shape = SubResource("BoxShape3D_xoo1o")
 
 [node name="GrassShadowCell" type="MeshInstance3D" parent="." unique_id=308626738]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, -0.288, 0)
+visible = false
 mesh = ExtResource("3_xoo1o")
 
 [node name="ui" type="Control" parent="." unique_id=124792109]
@@ -462,3 +464,9 @@ initial_velocity_max = 2.0
 scale_amount_min = 0.1
 scale_amount_max = 0.5
 color_ramp = SubResource("Gradient_aiar2")
+
+[node name="sounds" type="Node" parent="." unique_id=1606157899]
+
+[node name="click_but" type="AudioStreamPlayer" parent="sounds" unique_id=929010060]
+stream = ExtResource("8_d5nfs")
+volume_db = -2.0

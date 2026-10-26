@@ -13,6 +13,11 @@
 [ext_resource type="Script" uid="uid://ckwcf5viegnl0" path="res://scripts/player/level_camera.gd" id="9_3p04p"]
 [ext_resource type="PackedScene" uid="uid://c6xmstywcsofl" path="res://scenes/action_scene/player.tscn" id="10_qsp8v"]
 [ext_resource type="ArrayMesh" uid="uid://fle1jfqck46j" path="res://objects/meshes/grass_level_2/fire.res" id="11_nt80m"]
+[ext_resource type="PackedScene" uid="uid://dpaftua7gwg1r" path="res://scenes/action_scene/mac.tscn" id="14_mx6s3"]
+[ext_resource type="AudioStream" uid="uid://dph4qmmhiao22" path="res://sounds/level_2_music.mp3" id="18_gw1l3"]
+[ext_resource type="PackedScene" uid="uid://6kfah1nt2dp4" path="res://scenes/action_scene/code_obj.tscn" id="25_s7kn7"]
+[ext_resource type="Texture2D" uid="uid://d0k5ea188hihu" path="res://ui/card_code_ui/code_to_create_window.png" id="26_wk7pi"]
+[ext_resource type="Texture2D" uid="uid://dmvuogmq3wad8" path="res://ui/card_code_ui/code_to_import.png" id="27_yqg3d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4tk1o"]
 sky_top_color = Color(0.0429096, 0.06442337, 0.07470965, 1)
@@ -104,3 +109,34 @@ player = NodePath("../player")
 [node name="player" parent="." unique_id=1175395954 instance=ExtResource("10_qsp8v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1945872, -0.10187982, 0)
 is_apk = false
+
+[node name="src_obj" type="Node3D" parent="." unique_id=1467512082]
+
+[node name="Mac" parent="src_obj" unique_id=1322469569 instance=ExtResource("14_mx6s3")]
+transform = Transform3D(0.85355073, 0, -0.52100956, 0, 1, 0, 0.52100956, 0, 0.85355073, -2.6665397, -0.21848449, -1.7791231)
+
+[node name="code_objes" type="Node3D" parent="src_obj" unique_id=642370898]
+metadata/_edit_group_ = true
+
+[node name="main_window_code" parent="src_obj/code_objes" unique_id=393723837 node_paths=PackedStringArray("mac") instance=ExtResource("25_s7kn7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1421194, 0, 4.7188883)
+texture_obj = ExtResource("26_wk7pi")
+mac = NodePath("../../Mac")
+shadow = false
+
+[node name="import_code" parent="src_obj/code_objes" unique_id=1183243542 node_paths=PackedStringArray("mac") instance=ExtResource("25_s7kn7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.373246, 0, -5.612958)
+texture_obj = ExtResource("27_yqg3d")
+mac = NodePath("../../Mac")
+
+[node name="vars_code" parent="src_obj/code_objes" unique_id=1790417763 node_paths=PackedStringArray("mac") instance=ExtResource("25_s7kn7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.544713, 0, -2.8965116)
+mac = NodePath("../../Mac")
+shadow = false
+
+[node name="sounds" type="Node" parent="." unique_id=564020188]
+
+[node name="music" type="AudioStreamPlayer" parent="sounds" unique_id=1297773445]
+stream = ExtResource("18_gw1l3")
+volume_db = -2.0
+autoplay = true

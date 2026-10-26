@@ -2,6 +2,7 @@ extends Area3D
 
 @export var texture_obj: Texture;
 @export var mac: MeshInstance3D;
+@export var shadow: bool = true;
 
 const AMPLITUDE: float = 0.2;
 const SPEED_SIN: float = 2.0;
@@ -40,6 +41,9 @@ func _ready() -> void:
 	body_entered.connect(on_player_entered);
 	start_y = sprite_code.position.y;
 	del_scale = sprite_code.scale;
+	
+	if shadow:
+		grass_shadow_cell.show();
 	
 	
 func on_player_entered(body: Node3D) -> void:

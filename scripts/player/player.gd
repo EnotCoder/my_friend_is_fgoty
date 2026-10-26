@@ -10,6 +10,7 @@ var target_angle: float = 0.0;
 
 @onready var fall_part: Node3D = $fall_part
 @onready var standart_level_position: Vector3 = global_position;
+@onready var walk: AudioStreamPlayer = $sounds/walk
 
 var walk_time: float = 0.0
 var start_rotation_x: float
@@ -70,13 +71,26 @@ func player_move(dt: float) -> void:
 	
 	# walk animation
 	var target_x := start_rotation_x
+	var is_walking := direction != Vector3.ZERO and is_on_floor()
 
-	if direction != Vector3.ZERO and is_on_floor():
+	if is_walking:
 		walk_time += dt
-		part.emitting = true;
-		target_x += sin(walk_time * TAU * walk_frequency) * deg_to_rad(walk_angle)
+		part.emitting = true
+
+		# Запускаем только тогда, когда звук ещё не играет.
+		if not walk.playing:
+			walk.play()
+
+		target_x += (
+			sin(walk_time * TAU * walk_frequency)
+			* deg_to_rad(walk_angle)
+		)
 	else:
-		part.emitting = false;
+		part.emitting = false
+
+		if walk.playing:
+			walk.stop()
+
 		walk_time = 0.0
 
 	visual.rotation.x = lerp_angle(
@@ -85,7 +99,7 @@ func player_move(dt: float) -> void:
 		weight
 	)
 
-	move_and_slide();
+	move_and_slide()
 	
 func setup_crab_xray() -> void:
 	var crab := visual as MeshInstance3D

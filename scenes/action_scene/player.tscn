@@ -5,6 +5,9 @@
 [ext_resource type="Script" uid="uid://dwefwf7k7rxpj" path="res://scripts/player/fall_part.gd" id="2_gmi33"]
 [ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="3_gbxs5"]
 [ext_resource type="ArrayMesh" uid="uid://d2outqym74pfp" path="res://objects/meshes/part/particle_grass.res" id="5_olf1o"]
+[ext_resource type="AudioStream" uid="uid://bf13jq22fhwgv" path="res://sounds/player_walk.mp3" id="6_tpmkk"]
+[ext_resource type="AudioStream" uid="uid://ciq4mp52dq6kk" path="res://sounds/fall.mp3" id="7_t21h5"]
+[ext_resource type="AudioStream" uid="uid://ce7b5pvicudqu" path="res://sounds/teleport.mp3" id="8_uhbhg"]
 
 [sub_resource type="Animation" id="Animation_gbxs5"]
 length = 0.001
@@ -266,3 +269,15 @@ initial_velocity_max = 1.2
 scale_amount_min = 0.1
 scale_amount_max = 0.5
 color_ramp = SubResource("Gradient_tpmkk")
+
+[node name="sounds" type="Node" parent="." unique_id=347681375]
+
+[node name="walk" type="AudioStreamPlayer" parent="sounds" unique_id=274846596]
+stream = ExtResource("6_tpmkk")
+volume_db = -10.0
+
+[node name="fall" type="AudioStreamPlayer" parent="sounds" unique_id=2138457510]
+stream = ExtResource("7_t21h5")
+
+[node name="tp" type="AudioStreamPlayer" parent="sounds" unique_id=797652908]
+stream = ExtResource("8_uhbhg")

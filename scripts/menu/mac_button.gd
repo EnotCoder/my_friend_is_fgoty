@@ -5,6 +5,7 @@ extends MeshInstance3D
 @onready var text_to_play: Sprite3D = $text_to_play
 @onready var mac_screen_off: MeshInstance3D = $mac_screen_off
 @onready var mac_screen_on: MeshInstance3D = $mac_screen_on
+@onready var click_but: AudioStreamPlayer = $"../../sounds/click_but"
 
 var is_hover: bool = false;
 
@@ -26,6 +27,7 @@ func _input(event: InputEvent) -> void:
 			on_mac_screen_click();
 		
 func on_mac_screen_click() -> void:
+	click_but.play();
 	get_tree().change_scene_to_file("res://scenes/levels.tscn");
 
 func mac_screen_on_() -> void:

@@ -6,6 +6,7 @@ extends Control
 @onready var mac = $"../..".mac;
 @onready var parent_parent = $"../..";
 @onready var code: TextureRect = $code
+@onready var click_but: AudioStreamPlayer = $"../../sounds/click_but"
 
 func start():
 	get_tree().paused = true	
@@ -20,7 +21,9 @@ func pressed_use():
 	animation_player.play("fade_out");
 	mac.add_code(code.texture);
 	parent_parent.explode();
+	click_but.play();
 	
 func pressed_delete():
 	get_tree().paused = false;
 	animation_player.play("fade_out");
+	click_but.play();
