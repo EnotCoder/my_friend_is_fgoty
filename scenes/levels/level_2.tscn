@@ -16,6 +16,7 @@
 [ext_resource type="ArrayMesh" uid="uid://fle1jfqck46j" path="res://objects/meshes/grass_level_2/fire.res" id="11_nt80m"]
 [ext_resource type="PackedScene" uid="uid://dpaftua7gwg1r" path="res://scenes/action_scene/mac.tscn" id="14_mx6s3"]
 [ext_resource type="AudioStream" uid="uid://dph4qmmhiao22" path="res://sounds/level_2_music.mp3" id="18_gw1l3"]
+[ext_resource type="AudioStream" uid="uid://bd0fouuscct0g" path="res://sounds/fire.mp3" id="20_sibr7"]
 [ext_resource type="PackedScene" uid="uid://6kfah1nt2dp4" path="res://scenes/action_scene/code_obj.tscn" id="25_s7kn7"]
 [ext_resource type="Texture2D" uid="uid://d0k5ea188hihu" path="res://ui/card_code_ui/code_to_create_window.png" id="26_wk7pi"]
 [ext_resource type="Texture2D" uid="uid://dmvuogmq3wad8" path="res://ui/card_code_ui/code_to_import.png" id="27_yqg3d"]
@@ -48,6 +49,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="text" type="Label" parent="ui" unique_id=286799648]
 layout_mode = 1
@@ -165,4 +167,9 @@ shadow = false
 [node name="music" type="AudioStreamPlayer" parent="sounds" unique_id=1297773445]
 stream = ExtResource("18_gw1l3")
 volume_db = -2.0
+autoplay = true
+
+[node name="fire" type="AudioStreamPlayer" parent="sounds" unique_id=910538252]
+stream = ExtResource("20_sibr7")
+volume_db = -6.0
 autoplay = true
