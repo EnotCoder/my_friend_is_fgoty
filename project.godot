@@ -18,6 +18,7 @@ config/icon="uid://xxdniauhk5xi"
 
 [autoload]
 
+SceneLoader="*res://scenes/loading_screen.tscn"
 World="*uid://dlxikhp5mq08i"
 
 [display]

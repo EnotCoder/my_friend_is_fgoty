@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	);
 	
 func start_level_1():
-	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn");
+	SceneLoader.change_scene("res://scenes/levels/level_1.tscn");
 
 func start_level_2():
-	get_tree().change_scene_to_file("res://scenes/levels/level_2.tscn");
+	SceneLoader.change_scene("res://scenes/levels/level_2.tscn");
