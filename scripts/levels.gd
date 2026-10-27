@@ -29,3 +29,6 @@ func start_level_1():
 
 func start_level_2():
 	SceneLoader.change_scene("res://scenes/levels/level_2.tscn");
+	
+func start_level_3():
+	SceneLoader.change_scene("res://scenes/levels/level_3.tscn");

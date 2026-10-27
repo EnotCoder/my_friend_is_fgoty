@@ -133,12 +133,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.752, 0, 0.035)
 mesh = ExtResource("8_00hpi")
 metadata/_edit_group_ = true
 
-[node name="area" type="Area3D" parent="meshes/level_3" unique_id=2003648845 node_paths=PackedStringArray("shader_obj")]
+[node name="area" type="Area3D" parent="meshes/level_3" unique_id=2003648845 node_paths=PackedStringArray("shader_obj", "script_obj")]
 script = ExtResource("2_5ekxl")
 shader_obj = [NodePath("..")]
+script_obj = NodePath("../..")
 select_material = SubResource("ShaderMaterial_ly2og")
+call_func_click = "start_level_3"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="meshes/level_3/area" unique_id=1475680610]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="meshes/level_3/area" unique_id=1733865218]
 shape = ExtResource("9_6g56m")
 
 [node name="sounds" type="Node" parent="." unique_id=1957200169]

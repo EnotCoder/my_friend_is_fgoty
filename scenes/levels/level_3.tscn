@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://cocdnmbt62fqk"]
+
+[ext_resource type="ArrayMesh" uid="uid://coaipdvww0jwh" path="res://objects/meshes/grass_level_3/grass.res" id="1_2bnyt"]
+[ext_resource type="Shape3D" uid="uid://8g35kdxcu7fi" path="res://objects/collisions/level_3/grass.tres" id="2_2bnyt"]
+[ext_resource type="ArrayMesh" uid="uid://dy8qaik526qlx" path="res://objects/meshes/grass_level_3/shadow_grass.res" id="3_n6eey"]
+[ext_resource type="ArrayMesh" uid="uid://c60b6jrc84cxb" path="res://objects/meshes/grass_level_3/forest.res" id="4_qi5uv"]
+[ext_resource type="Shape3D" uid="uid://dfgqji1gn25t3" path="res://objects/collisions/level_3/forest.tres" id="5_2bnyt"]
+[ext_resource type="ArrayMesh" uid="uid://c47mm5wy6k6uk" path="res://objects/meshes/grass_level_3/cysts.res" id="6_f6egh"]
+[ext_resource type="Shape3D" uid="uid://1ujtl44t06s6" path="res://objects/collisions/level_3/cysts.tres" id="7_n6eey"]
+[ext_resource type="ArrayMesh" uid="uid://c5tcnf6qpev3f" path="res://objects/meshes/grass_level_3/branches.res" id="8_t4txi"]
+[ext_resource type="Script" uid="uid://ckwcf5viegnl0" path="res://scripts/player/level_camera.gd" id="9_pimnq"]
+[ext_resource type="PackedScene" uid="uid://c6xmstywcsofl" path="res://scenes/action_scene/player.tscn" id="10_2bnyt"]
+[ext_resource type="PackedScene" uid="uid://dpaftua7gwg1r" path="res://scenes/action_scene/mac.tscn" id="11_t4txi"]
+[ext_resource type="PackedScene" uid="uid://6kfah1nt2dp4" path="res://scenes/action_scene/code_obj.tscn" id="12_apo5x"]
+[ext_resource type="Texture2D" uid="uid://d0k5ea188hihu" path="res://ui/card_code_ui/code_to_create_window.png" id="13_josfm"]
+[ext_resource type="Texture2D" uid="uid://dmvuogmq3wad8" path="res://ui/card_code_ui/code_to_import.png" id="14_lgrx1"]
+[ext_resource type="AudioStream" uid="uid://fcvg7lsr6iff" path="res://sounds/level_1_music.mp3" id="15_apo5x"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_josfm"]
+sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
+sky_horizon_color = Color(0.827451, 0.9019608, 0.96862745, 1)
+ground_bottom_color = Color(0.827451, 0.9019608, 0.96862745, 1)
+ground_horizon_color = Color(0.827451, 0.9019608, 0.96862745, 1)
+
+[sub_resource type="Sky" id="Sky_o7j4k"]
+sky_material = SubResource("ProceduralSkyMaterial_josfm")
+
+[sub_resource type="Environment" id="Environment_lgrx1"]
+background_mode = 2
+sky = SubResource("Sky_o7j4k")
+adjustment_enabled = true
+adjustment_saturation = 0.8
+
+[node name="level_3" type="Node3D" unique_id=1019765516]
+
+[node name="world_light" type="WorldEnvironment" parent="." unique_id=830407596]
+environment = SubResource("Environment_lgrx1")
+
+[node name="map" type="Node3D" parent="." unique_id=1853696615]
+metadata/_edit_group_ = true
+
+[node name="Grass" type="MeshInstance3D" parent="map" unique_id=705372383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.026196, -0.298, 5.3082156)
+mesh = ExtResource("1_2bnyt")
+
+[node name="static_body" type="StaticBody3D" parent="map/Grass" unique_id=891822479]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Grass/static_body" unique_id=1014255090]
+shape = ExtResource("2_2bnyt")
+
+[node name="GrassShadow" type="MeshInstance3D" parent="map" unique_id=106448771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.026196, -0.288, 5.3082156)
+mesh = ExtResource("3_n6eey")
+
+[node name="Forest" type="MeshInstance3D" parent="map" unique_id=1375454164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7829404, 2.675, -1.5152674)
+mesh = ExtResource("4_qi5uv")
+
+[node name="static_body" type="StaticBody3D" parent="map/Forest" unique_id=1350714817]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Forest/static_body" unique_id=272972359]
+shape = ExtResource("5_2bnyt")
+
+[node name="Cysts" type="MeshInstance3D" parent="map" unique_id=104073646]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.418621, 0.096, 2.0711498)
+mesh = ExtResource("6_f6egh")
+
+[node name="static_body" type="StaticBody3D" parent="map/Cysts" unique_id=220328969]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Cysts/static_body" unique_id=392953299]
+shape = ExtResource("7_n6eey")
+
+[node name="Branches" type="MeshInstance3D" parent="map" unique_id=1626143229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07325935, -0.28220776, -0.33267903)
+mesh = ExtResource("8_t4txi")
+
+[node name="camera" type="Camera3D" parent="." unique_id=1311371328 node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 0.83388585, 0.55193704, 0, -0.55193704, 0.83388585, -4.127328, 7.309888, 11.134846)
+projection = 1
+fov = 30.0
+size = 9.0
+script = ExtResource("9_pimnq")
+player = NodePath("../player")
+
+[node name="player" parent="." unique_id=1175395954 instance=ExtResource("10_2bnyt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2873635, -0.10187982, 0)
+is_apk = false
+
+[node name="src_obj" type="Node3D" parent="." unique_id=1150545708]
+
+[node name="Mac" parent="src_obj" unique_id=1322469569 instance=ExtResource("11_t4txi")]
+transform = Transform3D(0.85355073, 0, -0.52100956, 0, 1, 0, 0.52100956, 0, 0.85355073, -3.693555, -0.21848449, -1.7715857)
+
+[node name="code_objes" type="Node3D" parent="src_obj" unique_id=1084844197]
+metadata/_edit_group_ = true
+
+[node name="main_window_code" parent="src_obj/code_objes" unique_id=393723837 node_paths=PackedStringArray("mac") instance=ExtResource("12_apo5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1421194, 0, 4.7188883)
+texture_obj = ExtResource("13_josfm")
+mac = NodePath("../../Mac")
+shadow = false
+
+[node name="import_code" parent="src_obj/code_objes" unique_id=1115388789 node_paths=PackedStringArray("mac") instance=ExtResource("12_apo5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.373246, 0, -5.612958)
+texture_obj = ExtResource("14_lgrx1")
+mac = NodePath("../../Mac")
+
+[node name="vars_code" parent="src_obj/code_objes" unique_id=303468756 node_paths=PackedStringArray("mac") instance=ExtResource("12_apo5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1746435, 0, 12.007456)
+mac = NodePath("../../Mac")
+shadow = false
+
+[node name="sounds" type="Node" parent="." unique_id=1976077228]
+
+[node name="music" type="AudioStreamPlayer" parent="sounds" unique_id=1444039441]
+stream = ExtResource("15_apo5x")
+volume_db = -2.0
+autoplay = true

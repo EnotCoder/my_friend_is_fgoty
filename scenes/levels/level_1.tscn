@@ -34,12 +34,12 @@ sky_horizon_color = Color(0.827451, 0.9019608, 0.96862745, 1)
 ground_bottom_color = Color(0.827451, 0.9019608, 0.96862745, 1)
 ground_horizon_color = Color(0.827451, 0.9019608, 0.96862745, 1)
 
-[sub_resource type="Sky" id="Sky_o7j4k"]
+[sub_resource type="Sky" id="Sky_31oqk"]
 sky_material = SubResource("ProceduralSkyMaterial_bswci")
 
 [sub_resource type="Environment" id="Environment_rus8k"]
 background_mode = 2
-sky = SubResource("Sky_o7j4k")
+sky = SubResource("Sky_31oqk")
 adjustment_enabled = true
 adjustment_saturation = 0.8
 
