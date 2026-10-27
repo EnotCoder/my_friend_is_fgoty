@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="7_nc4up"]
 [ext_resource type="Script" uid="uid://bc7ivbyma6dj8" path="res://scripts/mac/mac_ui.gd" id="7_of0i2"]
 [ext_resource type="Script" uid="uid://c7jjjbgox1ovt" path="res://scripts/mac/code_panel.gd" id="8_fiab4"]
+[ext_resource type="PackedScene" uid="uid://bydwtxj8ljxly" path="res://scenes/action_scene/ui/win_lose_level.tscn" id="10_fiab4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7gny6"]
 render_priority = 0
@@ -293,3 +294,5 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_st5n6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_exhfj")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_sefyh")
 text = "RUN CODE"
+
+[node name="win_lose_level" parent="." unique_id=1185155249 instance=ExtResource("10_fiab4")]

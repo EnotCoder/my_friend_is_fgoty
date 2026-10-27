@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://ccqcmsj6iwgjy" path="res://scenes/action_scene/fgoty_sit.tscn" id="21_wtkl1"]
 [ext_resource type="Texture2D" uid="uid://cklig1b7o52cp" path="res://ui/text/my_friend.png" id="22_ovy75"]
 [ext_resource type="Script" uid="uid://fyuefsp1yb7s" path="res://scripts/action/to_sin.gd" id="23_wk6bc"]
+[ext_resource type="Script" uid="uid://b6i68n8iw1gwo" path="res://scripts/action/code_objes.gd" id="24_o7j4k"]
 [ext_resource type="PackedScene" uid="uid://6kfah1nt2dp4" path="res://scenes/action_scene/code_obj.tscn" id="24_ugk5q"]
 [ext_resource type="Texture2D" uid="uid://d0k5ea188hihu" path="res://ui/card_code_ui/code_to_create_window.png" id="25_4u6u3"]
 [ext_resource type="AudioStream" uid="uid://fcvg7lsr6iff" path="res://sounds/level_1_music.mp3" id="25_7o3do"]
@@ -121,6 +122,7 @@ player = NodePath("../player")
 
 [node name="Mac" parent="src_obj" unique_id=1322469569 instance=ExtResource("11_mqh5v")]
 transform = Transform3D(0.33545148, 0, -0.94205743, 0, 1, 0, 0.94205743, 0, 0.33545148, 1.3624223, -0.21848449, -0.48973668)
+finish_code = Array[Texture]([ExtResource("26_o7j4k"), ExtResource("25_4u6u3")])
 
 [node name="Sitting" type="MeshInstance3D" parent="src_obj" unique_id=969822811]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -0.40396464, 0.16140664, -1.9319048)
@@ -171,6 +173,7 @@ shape = SubResource("BoxShape3D_jmwk8")
 script = ExtResource("20_dwx2n")
 
 [node name="code_objes" type="Node3D" parent="src_obj" unique_id=337815013]
+script = ExtResource("24_o7j4k")
 metadata/_edit_group_ = true
 
 [node name="main_window_code" parent="src_obj/code_objes" unique_id=393723837 node_paths=PackedStringArray("mac") instance=ExtResource("24_ugk5q")]

@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://bydwtxj8ljxly"]
+
+[ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="1_5uv1c"]
+[ext_resource type="Script" uid="uid://gp2q45rdf0w4" path="res://scripts/ui/win_lose_level.gd" id="1_fkh4k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5uv1c"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(8.471012e-06, 0.7203389, 0, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(2.0094587e-06, 0.46288532, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkh4k"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0.4674126, 0, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0.35593832, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tedar"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(3.657937e-06, 0.6294837, 5.7756904e-07, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0.44933867, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="win_lose_level" type="Control" unique_id=1185155249]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fkh4k")
+
+[node name="rect" type="ColorRect" parent="." unique_id=214726542]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.4627451)
+
+[node name="win" type="Control" parent="." unique_id=312813950]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="text" type="Label" parent="win" unique_id=608531096]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.0
+offset_top = -365.0
+offset_right = 221.0
+offset_bottom = -219.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 33
+theme_override_fonts/font = ExtResource("1_5uv1c")
+theme_override_font_sizes/font_size = 120
+text = "You win"
+horizontal_alignment = 1
+
+[node name="lose" type="Control" parent="." unique_id=1332186464]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="text" type="Label" parent="lose" unique_id=241936186]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.0
+offset_top = -365.0
+offset_right = 221.0
+offset_bottom = -219.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 33
+theme_override_fonts/font = ExtResource("1_5uv1c")
+theme_override_font_sizes/font_size = 120
+text = "You lose"
+horizontal_alignment = 1
+
+[node name="back" type="Button" parent="." unique_id=914982657]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -323.5
+offset_top = 254.0
+offset_right = 323.5
+offset_bottom = 364.00012
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_5uv1c")
+theme_override_font_sizes/font_size = 84
+theme_override_styles/normal = SubResource("StyleBoxFlat_5uv1c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fkh4k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tedar")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5uv1c")
+text = "back to menu"

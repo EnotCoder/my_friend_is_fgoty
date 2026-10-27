@@ -2,6 +2,7 @@ extends MeshInstance3D
 
 # function click
 @onready var ui: Control = $ui;
+@export var finish_code: Array[Texture];
 
 func on_mac_click() -> void:
 	get_tree().paused = true;

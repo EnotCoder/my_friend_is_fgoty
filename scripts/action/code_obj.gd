@@ -16,6 +16,8 @@ const SPEED_SCALE_SHADOW: float = 4.0;
 @onready var code: TextureRect = $ui/ui/code
 @onready var part: CPUParticles3D = $part
 
+var is_get: bool = false;
+
 func explode() -> void:
 	part.restart()
 	part.emitting = true
@@ -48,7 +50,8 @@ func _ready() -> void:
 	
 func on_player_entered(body: Node3D) -> void:
 	if body is Player:
-		set_deferred("monitoring", false)
-		del_scale = Vector3.ZERO;
-		
+		del();
 		ui.start();
+func del():
+	set_deferred("monitoring", false)
+	del_scale = Vector3.ZERO;
