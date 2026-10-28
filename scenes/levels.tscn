@@ -140,7 +140,7 @@ script_obj = NodePath("../..")
 select_material = SubResource("ShaderMaterial_ly2og")
 call_func_click = "start_level_3"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="meshes/level_3/area" unique_id=1733865218]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="meshes/level_3/area" unique_id=142310670]
 shape = ExtResource("9_6g56m")
 
 [node name="sounds" type="Node" parent="." unique_id=1957200169]

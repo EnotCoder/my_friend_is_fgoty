@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmvuogmq3wad8"
-path.s3tc="res://.godot/imported/code_to_import.png-de446ca389c81059e257a75650ec23cf.s3tc.ctex"
+uid="uid://6mv43lbumu15"
+path.s3tc="res://.godot/imported/object_to_create_window.png-3c8dd69a15fc6059c7e1370bc823360a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://ui/card_code_ui/code_to_import.png"
-dest_files=["res://.godot/imported/code_to_import.png-de446ca389c81059e257a75650ec23cf.s3tc.ctex"]
+source_file="res://ui/card_code_ui/level_2/object_to_create_window.png"
+dest_files=["res://.godot/imported/object_to_create_window.png-3c8dd69a15fc6059c7e1370bc823360a.s3tc.ctex"]
 
 [params]
 

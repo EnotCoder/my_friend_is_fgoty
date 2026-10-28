@@ -9,8 +9,8 @@ func _process(_delta: float) -> void:
 	for child in get_children():
 		if child.is_get == false:
 			i += 1;
-			
-	if i < need_card and not get_all:
+	
+	if i == 1 and not get_all:
 		for child in get_children():
 			if child.is_get == false:
 				child.del();

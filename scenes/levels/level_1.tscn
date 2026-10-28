@@ -24,9 +24,10 @@
 [ext_resource type="Script" uid="uid://fyuefsp1yb7s" path="res://scripts/action/to_sin.gd" id="23_wk6bc"]
 [ext_resource type="Script" uid="uid://b6i68n8iw1gwo" path="res://scripts/action/code_objes.gd" id="24_o7j4k"]
 [ext_resource type="PackedScene" uid="uid://6kfah1nt2dp4" path="res://scenes/action_scene/code_obj.tscn" id="24_ugk5q"]
-[ext_resource type="Texture2D" uid="uid://d0k5ea188hihu" path="res://ui/card_code_ui/code_to_create_window.png" id="25_4u6u3"]
+[ext_resource type="Texture2D" uid="uid://d0k5ea188hihu" path="res://ui/card_code_ui/level_1/code_to_create_window.png" id="25_4u6u3"]
 [ext_resource type="AudioStream" uid="uid://fcvg7lsr6iff" path="res://sounds/level_1_music.mp3" id="25_7o3do"]
-[ext_resource type="Texture2D" uid="uid://dmvuogmq3wad8" path="res://ui/card_code_ui/code_to_import.png" id="26_o7j4k"]
+[ext_resource type="Texture2D" uid="uid://dmvuogmq3wad8" path="res://ui/card_code_ui/level_1/code_to_import.png" id="26_o7j4k"]
+[ext_resource type="Texture2D" uid="uid://bbr221lmewqrn" path="res://ui/card_code_ui/level_2/object_main_loop.png" id="27_x7jkp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bswci"]
 sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
@@ -213,8 +214,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.680425, 0, 3.182349)
 texture_obj = ExtResource("26_o7j4k")
 mac = NodePath("../../Mac")
 
-[node name="vars_code" parent="src_obj/code_objes" unique_id=833951070 node_paths=PackedStringArray("mac") instance=ExtResource("24_ugk5q")]
+[node name="f_loop_code" parent="src_obj/code_objes" unique_id=833951070 node_paths=PackedStringArray("mac") instance=ExtResource("24_ugk5q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.544713, 0, -1.5844164)
+texture_obj = ExtResource("27_x7jkp")
 mac = NodePath("../../Mac")
 
 [node name="sounds" type="Node" parent="." unique_id=920340193]
