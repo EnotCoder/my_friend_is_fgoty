@@ -40,6 +40,9 @@ func _ready() -> void:
 func _physics_process(dt: float) -> void:
 	add_player_gravity(dt);
 	player_move(dt);
+	
+	if Input.is_action_just_pressed("Exit"):
+		get_tree().change_scene_to_file("res://scenes/levels.tscn");
 
 
 func add_player_gravity(dt: float) -> void:

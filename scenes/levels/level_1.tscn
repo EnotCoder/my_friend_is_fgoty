@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cnf2y8in874g8"]
 
-[ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="1_31oqk"]
 [ext_resource type="ArrayMesh" uid="uid://dvynh3s2si5tu" path="res://objects/meshes/grass_level_1/grass.res" id="1_o7j4k"]
+[ext_resource type="PackedScene" uid="uid://cs34ebgor37qa" path="res://scenes/action_scene/ui/start_level_hint.tscn" id="1_x7jkp"]
 [ext_resource type="Shape3D" uid="uid://c1iaqun8irlep" path="res://objects/collisions/level_1/level_1_grass.tres" id="2_31oqk"]
 [ext_resource type="ArrayMesh" uid="uid://imgmd3basxqr" path="res://objects/meshes/grass_level_1/grass_shadow.res" id="3_x7jkp"]
 [ext_resource type="ArrayMesh" uid="uid://kehl5ud40rt5" path="res://objects/meshes/grass_level_1/forest.res" id="4_0qwwm"]
@@ -69,32 +69,6 @@ size = Vector3(1.1669922, 2.2111816, 1.1259766)
 
 [node name="world_light" type="WorldEnvironment" parent="." unique_id=664374490]
 environment = SubResource("Environment_rus8k")
-
-[node name="ui" type="Control" parent="." unique_id=1489096250]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="text" type="Label" parent="ui" unique_id=1361425095]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -400.0
-offset_top = 20.0
-offset_right = 400.00024
-offset_bottom = 94.0
-grow_horizontal = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
-theme_override_fonts/font = ExtResource("1_31oqk")
-theme_override_font_sizes/font_size = 47
-text = "goal: write code to create a window"
-horizontal_alignment = 1
 
 [node name="map" type="Node3D" parent="." unique_id=1457961318]
 metadata/_edit_group_ = true
@@ -218,6 +192,11 @@ mac = NodePath("../../Mac")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.544713, 0, -1.5844164)
 texture_obj = ExtResource("27_x7jkp")
 mac = NodePath("../../Mac")
+
+[node name="start_level_hint" parent="." unique_id=1179466889 instance=ExtResource("1_x7jkp")]
+level_goal = "Goal: write code to create a window"
+level_part_counter = 2
+ex_level_part_counter = 1
 
 [node name="sounds" type="Node" parent="." unique_id=920340193]
 
