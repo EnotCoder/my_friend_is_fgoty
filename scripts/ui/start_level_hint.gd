@@ -9,6 +9,8 @@ extends Control
 @onready var part_counter: Label = $panel/part_counter
 @onready var panel: Control = $panel
 
+@onready var music: AudioStreamPlayer = $sounds/music;
+@onready var click_but: AudioStreamPlayer = $sounds/click_but;
 
 func _ready() -> void:
 	show_hint();
@@ -22,6 +24,9 @@ func _ready() -> void:
 func hide_hint():
 	get_tree().paused = false;
 	panel.hide();
+	music.stop();
 func show_hint():
 	get_tree().paused = true;
 	panel.show();
+	music.play();
+	click_but.play();

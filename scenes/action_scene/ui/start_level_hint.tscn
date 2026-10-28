@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://ckk7ij878fb62" path="res://scripts/ui/start_level_hint.gd" id="1_v5kig"]
 [ext_resource type="Texture2D" uid="uid://blpca5qoxtvi8" path="res://ui/button_hint/icon_hint_active.png" id="3_ey681"]
 [ext_resource type="Script" uid="uid://bbwk2fjkue7q4" path="res://scripts/ui/hint_but.gd" id="5_bexk1"]
+[ext_resource type="AudioStream" uid="uid://dhbx0itapofdw" path="res://sounds/hint_music.mp3" id="7_0j1xg"]
+[ext_resource type="AudioStream" uid="uid://bhu0urt08ach0" path="res://sounds/click_use_del.mp3" id="8_0q5g0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jmwk8"]
 shader = ExtResource("1_5wiq7")
@@ -185,3 +187,13 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0j1xg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0fav1")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_bexk1")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ey681")
+
+[node name="sounds" type="Node" parent="." unique_id=1933592981]
+
+[node name="music" type="AudioStreamPlayer" parent="sounds" unique_id=186454184]
+stream = ExtResource("7_0j1xg")
+volume_db = -5.0
+
+[node name="click_but" type="AudioStreamPlayer" parent="sounds" unique_id=1362689997]
+stream = ExtResource("8_0q5g0")
+volume_db = -2.0
