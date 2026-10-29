@@ -15,7 +15,7 @@
 [ext_resource type="ArrayMesh" uid="uid://fle1jfqck46j" path="res://objects/meshes/grass_level_2/fire.res" id="11_nt80m"]
 [ext_resource type="PackedScene" uid="uid://dpaftua7gwg1r" path="res://scenes/action_scene/mac.tscn" id="14_mx6s3"]
 [ext_resource type="Texture2D" uid="uid://6mv43lbumu15" path="res://ui/card_code_ui/level_2/object_to_create_window.png" id="17_sbygb"]
-[ext_resource type="AudioStream" uid="uid://dph4qmmhiao22" path="res://sounds/level_2_music.mp3" id="18_gw1l3"]
+[ext_resource type="AudioStream" uid="uid://dph4qmmhiao22" path="res://sounds/music/level_2_music.mp3" id="18_gw1l3"]
 [ext_resource type="Texture2D" uid="uid://b8d25s4idrkhq" path="res://ui/card_code_ui/level_2/object_imports.png" id="19_5niy6"]
 [ext_resource type="Script" uid="uid://b6i68n8iw1gwo" path="res://scripts/action/code_objes.gd" id="19_wikm6"]
 [ext_resource type="AudioStream" uid="uid://bd0fouuscct0g" path="res://sounds/fire.mp3" id="20_sibr7"]

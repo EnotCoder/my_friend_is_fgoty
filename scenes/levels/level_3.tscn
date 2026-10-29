@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://6kfah1nt2dp4" path="res://scenes/action_scene/code_obj.tscn" id="12_apo5x"]
 [ext_resource type="Texture2D" uid="uid://d0k5ea188hihu" path="res://ui/card_code_ui/level_1/code_to_create_window.png" id="13_josfm"]
 [ext_resource type="Texture2D" uid="uid://byltakqfncxvt" path="res://ui/card_code_ui/level_3/lerp_to_create_window.png" id="15_5f5xw"]
-[ext_resource type="AudioStream" uid="uid://fcvg7lsr6iff" path="res://sounds/level_1_music.mp3" id="15_apo5x"]
 [ext_resource type="ArrayMesh" uid="uid://cenlm85m81g4a" path="res://objects/meshes/grass_level_3/bridge.res" id="16_josfm"]
 [ext_resource type="Texture2D" uid="uid://3rpdvvvffxjf" path="res://ui/card_code_ui/level_3/lerp_imports.png" id="16_o3ttr"]
 [ext_resource type="PackedScene" uid="uid://cs34ebgor37qa" path="res://scenes/action_scene/ui/start_level_hint.tscn" id="17_fhpes"]
@@ -23,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://b4wo87cjywmwb" path="res://ui/card_code_ui/level_3/lerp_events.png" id="18_kva3v"]
 [ext_resource type="Script" uid="uid://b6i68n8iw1gwo" path="res://scripts/action/code_objes.gd" id="19_do6pa"]
 [ext_resource type="Texture2D" uid="uid://ca7veew5hi78s" path="res://ui/card_code_ui/level_3/lerp_draw.png" id="19_jql0x"]
+[ext_resource type="AudioStream" uid="uid://xsofcmcd0dxg" path="res://sounds/music/level_3_music.mp3" id="23_jql0x"]
+[ext_resource type="AudioStream" uid="uid://b1j6hb6ebm4wp" path="res://sounds/water_fall.mp3" id="24_jql0x"]
 [ext_resource type="Script" uid="uid://dvekoa03clw5b" path="res://scripts/action/kill_part.gd" id="24_kva3v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_josfm"]
@@ -160,14 +161,20 @@ ex_level_part_counter = 1
 [node name="sounds" type="Node" parent="." unique_id=1976077228]
 
 [node name="music" type="AudioStreamPlayer" parent="sounds" unique_id=1444039441]
-stream = ExtResource("15_apo5x")
-volume_db = -2.0
+stream = ExtResource("23_jql0x")
+volume_db = -10.0
 autoplay = true
 
-[node name="kill_part" type="Area3D" parent="." unique_id=755165423 node_paths=PackedStringArray("player")]
+[node name="water_fall" type="AudioStreamPlayer" parent="sounds" unique_id=1192415879]
+stream = ExtResource("24_jql0x")
+volume_db = -2.0
+
+[node name="kill_part" type="Area3D" parent="." unique_id=755165423 node_paths=PackedStringArray("sound", "player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.606636, 0)
 script = ExtResource("24_kva3v")
+sound = NodePath("../sounds/water_fall")
 player = NodePath("../player")
+metadata/_edit_group_ = true
 
 [node name="collision" type="CollisionShape3D" parent="kill_part" unique_id=855540820]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8338928, 0, 0.10107422)

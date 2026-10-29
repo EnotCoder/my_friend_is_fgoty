@@ -25,7 +25,7 @@
 [ext_resource type="Script" uid="uid://b6i68n8iw1gwo" path="res://scripts/action/code_objes.gd" id="24_o7j4k"]
 [ext_resource type="PackedScene" uid="uid://6kfah1nt2dp4" path="res://scenes/action_scene/code_obj.tscn" id="24_ugk5q"]
 [ext_resource type="Texture2D" uid="uid://d0k5ea188hihu" path="res://ui/card_code_ui/level_1/code_to_create_window.png" id="25_4u6u3"]
-[ext_resource type="AudioStream" uid="uid://fcvg7lsr6iff" path="res://sounds/level_1_music.mp3" id="25_7o3do"]
+[ext_resource type="AudioStream" uid="uid://fcvg7lsr6iff" path="res://sounds/music/level_1_music.mp3" id="25_7o3do"]
 [ext_resource type="Texture2D" uid="uid://dmvuogmq3wad8" path="res://ui/card_code_ui/level_1/code_to_import.png" id="26_o7j4k"]
 [ext_resource type="Texture2D" uid="uid://bbr221lmewqrn" path="res://ui/card_code_ui/level_2/object_main_loop.png" id="27_x7jkp"]
 

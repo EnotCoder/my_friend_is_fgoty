@@ -6,10 +6,10 @@
 [ext_resource type="Shader" uid="uid://b700fs1jyol2f" path="res://shaders/select_object.gdshader" id="3_ly2og"]
 [ext_resource type="Shape3D" uid="uid://0akwlleayixx" path="res://objects/collisions/levels/level_1.tres" id="4_ly2og"]
 [ext_resource type="ArrayMesh" uid="uid://c1u8wafax2dg7" path="res://objects/meshes/levels/level_2.res" id="5_r44b6"]
-[ext_resource type="AudioStream" uid="uid://bumud35u3trve" path="res://sounds/menu_levels_music.mp3" id="6_byla0"]
 [ext_resource type="Shape3D" uid="uid://sohx8hvcxqwc" path="res://objects/collisions/levels/level_2.tres" id="7_1jewu"]
 [ext_resource type="ArrayMesh" uid="uid://ds3b8fwxq6e8e" path="res://objects/meshes/levels/level_3.res" id="8_00hpi"]
 [ext_resource type="Shape3D" uid="uid://blotoh71lby8t" path="res://objects/collisions/levels/level_3.tres" id="9_6g56m"]
+[ext_resource type="AudioStream" uid="uid://b2ce4okp4p4bl" path="res://sounds/music/music_levels.mp3" id="10_hbvtp"]
 [ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="11_6g56m"]
 [ext_resource type="Script" uid="uid://hgabuo2cprtf" path="res://scripts/ui/levels_ui.gd" id="11_hbvtp"]
 
@@ -146,8 +146,8 @@ shape = ExtResource("9_6g56m")
 [node name="sounds" type="Node" parent="." unique_id=1957200169]
 
 [node name="music" type="AudioStreamPlayer" parent="sounds" unique_id=1892475269]
-stream = ExtResource("6_byla0")
-volume_db = 2.0
+stream = ExtResource("10_hbvtp")
+volume_db = -10.0
 autoplay = true
 
 [node name="ui" type="Control" parent="." unique_id=221466658]

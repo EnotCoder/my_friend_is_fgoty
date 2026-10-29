@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://ckl1s2fqx2r1g" path="res://scripts/menu/text_to_play.gd" id="11_jkv2x"]
 [ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="16_jbj1t"]
 [ext_resource type="AudioStream" uid="uid://bhu0urt08ach0" path="res://sounds/click_use_del.mp3" id="17_dp3eg"]
-[ext_resource type="AudioStream" uid="uid://bumud35u3trve" path="res://sounds/menu_levels_music.mp3" id="17_muem4"]
+[ext_resource type="AudioStream" uid="uid://bumud35u3trve" path="res://sounds/music/menu_music.mp3" id="17_muem4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_272bh"]
 sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
