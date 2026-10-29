@@ -10,11 +10,20 @@
 [ext_resource type="ArrayMesh" uid="uid://bi0hwtyld2xjo" path="res://objects/meshes/grass_level_3/branches.res" id="8_t4txi"]
 [ext_resource type="Script" uid="uid://ckwcf5viegnl0" path="res://scripts/player/level_camera.gd" id="9_pimnq"]
 [ext_resource type="PackedScene" uid="uid://c6xmstywcsofl" path="res://scenes/action_scene/player.tscn" id="10_2bnyt"]
+[ext_resource type="Shape3D" uid="uid://bjcn5klwr3ssj" path="res://objects/collisions/level_3/bridge.tres" id="10_lgrx1"]
 [ext_resource type="PackedScene" uid="uid://dpaftua7gwg1r" path="res://scenes/action_scene/mac.tscn" id="11_t4txi"]
 [ext_resource type="PackedScene" uid="uid://6kfah1nt2dp4" path="res://scenes/action_scene/code_obj.tscn" id="12_apo5x"]
 [ext_resource type="Texture2D" uid="uid://d0k5ea188hihu" path="res://ui/card_code_ui/level_1/code_to_create_window.png" id="13_josfm"]
-[ext_resource type="Texture2D" uid="uid://dmvuogmq3wad8" path="res://ui/card_code_ui/level_1/code_to_import.png" id="14_lgrx1"]
+[ext_resource type="Texture2D" uid="uid://byltakqfncxvt" path="res://ui/card_code_ui/level_3/lerp_to_create_window.png" id="15_5f5xw"]
 [ext_resource type="AudioStream" uid="uid://fcvg7lsr6iff" path="res://sounds/level_1_music.mp3" id="15_apo5x"]
+[ext_resource type="ArrayMesh" uid="uid://cenlm85m81g4a" path="res://objects/meshes/grass_level_3/bridge.res" id="16_josfm"]
+[ext_resource type="Texture2D" uid="uid://3rpdvvvffxjf" path="res://ui/card_code_ui/level_3/lerp_imports.png" id="16_o3ttr"]
+[ext_resource type="PackedScene" uid="uid://cs34ebgor37qa" path="res://scenes/action_scene/ui/start_level_hint.tscn" id="17_fhpes"]
+[ext_resource type="Texture2D" uid="uid://6alfxq44fe45" path="res://ui/card_code_ui/level_3/lerp_vars.png" id="17_kdsi4"]
+[ext_resource type="Texture2D" uid="uid://b4wo87cjywmwb" path="res://ui/card_code_ui/level_3/lerp_events.png" id="18_kva3v"]
+[ext_resource type="Script" uid="uid://b6i68n8iw1gwo" path="res://scripts/action/code_objes.gd" id="19_do6pa"]
+[ext_resource type="Texture2D" uid="uid://ca7veew5hi78s" path="res://ui/card_code_ui/level_3/lerp_draw.png" id="19_jql0x"]
+[ext_resource type="Script" uid="uid://dvekoa03clw5b" path="res://scripts/action/kill_part.gd" id="24_kva3v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_josfm"]
 sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
@@ -30,6 +39,9 @@ background_mode = 2
 sky = SubResource("Sky_o7j4k")
 adjustment_enabled = true
 adjustment_saturation = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jmwk8"]
+size = Vector3(4.187439, 1, 14.00293)
 
 [node name="level_3" type="Node3D" unique_id=1019765516]
 
@@ -74,8 +86,17 @@ shape = ExtResource("7_n6eey")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07325935, -0.28220776, -0.33267903)
 mesh = ExtResource("8_t4txi")
 
+[node name="Bridge" type="MeshInstance3D" parent="map" unique_id=825971423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73784006, -0.51143956, 0.45679647)
+mesh = ExtResource("16_josfm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Bridge" unique_id=30922622]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Bridge/StaticBody3D" unique_id=1688989444]
+shape = ExtResource("10_lgrx1")
+
 [node name="camera" type="Camera3D" parent="." unique_id=1311371328 node_paths=PackedStringArray("player")]
-transform = Transform3D(1, 0, 0, 0, 0.83388585, 0.55193704, 0, -0.55193704, 0.83388585, -4.127328, 7.309888, 11.134846)
+transform = Transform3D(1, 0, 0, 0, 0.83388585, 0.55193704, 0, -0.55193704, 0.83388585, 2.8383875, 19.265385, 34.41207)
 projection = 1
 fov = 30.0
 size = 9.0
@@ -90,25 +111,51 @@ is_apk = false
 
 [node name="Mac" parent="src_obj" unique_id=1322469569 instance=ExtResource("11_t4txi")]
 transform = Transform3D(0.85355073, 0, -0.52100956, 0, 1, 0, 0.52100956, 0, 0.85355073, -3.693555, -0.21848449, -1.7715857)
+finish_code = Array[Texture]([ExtResource("16_o3ttr"), ExtResource("15_5f5xw"), ExtResource("17_kdsi4"), ExtResource("18_kva3v"), ExtResource("19_jql0x")])
 
 [node name="code_objes" type="Node3D" parent="src_obj" unique_id=1084844197]
+script = ExtResource("19_do6pa")
 metadata/_edit_group_ = true
 
 [node name="main_window_code" parent="src_obj/code_objes" unique_id=393723837 node_paths=PackedStringArray("mac") instance=ExtResource("12_apo5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1421194, 0, 4.7188883)
-texture_obj = ExtResource("13_josfm")
+texture_obj = ExtResource("15_5f5xw")
 mac = NodePath("../../Mac")
 shadow = false
 
 [node name="import_code" parent="src_obj/code_objes" unique_id=1115388789 node_paths=PackedStringArray("mac") instance=ExtResource("12_apo5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.373246, 0, -5.612958)
-texture_obj = ExtResource("14_lgrx1")
-mac = NodePath("../../Mac")
-
-[node name="vars_code" parent="src_obj/code_objes" unique_id=303468756 node_paths=PackedStringArray("mac") instance=ExtResource("12_apo5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1746435, 0, 12.007456)
+texture_obj = ExtResource("16_o3ttr")
 mac = NodePath("../../Mac")
 shadow = false
+
+[node name="vars_code" parent="src_obj/code_objes" unique_id=303468756 node_paths=PackedStringArray("mac") instance=ExtResource("12_apo5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8880734, 0, 9.247068)
+texture_obj = ExtResource("17_kdsi4")
+mac = NodePath("../../Mac")
+shadow = false
+
+[node name="events" parent="src_obj/code_objes" unique_id=1914534970 node_paths=PackedStringArray("mac") instance=ExtResource("12_apo5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.595799, 0, 14.487518)
+texture_obj = ExtResource("18_kva3v")
+mac = NodePath("../../Mac")
+shadow = false
+
+[node name="draw" parent="src_obj/code_objes" unique_id=1785583120 node_paths=PackedStringArray("mac") instance=ExtResource("12_apo5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.531957, 0, 5.8773108)
+texture_obj = ExtResource("19_jql0x")
+mac = NodePath("../../Mac")
+
+[node name="fcode_1" parent="src_obj/code_objes" unique_id=1141376248 node_paths=PackedStringArray("mac") instance=ExtResource("12_apo5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.429037, 0, 19.795662)
+texture_obj = ExtResource("13_josfm")
+mac = NodePath("../../Mac")
+shadow = false
+
+[node name="start_level_hint" parent="." unique_id=1179466889 instance=ExtResource("17_fhpes")]
+level_goal = "Goal: write code to create a object with lerp"
+level_part_counter = 5
+ex_level_part_counter = 1
 
 [node name="sounds" type="Node" parent="." unique_id=1976077228]
 
@@ -116,3 +163,12 @@ shadow = false
 stream = ExtResource("15_apo5x")
 volume_db = -2.0
 autoplay = true
+
+[node name="kill_part" type="Area3D" parent="." unique_id=755165423 node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.606636, 0)
+script = ExtResource("24_kva3v")
+player = NodePath("../player")
+
+[node name="collision" type="CollisionShape3D" parent="kill_part" unique_id=855540820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8338928, 0, 0.10107422)
+shape = SubResource("BoxShape3D_jmwk8")

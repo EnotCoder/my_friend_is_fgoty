@@ -11,10 +11,9 @@ var show_ui: bool = false;
 
 func _process(_delta: float) -> void:
 	if get_parent().global_position.y <= GLOBAL_TP_FALL_LINE:
-		get_parent().set_standart_level_position();
 		show_ui = false;
 		animation_player.play("fade_out");
-		tp.play();
+		restart();
 
 func is_on_grass() -> bool:
 	if get_parent().global_position.y <= GLOBAL_FALL_LINE:
@@ -25,3 +24,7 @@ func is_on_grass() -> bool:
 		return false;
 	
 	return true;
+
+func restart() -> void:
+	get_parent().set_standart_level_position();
+	tp.play();

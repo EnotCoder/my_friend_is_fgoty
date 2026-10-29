@@ -50,6 +50,15 @@ _subresources={
 "save_to_file/fallback_path": "res://objects/meshes/grass_level_3/branches.res",
 "save_to_file/path": "uid://bi0hwtyld2xjo"
 },
+"grass_3_Cube_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://objects/meshes/grass_level_3/bridge.res",
+"save_to_file/path": "uid://bkppgaumxvtpr"
+},
 "grass_3_cysts_level_1_002": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
