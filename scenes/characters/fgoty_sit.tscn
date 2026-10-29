@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://ccqcmsj6iwgjy"]
 
-[ext_resource type="Script" uid="uid://b0tnv54xx8x1k" path="res://scripts/action/fgoty_sit.gd" id="1_thdja"]
+[ext_resource type="Script" uid="uid://b0tnv54xx8x1k" path="res://scripts/characters/fgoty/fgoty_sit.gd" id="1_thdja"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sx6sq"]
 resource_name = "body_1"

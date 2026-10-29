@@ -2,7 +2,7 @@ extends ScrollContainer
 
 const EMPTY_TEXTURE := preload("res://ui/card_code_ui/null.png")
 
-const DRAG_SCRIPT := preload("res://scripts/mac/texture_rect.gd")
+const DRAG_SCRIPT := preload("res://scripts/action/game/mac/texture_rect.gd")
 
 @onready var code_list: VBoxContainer = $MarginContainer/code_list
 

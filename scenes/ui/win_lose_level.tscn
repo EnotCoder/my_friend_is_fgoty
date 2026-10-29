@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bydwtxj8ljxly"]
 
 [ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="1_5uv1c"]
-[ext_resource type="Script" uid="uid://gp2q45rdf0w4" path="res://scripts/ui/win_lose_level.gd" id="1_fkh4k"]
+[ext_resource type="Script" uid="uid://gp2q45rdf0w4" path="res://scripts/ui/game/win_lose_level.gd" id="1_fkh4k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5uv1c"]
 content_margin_left = 4.0

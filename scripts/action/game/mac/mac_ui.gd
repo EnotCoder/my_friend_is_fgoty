@@ -3,7 +3,7 @@ extends Control
 # load cards
 
 const EMPTY_TEXTURE := preload("res://ui/card_code_ui/null.png")
-const DRAG_SCRIPT := preload("res://scripts/mac/texture_rect.gd")
+const DRAG_SCRIPT := preload("res://scripts/action/game/mac/texture_rect.gd")
 
 ## Число пустых слотов в правой панели («мой код»).
 var right_empty_slots := 2;

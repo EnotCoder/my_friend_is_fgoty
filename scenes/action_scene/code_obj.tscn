@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://6kfah1nt2dp4"]
 
-[ext_resource type="Script" uid="uid://3lpn23m8luoo" path="res://scripts/action/code_obj.gd" id="1_4ydmg"]
+[ext_resource type="Script" uid="uid://3lpn23m8luoo" path="res://scripts/action/game/code_obj.gd" id="1_4ydmg"]
 [ext_resource type="Texture2D" uid="uid://d0k5ea188hihu" path="res://ui/card_code_ui/level_1/code_to_create_window.png" id="1_kqwqn"]
-[ext_resource type="Texture2D" uid="uid://cfym2236xbb5" path="res://ui/texture_card.png" id="2_xoo1o"]
+[ext_resource type="Texture2D" uid="uid://cfym2236xbb5" path="res://ui/card_code_ui/texture_card.png" id="2_xoo1o"]
 [ext_resource type="ArrayMesh" uid="uid://6pa0wh4lfyeb" path="res://objects/meshes/grass_shadow_cell.res" id="3_xoo1o"]
-[ext_resource type="Script" uid="uid://bl53gxk8q5imq" path="res://scripts/action/ui_code_obj.gd" id="4_sefyh"]
+[ext_resource type="Script" uid="uid://bl53gxk8q5imq" path="res://scripts/ui/game/ui_code_obj.gd" id="4_sefyh"]
 [ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="5_nbfq8"]
 [ext_resource type="ArrayMesh" uid="uid://h4ae8s57m58d" path="res://objects/meshes/part/particle.res" id="7_u138y"]
-[ext_resource type="AudioStream" uid="uid://bhu0urt08ach0" path="res://sounds/click_use_del.mp3" id="8_d5nfs"]
+[ext_resource type="AudioStream" uid="uid://bhu0urt08ach0" path="res://sounds/map/click_use_del.mp3" id="8_d5nfs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xoo1o"]
 size = Vector3(1.4, 0.8051758, 1.4)

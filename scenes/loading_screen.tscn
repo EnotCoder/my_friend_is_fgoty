@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene format=3]
 
-[ext_resource type="Script" uid="uid://d2rfdw778vikv" path="res://scripts/loading_screen.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://d2rfdw778vikv" path="res://scripts/global/loading_screen.gd" id="1_script"]
 [ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="2_font"]
 
 [node name="loading_screen" type="CanvasLayer"]

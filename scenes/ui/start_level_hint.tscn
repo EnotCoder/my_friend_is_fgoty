@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://cscuy7uip65u1" path="res://ui/button_hint/icon_hint.png" id="1_0fav1"]
 [ext_resource type="Shader" uid="uid://881bm6j3ur7n" path="res://shaders/blur.gdshader" id="1_5wiq7"]
 [ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="1_r7k34"]
-[ext_resource type="Script" uid="uid://ckk7ij878fb62" path="res://scripts/ui/start_level_hint.gd" id="1_v5kig"]
+[ext_resource type="Script" uid="uid://ckk7ij878fb62" path="res://scripts/ui/game/start_level_hint.gd" id="1_v5kig"]
 [ext_resource type="Texture2D" uid="uid://blpca5qoxtvi8" path="res://ui/button_hint/icon_hint_active.png" id="3_ey681"]
-[ext_resource type="Script" uid="uid://bbwk2fjkue7q4" path="res://scripts/ui/hint_but.gd" id="5_bexk1"]
+[ext_resource type="Script" uid="uid://bbwk2fjkue7q4" path="res://scripts/ui/game/hint_but.gd" id="5_bexk1"]
 [ext_resource type="AudioStream" uid="uid://dhbx0itapofdw" path="res://sounds/music/hint_music.mp3" id="7_0j1xg"]
-[ext_resource type="AudioStream" uid="uid://bhu0urt08ach0" path="res://sounds/click_use_del.mp3" id="8_0q5g0"]
+[ext_resource type="AudioStream" uid="uid://bhu0urt08ach0" path="res://sounds/map/click_use_del.mp3" id="8_0q5g0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jmwk8"]
 shader = ExtResource("1_5wiq7")
