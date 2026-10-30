@@ -162,9 +162,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -894.4999
-offset_top = 920.0
+offset_top = 771.0
 offset_right = 894.5001
-offset_bottom = 1034.0
+offset_bottom = 885.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 0.44313726, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -173,6 +173,24 @@ theme_override_fonts/font = ExtResource("1_r7k34")
 theme_override_font_sizes/font_size = 40
 text = "Warning: you should keep only the necessary 
 amount of code; any excess should be removed."
+horizontal_alignment = 1
+
+[node name="about_exit" type="Label" parent="panel" unique_id=1294243323]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -894.4999
+offset_top = 950.0
+offset_right = 894.5001
+offset_bottom = 999.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 0.44313726, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("1_r7k34")
+theme_override_font_sizes/font_size = 40
+text = "After closing this panel, you can press ESC to exit :)"
 horizontal_alignment = 1
 
 [node name="but_close" type="Button" parent="panel" unique_id=882907003]

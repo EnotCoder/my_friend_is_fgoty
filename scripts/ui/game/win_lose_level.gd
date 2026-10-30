@@ -25,4 +25,4 @@ func lose_level() -> void:
 	
 func on_back_pressed() -> void:
 	get_tree().paused = false;
-	SceneLoader.change_scene("res://scenes/levels.tscn");
+	SceneLoader.change_scene("res://scenes/levels/levels.tscn");
