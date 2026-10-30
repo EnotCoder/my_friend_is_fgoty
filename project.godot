@@ -13,7 +13,7 @@ config_version=5
 config/name="test_3d"
 run/main_scene="uid://by7iv0hesryu5"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-boot_splash/image="uid://baxeotx6srf87"
+boot_splash/image="res://ui/my_icon.png"
 config/icon="uid://xxdniauhk5xi"
 
 [autoload]
@@ -25,6 +25,7 @@ World="*uid://dlxikhp5mq08i"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
