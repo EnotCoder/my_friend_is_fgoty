@@ -1,18 +1,18 @@
 extends Node3D
 
-@onready var need_card = $"../Mac".finish_code.size();
+@onready var need_card = $"../Mac".finish_code.size()
 
-var get_all: bool = false;
+var get_all: bool = false
 
 func _process(_delta: float) -> void:
-	var i := 0;
+	var i := 0
 	for child in get_children():
 		if child.is_get == false:
-			i += 1;
+			i += 1
 	
 	if i == 1 and not get_all:
 		for child in get_children():
 			if child.is_get == false:
-				child.del();
-				child.explode();
-				get_all = true;
+				child.del()
+				child.explode()
+				get_all = true

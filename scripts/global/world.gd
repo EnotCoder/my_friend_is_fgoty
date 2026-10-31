@@ -1,3 +1,4 @@
 extends Node
 
-var is_show_hint: bool = false;
+var is_show_hint: bool = false
+
