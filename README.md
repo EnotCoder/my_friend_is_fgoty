@@ -1,11 +1,10 @@
 ## My friend is fgoty
 
-![Логотип библиотеки](ui/icon.png)
+![Library logo](ui/icon.png)
 
 [![license](https://img.shields.io/crates/l/frglib.svg)](https://github.com/EnotCoder/FRGlib/blob/main/LICENSE)
 [![Godot](https://img.shields.io/badge/Godot-4.7-478CBF?logo=godotengine&logoColor=white)](https://godotengine.org/)
 
+This is a simple game jam project about Fgoty the frog — the mascot of frglib. It provides a playful way to get acquainted with frglib, a cool Rust library.
 
-Это простая игра для геймджема про лягушку Фготи — маскота frglib. В ней можно в игровой форме познакомиться с frglib — крутой библиотекой для Rust.
-
-Игра создана на движке Godot 4.7 без использования ИИ.
+The game was created using Godot 4.7 without the use of AI.
