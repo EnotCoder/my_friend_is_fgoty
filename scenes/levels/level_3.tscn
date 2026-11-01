@@ -22,9 +22,15 @@
 [ext_resource type="Texture2D" uid="uid://b4wo87cjywmwb" path="res://ui/card_code_ui/level_3/lerp_events.png" id="18_kva3v"]
 [ext_resource type="Script" uid="uid://b6i68n8iw1gwo" path="res://scripts/action/game/code_objes.gd" id="19_do6pa"]
 [ext_resource type="Texture2D" uid="uid://ca7veew5hi78s" path="res://ui/card_code_ui/level_3/lerp_draw.png" id="19_jql0x"]
+[ext_resource type="ArrayMesh" uid="uid://bxtmjsiaetcyc" path="res://objects/meshes/rico.res" id="22_22mqa"]
+[ext_resource type="Script" uid="uid://dcxqnbrsryk0m" path="res://scripts/characters/rico/rico_sit.gd" id="23_6c6bd"]
 [ext_resource type="AudioStream" uid="uid://xsofcmcd0dxg" path="res://sounds/music/level_3_music.mp3" id="23_jql0x"]
+[ext_resource type="Script" uid="uid://cr7h1b8xe1to2" path="res://scripts/action/game/select_object_area.gd" id="24_2qmps"]
 [ext_resource type="AudioStream" uid="uid://b1j6hb6ebm4wp" path="res://sounds/map/water_fall.mp3" id="24_jql0x"]
 [ext_resource type="Script" uid="uid://dvekoa03clw5b" path="res://scripts/action/game/kill_part.gd" id="24_kva3v"]
+[ext_resource type="Shader" uid="uid://b700fs1jyol2f" path="res://shaders/select_object.gdshader" id="25_gtyp3"]
+[ext_resource type="PackedScene" uid="uid://dxe1h4qesqhx3" path="res://scenes/ui/hint_label.tscn" id="26_n7m6w"]
+[ext_resource type="Script" uid="uid://cvipnsevg4ofo" path="res://scripts/ui/game/hint_label.gd" id="27_ju8vr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_josfm"]
 sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
@@ -40,6 +46,20 @@ background_mode = 2
 sky = SubResource("Sky_o7j4k")
 adjustment_enabled = true
 adjustment_saturation = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tio2m"]
+size = Vector3(0.833, 0.865, 0.808)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0p7o"]
+render_priority = 0
+shader = ExtResource("25_gtyp3")
+shader_parameter/highlight_color = Color(0.3, 0.85, 1, 1)
+shader_parameter/opacity = 0.0
+shader_parameter/stripe_spacing = 12.0
+shader_parameter/stripe_width = 0.3
+shader_parameter/stripe_speed = 20.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jnyl3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jmwk8"]
 size = Vector3(4.187439, 1, 14.00293)
@@ -112,7 +132,7 @@ is_apk = false
 
 [node name="Mac" parent="src_obj" unique_id=1322469569 instance=ExtResource("11_t4txi")]
 transform = Transform3D(0.85355073, 0, -0.52100956, 0, 1, 0, 0.52100956, 0, 0.85355073, -3.693555, -0.21848449, -1.7715857)
-finish_code = Array[Texture]([ExtResource("16_o3ttr"), ExtResource("15_5f5xw"), ExtResource("17_kdsi4"), ExtResource("18_kva3v"), ExtResource("19_jql0x")])
+finish_code = Array[Texture2D]([ExtResource("16_o3ttr"), ExtResource("15_5f5xw"), ExtResource("17_kdsi4"), ExtResource("18_kva3v"), ExtResource("19_jql0x")])
 
 [node name="code_objes" type="Node3D" parent="src_obj" unique_id=1084844197]
 script = ExtResource("19_do6pa")
@@ -152,6 +172,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.429037, 0, 19.795662)
 texture_obj = ExtResource("13_josfm")
 mac = NodePath("../../Mac")
 shadow = false
+
+[node name="Rico" type="MeshInstance3D" parent="src_obj" unique_id=219021993]
+transform = Transform3D(0.8933714, 0, -0.449319, 0, 1, 0, 0.449319, 0, 0.8933714, -2.629436, 0.177, -2.13)
+mesh = ExtResource("22_22mqa")
+script = ExtResource("23_6c6bd")
+metadata/_edit_group_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="src_obj/Rico" unique_id=1757059565]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="src_obj/Rico/StaticBody3D" unique_id=1492157949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056762695, 0, -0.10171485)
+shape = SubResource("BoxShape3D_tio2m")
+
+[node name="area" type="Area3D" parent="src_obj/Rico" unique_id=1569514033 node_paths=PackedStringArray("shader_obj")]
+script = ExtResource("24_2qmps")
+shader_obj = [NodePath("..")]
+select_material = SubResource("ShaderMaterial_p0p7o")
+call_func_click = "rico_click"
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="src_obj/Rico/area" unique_id=1174278051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056762695, 0, -0.10171485)
+shape = SubResource("BoxShape3D_jnyl3")
+
+[node name="hint_label" parent="src_obj/Rico" unique_id=498957823 instance=ExtResource("26_n7m6w")]
+script = ExtResource("27_ju8vr")
 
 [node name="start_level_hint" parent="." unique_id=1179466889 instance=ExtResource("17_fhpes")]
 level_goal = "Goal: write code to create a object with lerp"

@@ -124,7 +124,7 @@ player = NodePath("../player")
 
 [node name="Mac" parent="src_obj" unique_id=1322469569 instance=ExtResource("11_mqh5v")]
 transform = Transform3D(0.33545148, 0, -0.94205743, 0, 1, 0, 0.94205743, 0, 0.33545148, 1.3624223, -0.21848449, -0.48973668)
-finish_code = Array[Texture]([ExtResource("26_o7j4k"), ExtResource("25_4u6u3")])
+finish_code = Array[Texture2D]([ExtResource("26_o7j4k"), ExtResource("25_4u6u3")])
 
 [node name="Sitting" type="MeshInstance3D" parent="src_obj" unique_id=969822811]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -0.40396464, 0.16140664, -1.9319048)
