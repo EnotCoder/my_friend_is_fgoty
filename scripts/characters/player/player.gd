@@ -17,6 +17,8 @@ var start_rotation_x: float
 var walk_angle: float = 20.0
 var walk_frequency: float = 3.0
 
+var squash_tween: Tween
+
 func set_standart_level_position():
 	global_position = standart_level_position
 	global_position.y = standart_level_position.y + 10.0
@@ -39,10 +41,28 @@ func _ready() -> void:
 
 func _physics_process(dt: float) -> void:
 	add_player_gravity(dt)
+
+	var was_on_floor := is_on_floor()
 	player_move(dt)
+
+	# «Приседаем» при приземлении.
+	if is_on_floor() and not was_on_floor:
+		play_land_squash()
 	
 	if Input.is_action_just_pressed("Exit"):
 		get_tree().change_scene_to_file("res://scenes/levels/levels.tscn")
+
+
+## Короткая squash-анимация при приземлении.
+func play_land_squash() -> void:
+	if squash_tween and squash_tween.is_valid():
+		squash_tween.kill()
+
+	visual.scale = Vector3(1.15, 0.8, 1.15)
+
+	squash_tween = create_tween()
+	squash_tween.tween_property(visual, "scale", Vector3.ONE, 0.25) \
+		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 
 func add_player_gravity(dt: float) -> void:

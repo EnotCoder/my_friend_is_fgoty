@@ -13,6 +13,7 @@ func object_click(text_hint: String) -> void:
 	if not is_playing and not World.is_show_hint:
 		text.text = text_hint
 		animation_player.play("fade_in")
+		UiAnim.pop_in(text, 0.3, 0.7)
 		is_playing = true
 		World.is_show_hint = true
 		timer.start()

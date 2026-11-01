@@ -7,6 +7,8 @@ const DRAG_SCRIPT = preload("res://scripts/action/game/mac/texture_rect.gd")
 
 @onready var left_list: VBoxContainer = $code_rect/code_list/MarginContainer/code_list
 @onready var right_list: VBoxContainer = $my_code_rect/scroll/MarginContainer/code_list
+@onready var code_rect: ColorRect = $code_rect
+@onready var my_code_rect: ColorRect = $my_code_rect
 @onready var back_button: Button = $back
 @onready var run_button: Button = $run_code
 
@@ -16,6 +18,8 @@ const DRAG_SCRIPT = preload("res://scripts/action/game/mac/texture_rect.gd")
 
 var expected_slots_count: int = 0
 
+var _close_tween: Tween
+
 
 func _ready() -> void:
 	back_button.pressed.connect(_on_back_pressed)
@@ -24,12 +28,42 @@ func _ready() -> void:
 	expected_slots_count = mac.finish_code.size()
 	
 	# Стилизация панелей под Mac
-	_apply_mac_style($code_rect)
-	_apply_mac_style($my_code_rect)
+	_apply_mac_style(code_rect)
+	_apply_mac_style(my_code_rect)
+	
+	UiAnim.hover_scale(back_button, 1.04)
+	UiAnim.hover_scale(run_button, 1.03)
 	
 	# Инициализация пустых слотов в левой панели (куда вставляем код)
 	for i in expected_slots_count:
 		left_list.add_child(create_code_slot(empty_slot_texture))
+
+
+## Плавно открывает интерфейс компьютера.
+func open() -> void:
+	if _close_tween and _close_tween.is_valid():
+		_close_tween.kill()
+
+	modulate.a = 1.0
+	show()
+	
+	UiAnim.slide_in(code_rect, Vector2(-80.0, 0.0), 0.35)
+	UiAnim.slide_in(my_code_rect, Vector2(80.0, 0.0), 0.35, 0.05)
+	UiAnim.slide_in(back_button, Vector2(0.0, 50.0), 0.35, 0.1)
+	UiAnim.slide_in(run_button, Vector2(0.0, 50.0), 0.35, 0.1)
+
+
+## Плавно закрывает интерфейс компьютера.
+func close() -> void:
+	if _close_tween and _close_tween.is_valid():
+		_close_tween.kill()
+
+	_close_tween = create_tween()
+	_close_tween.tween_property(self, "modulate:a", 0.0, 0.16)
+	_close_tween.tween_callback(func() -> void:
+		hide()
+		modulate.a = 1.0
+	)
 
 
 ## Создает новый узел слота с поддержкой Drag & Drop.
@@ -45,12 +79,14 @@ func create_code_slot(tex: Texture2D) -> TextureRect:
 
 ## Добавляет карточку в правую панель (инвентарь).
 func load_new_code(card_texture: Texture2D) -> void:
-	right_list.add_child(create_code_slot(card_texture))
+	var slot := create_code_slot(card_texture)
+	right_list.add_child(slot)
+	slot.play_spawn.call_deferred()
 
 
 func _on_back_pressed() -> void:
 	get_tree().paused = false
-	hide()
+	close()
 
 
 func _on_run_pressed() -> void:

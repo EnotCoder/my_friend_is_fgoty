@@ -6,6 +6,7 @@ const DOTS: PackedStringArray = ["Loading.", "Loading..", "Loading..."]
 const DOT_STEP_TIME: float = 0.25
 
 @onready var text: Label = $Control/text
+@onready var control: Control = $Control
 
 var is_loading: bool = false
 var dot_index: int = 0
@@ -13,6 +14,13 @@ var dot_time: float = 0.0
 
 func _ready() -> void:
 	hide()
+	UiAnim.center_pivot(text)
+
+	var pulse := create_tween().set_loops()
+	pulse.tween_property(text, "modulate:a", 0.55, 0.7) \
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	pulse.tween_property(text, "modulate:a", 1.0, 0.7) \
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
 func _process(delta: float) -> void:
 	if not visible:
@@ -32,7 +40,11 @@ func change_scene(scene_path: String) -> void:
 	dot_index = 0
 	dot_time = 0.0
 	text.text = DOTS[0]
+	control.modulate.a = 0.0
 	show()
+
+	var fade_in := create_tween()
+	fade_in.tween_property(control, "modulate:a", 1.0, 0.15)
 	
 	var start_ms: int = Time.get_ticks_msec()
 	var packed: PackedScene = await _load_scene(scene_path, start_ms)
@@ -51,6 +63,10 @@ func change_scene(scene_path: String) -> void:
 		if current != null and current != previous:
 			break
 	
+	var fade_out := create_tween()
+	fade_out.tween_property(control, "modulate:a", 0.0, 0.2)
+	await fade_out.finished
+
 	hide()
 	is_loading = false
 

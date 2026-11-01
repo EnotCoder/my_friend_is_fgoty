@@ -44,9 +44,16 @@ const MAX_SIZE_VALUE: float = 12.0
 const MIN_SIZE_VALUE: float = 6.0
 
 var camera_size: float = START_SIZE
+var zoom_tween: Tween
 
 func set_camera_fov(num_is_true: bool) -> void:
 	if num_is_true: camera_size += SIZE_SPEED
 	else: camera_size -= SIZE_SPEED
 	camera_size = clampf(camera_size, MIN_SIZE_VALUE, MAX_SIZE_VALUE)
-	size = camera_size
+
+	if zoom_tween and zoom_tween.is_valid():
+		zoom_tween.kill()
+
+	zoom_tween = create_tween()
+	zoom_tween.tween_property(self, "size", camera_size, 0.15) \
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)

@@ -76,6 +76,10 @@ func _notification(what: int) -> void:
 
 
 func _animate_slot(slot: TextureRect, active: bool) -> void:
+	if slot.has_method("play_highlight"):
+		slot.play_highlight(active)
+		return
+
 	var tween = slot.create_tween()
 	if active:
 		tween.tween_property(slot, "modulate", Color(1.5, 1.5, 1.5, 1.0), 0.1)
@@ -85,7 +89,7 @@ func _animate_slot(slot: TextureRect, active: bool) -> void:
 
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if global_hovered_slot:
-		_animate_slot(global_hovered_slot, false)
+		global_hovered_slot.modulate = Color.WHITE
 		global_hovered_slot = null
 
 	var slot := get_slot_under_cursor()
@@ -106,4 +110,21 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 			source.texture = source.empty_texture
 		else:
 			source.texture = null
+
+	_pop_slot(slot)
+
+
+## Короткая «пружинка» при установке карточки в слот.
+func _pop_slot(slot: TextureRect) -> void:
+	if slot.has_method("stop_animations"):
+		slot.stop_animations()
+
+	slot.pivot_offset = slot.size / 2.0
+	slot.scale = Vector2(0.85, 0.85)
+	slot.modulate = Color(1.6, 1.6, 1.6, 1.0)
+
+	var tween := slot.create_tween().set_parallel(true)
+	tween.tween_property(slot, "scale", Vector2.ONE, 0.25) \
+		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(slot, "modulate", Color.WHITE, 0.3)
 
