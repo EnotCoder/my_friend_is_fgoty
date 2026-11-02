@@ -18,7 +18,10 @@
 [ext_resource type="FontFile" uid="uid://bhielboa5e5rv" path="res://ui/text/font.ttf" id="16_jbj1t"]
 [ext_resource type="AudioStream" uid="uid://bhu0urt08ach0" path="res://sounds/map/click_use_del.mp3" id="17_dp3eg"]
 [ext_resource type="AudioStream" uid="uid://bumud35u3trve" path="res://sounds/music/menu_music.mp3" id="17_muem4"]
-[ext_resource type="Script" path="res://scripts/action/menu/main_ui.gd" id="18_mainui"]
+[ext_resource type="Script" uid="uid://bjsrb5xyidat7" path="res://scripts/action/menu/main_ui.gd" id="18_mainui"]
+[ext_resource type="ArrayMesh" uid="uid://ch7834pkv4oym" path="res://objects/meshes/bot.res" id="20_gqmmt"]
+[ext_resource type="Script" uid="uid://dvi2jxfah802i" path="res://scripts/action/game/mesh/mesh_to_sin.gd" id="21_jscy8"]
+[ext_resource type="ArrayMesh" uid="uid://xlyd8m6ox60q" path="res://objects/meshes/part/particle_fire_1.res" id="21_yc10j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_272bh"]
 sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
@@ -109,6 +112,10 @@ _data = {
 &"idle_rust": SubResource("Animation_272bh")
 }
 
+[sub_resource type="Gradient" id="Gradient_jscy8"]
+offsets = PackedFloat32Array(0, 0.47147146, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="main" type="Node3D" unique_id=128878236]
 
 [node name="world_light" type="WorldEnvironment" parent="." unique_id=672269219]
@@ -189,6 +196,27 @@ metadata/_edit_group_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="src_obj/Rust" unique_id=125760713]
 libraries/ = SubResource("AnimationLibrary_5vw27")
+
+[node name="Bot" type="MeshInstance3D" parent="src_obj" unique_id=503060900]
+transform = Transform3D(0.9999863, 0, 0.005235964, 0, 1, 0, -0.005235964, 0, 0.9999863, 1.142, 0.754, -1.319)
+mesh = ExtResource("20_gqmmt")
+script = ExtResource("21_jscy8")
+start_y = 0.754
+metadata/_edit_group_ = true
+
+[node name="part" type="CPUParticles3D" parent="src_obj/Bot" unique_id=1819734439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011706352, -0.42243326, 0.038437963)
+amount = 16
+lifetime = 0.3
+mesh = ExtResource("21_yc10j")
+direction = Vector3(0, 1, 0)
+spread = 60.0
+gravity = Vector3(0, -11.03, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.2
+scale_amount_min = 0.3
+scale_amount_max = 0.8
+color_ramp = SubResource("Gradient_jscy8")
 
 [node name="ui" type="Control" parent="." unique_id=142827029]
 layout_mode = 3
