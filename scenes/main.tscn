@@ -23,6 +23,7 @@
 [ext_resource type="Script" uid="uid://dvi2jxfah802i" path="res://scripts/action/game/mesh/mesh_to_sin.gd" id="21_jscy8"]
 [ext_resource type="ArrayMesh" uid="uid://xlyd8m6ox60q" path="res://objects/meshes/part/particle_fire_1.res" id="21_yc10j"]
 [ext_resource type="ArrayMesh" uid="uid://bxtmjsiaetcyc" path="res://objects/meshes/rico.res" id="23_pm3ni"]
+[ext_resource type="ArrayMesh" uid="uid://cu25lfke466yc" path="res://objects/meshes/fgoty_head.res" id="24_y6deb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_272bh"]
 sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
@@ -149,6 +150,12 @@ initial_velocity_max = 1.2
 scale_amount_min = 0.3
 scale_amount_max = 0.8
 color_ramp = SubResource("Gradient_jscy8")
+
+[node name="FgotyHead" type="MeshInstance3D" parent="src_obj" unique_id=1749930474]
+transform = Transform3D(0.81613755, 0, -0.57785755, 0, 1, 0, 0.57785755, 0, 0.81613755, 3.842, 1.371, -2.594)
+mesh = ExtResource("24_y6deb")
+script = ExtResource("21_jscy8")
+amplitude = 0.06
 
 [node name="ui" type="Control" parent="." unique_id=142827029]
 layout_mode = 3

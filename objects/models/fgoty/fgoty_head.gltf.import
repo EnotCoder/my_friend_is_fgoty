@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c4twl0wdx4ck7"
-path="res://.godot/imported/fgoty_sit.gltf-398291860eed4e704916ea0d552c6985.scn"
+uid="uid://ii5k3bweuxcu"
+path="res://.godot/imported/fgoty_head.gltf-7da097be4b931dbc1f342b739793eed3.scn"
 
 [deps]
 
-source_file="res://objects/models/fgoty_sit.gltf"
-dest_files=["res://.godot/imported/fgoty_sit.gltf-398291860eed4e704916ea0d552c6985.scn"]
+source_file="res://objects/models/fgoty/fgoty_head.gltf"
+dest_files=["res://.godot/imported/fgoty_head.gltf-7da097be4b931dbc1f342b739793eed3.scn"]
 
 [params]
 
@@ -39,7 +39,19 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"meshes": {
+"fgoty_head_head": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://objects/meshes/fgoty_head.res",
+"save_to_file/path": "uid://cu25lfke466yc"
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
 gltf/texture_map_mode=1

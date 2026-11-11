@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c4i1dpdst7euo"]
+
+[ext_resource type="Script" uid="uid://54py1w1yvi1p" path="res://scripts/characters/bot/enemy_bot.gd" id="1_3cf1k"]
+[ext_resource type="ArrayMesh" uid="uid://elaxeflcscuc" path="res://objects/meshes/bot.res" id="1_hsb6a"]
+[ext_resource type="Script" uid="uid://dvi2jxfah802i" path="res://scripts/action/game/mesh/mesh_to_sin.gd" id="2_3cf1k"]
+[ext_resource type="ArrayMesh" uid="uid://xlyd8m6ox60q" path="res://objects/meshes/part/particle_fire_1.res" id="3_y7trc"]
+
+[sub_resource type="Gradient" id="Gradient_eafdy"]
+offsets = PackedFloat32Array(0, 0.47147146, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jmwk8"]
+size = Vector3(1, 1.4483032, 1)
+
+[node name="enemy_bot" type="CharacterBody3D" unique_id=1174630870]
+script = ExtResource("1_3cf1k")
+
+[node name="Bot" type="MeshInstance3D" parent="." unique_id=868708963]
+transform = Transform3D(0.9999863, 0, 0.005235964, 0, 1, 0, -0.005235964, 0, 0.9999863, 0, 0, 0)
+mesh = ExtResource("1_hsb6a")
+script = ExtResource("2_3cf1k")
+metadata/_edit_group_ = true
+
+[node name="part" type="CPUParticles3D" parent="Bot" unique_id=1424758452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011706352, -0.42243326, 0.038437963)
+amount = 16
+lifetime = 0.3
+mesh = ExtResource("3_y7trc")
+direction = Vector3(0, 1, 0)
+spread = 60.0
+gravity = Vector3(0, -11.03, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.2
+scale_amount_min = 0.3
+scale_amount_max = 0.8
+color_ramp = SubResource("Gradient_eafdy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=813539679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025970459, 0)
+shape = SubResource("BoxShape3D_jmwk8")

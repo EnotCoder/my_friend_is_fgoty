@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cgh0yjdo6n6dd"]
+
+[ext_resource type="ArrayMesh" uid="uid://dvynh3s2si5tu" path="res://objects/meshes/grass_level_1/grass.res" id="1_w6h2s"]
+[ext_resource type="Shape3D" uid="uid://c1iaqun8irlep" path="res://objects/collisions/level_1/level_1_grass.tres" id="2_ogj6a"]
+[ext_resource type="ArrayMesh" uid="uid://d00yu71csjg1x" path="res://objects/meshes/grass_level_1/branches.res" id="3_anwe6"]
+[ext_resource type="PackedScene" uid="uid://c6xmstywcsofl" path="res://scenes/characters/player.tscn" id="4_anwe6"]
+[ext_resource type="Script" uid="uid://ckwcf5viegnl0" path="res://scripts/characters/player/level_camera.gd" id="5_rej77"]
+[ext_resource type="PackedScene" uid="uid://c4i1dpdst7euo" path="res://scenes/characters/enemy_bot.tscn" id="6_rej77"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2c1li"]
+sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
+sky_horizon_color = Color(0.827451, 0.9019608, 0.96862745, 1)
+ground_bottom_color = Color(0.827451, 0.9019608, 0.96862745, 1)
+ground_horizon_color = Color(0.827451, 0.9019608, 0.96862745, 1)
+
+[sub_resource type="Sky" id="Sky_31oqk"]
+sky_material = SubResource("ProceduralSkyMaterial_2c1li")
+
+[sub_resource type="Environment" id="Environment_06474"]
+background_mode = 2
+sky = SubResource("Sky_31oqk")
+adjustment_enabled = true
+adjustment_saturation = 0.8
+
+[node name="level_4" type="Node3D" unique_id=1758494827]
+
+[node name="world_light" type="WorldEnvironment" parent="." unique_id=633832309]
+environment = SubResource("Environment_06474")
+
+[node name="map" type="Node3D" parent="." unique_id=377153179]
+metadata/_edit_group_ = true
+
+[node name="Grass" type="MeshInstance3D" parent="map" unique_id=682446816]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.298, 0)
+mesh = ExtResource("1_w6h2s")
+
+[node name="static_body" type="StaticBody3D" parent="map/Grass" unique_id=2027864583]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Grass/static_body" unique_id=1542125170]
+shape = ExtResource("2_ogj6a")
+
+[node name="Branches" type="MeshInstance3D" parent="map" unique_id=952642083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87499046, -0.28220776, 0.4690535)
+mesh = ExtResource("3_anwe6")
+
+[node name="player" parent="." unique_id=1175395954 instance=ExtResource("4_anwe6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10187982, 0)
+is_apk = false
+
+[node name="camera" type="Camera3D" parent="." unique_id=2077844616 node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 0.83388585, 0.55193704, 0, -0.55193704, 0.83388585, 0, 8.516, 11.069)
+projection = 1
+fov = 30.0
+size = 9.0
+script = ExtResource("5_rej77")
+player = NodePath("../player")
+
+[node name="enemy_bot" parent="." unique_id=1174630870 node_paths=PackedStringArray("player") instance=ExtResource("6_rej77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.699068, 0.1244334, -3.926096)
+player = NodePath("../player")
