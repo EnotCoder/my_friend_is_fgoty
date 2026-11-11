@@ -22,6 +22,7 @@
 [ext_resource type="ArrayMesh" uid="uid://elaxeflcscuc" path="res://objects/meshes/bot.res" id="20_gqmmt"]
 [ext_resource type="Script" uid="uid://dvi2jxfah802i" path="res://scripts/action/game/mesh/mesh_to_sin.gd" id="21_jscy8"]
 [ext_resource type="ArrayMesh" uid="uid://xlyd8m6ox60q" path="res://objects/meshes/part/particle_fire_1.res" id="21_yc10j"]
+[ext_resource type="ArrayMesh" uid="uid://bxtmjsiaetcyc" path="res://objects/meshes/rico.res" id="23_pm3ni"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_272bh"]
 sky_top_color = Color(0.8263835, 0.9028206, 0.96717495, 1)
@@ -40,77 +41,6 @@ adjustment_saturation = 0.8
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jmwk8"]
 size = Vector3(0.8286743, 0.5415039, 0.18261719)
-
-[sub_resource type="Animation" id="Animation_7mycd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_0ld40"]
-resource_name = "fast_rotate_back"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, -1.6057029, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_dp3eg"]
-resource_name = "fast_rotate_mac"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -1.6057029, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_272bh"]
-resource_name = "idle_rust"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -0.08726646, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5vw27"]
-_data = {
-&"RESET": SubResource("Animation_7mycd"),
-&"fast_rotate_back": SubResource("Animation_0ld40"),
-&"fast_rotate_mac": SubResource("Animation_dp3eg"),
-&"idle_rust": SubResource("Animation_272bh")
-}
 
 [sub_resource type="Gradient" id="Gradient_jscy8"]
 offsets = PackedFloat32Array(0, 0.47147146, 1)
@@ -163,6 +93,12 @@ mesh = ExtResource("8_jbj1t")
 
 [node name="src_obj" type="Node3D" parent="." unique_id=841951501]
 
+[node name="Rico" type="MeshInstance3D" parent="src_obj" unique_id=1375913451]
+transform = Transform3D(0.48480955, -0.022894876, 0.87432003, 0, 0.99965733, 0.02617695, -0.87461966, -0.012690836, 0.48464346, -0.307, 0.415, 0.759)
+mesh = ExtResource("23_pm3ni")
+script = ExtResource("21_jscy8")
+amplitude = 0.05
+
 [node name="Mac" type="MeshInstance3D" parent="src_obj" unique_id=1129654293]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5719484, 0.39773047, 1.6566563)
 mesh = ExtResource("2_choun")
@@ -194,14 +130,10 @@ mesh = ExtResource("9_muem4")
 script = ExtResource("10_choun")
 metadata/_edit_group_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="src_obj/Rust" unique_id=125760713]
-libraries/ = SubResource("AnimationLibrary_5vw27")
-
 [node name="Bot" type="MeshInstance3D" parent="src_obj" unique_id=503060900]
 transform = Transform3D(0.9999863, 0, 0.005235964, 0, 1, 0, -0.005235964, 0, 0.9999863, 1.142, 0.754, -1.319)
 mesh = ExtResource("20_gqmmt")
 script = ExtResource("21_jscy8")
-start_y = 0.754
 metadata/_edit_group_ = true
 
 [node name="part" type="CPUParticles3D" parent="src_obj/Bot" unique_id=1819734439]
