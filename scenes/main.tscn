@@ -242,7 +242,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
 theme_override_fonts/font = ExtResource("16_jbj1t")
 theme_override_font_sizes/font_size = 40
-text = "version: 0.1.0 (for gamejam)"
+text = "version: 0.1.1"
 metadata/_edit_use_anchors_ = true
 
 [node name="date" type="Label" parent="ui" unique_id=1065413455]
